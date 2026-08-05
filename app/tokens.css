@@ -1,0 +1,91 @@
+/**
+ * PortionPair design tokens — Design System v0.2.2 (locked).
+ *
+ * Ported verbatim from the approved token set. Do not re-derive, re-theme, or
+ * substitute values here; the visual direction is locked (CLAUDE.md §11).
+ *
+ * The three font stacks resolve through `next/font` variables declared on <html>
+ * (see app/layout.tsx), so the families are self-hosted and there is no
+ * render-blocking request to a third-party font host.
+ */
+
+:root {
+  color-scheme: light;
+
+  --color-action-primary: #3d7551;
+  --color-action-hover: #2e5c40;
+  --color-action-pressed: #234a33;
+  --color-action-subtle: #eef4ee;
+  --color-action-disabled: #e6e1d6;
+
+  --color-text-primary: #1c2620;
+  --color-text-body: #38423c;
+  --color-text-secondary: #4f5a53;
+  --color-text-tertiary: #636c65;
+  --color-text-disabled: #79817a;
+
+  --color-surface-page: #f0ede4;
+  --color-surface-canvas: #fbf9f5;
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: #f4f1ea;
+  --color-surface-inverse: #1a3726;
+
+  --color-border-default: #e6e1d6;
+  --color-border-soft: #efe9dc;
+  --color-border-control: #948a70;
+
+  --color-feedback-success: #2e7d5b;
+  --color-feedback-success-surface: #eaf4ee;
+  --color-feedback-success-border: #b4cfb9;
+  --color-feedback-error: #a8362b;
+  --color-feedback-error-text: #8a2a21;
+  --color-feedback-error-surface: #fbedeb;
+
+  /*
+   * Profile accent slots. These name design-token slots, not people — a member
+   * assigned the `charlie` slot need not be named Charlie.
+   */
+  --color-profile-charlie: #1f6d6a;
+  --color-profile-sam: #9b3b63;
+
+  --font-display: var(--font-newsreader), Georgia, serif;
+  --font-body: var(--font-plus-jakarta), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.125rem;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgb(28 38 32 / 8%);
+  --shadow-card: 0 1px 3px rgb(28 38 32 / 6%);
+  --shadow-overlay: 0 16px 36px rgb(28 38 32 / 12%);
+
+  --content-max: 74rem;
+  --motion-fast: 140ms;
+  --motion-normal: 220ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/*
+ * Product breakpoints (CLAUDE.md §11). Written out at each use site as plain
+ * `@media` queries — `@custom-media` has no native browser support and was
+ * never referenced in the validated prototype either.
+ *
+ *   Compact                        30rem
+ *   Tablet                         48rem
+ *   Desktop persistent navigation  64rem
+ */

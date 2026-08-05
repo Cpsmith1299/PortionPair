@@ -1,0 +1,72 @@
+.onboarding-main {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: clamp(1rem, 5vw, 3.5rem) 1rem clamp(6.5rem, 10vw, 4.5rem);
+  background: var(--color-surface-raised);
+}
+
+.onboarding-card { width: min(100%, 38.75rem); }
+
+.onboarding-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-8); }
+.back-button { min-height: 44px; margin: -0.625rem -0.25rem; padding: 0.625rem 0.25rem; border: 0; background: none; color: var(--color-text-disabled); font-size: 0.84375rem; font-weight: 600; cursor: not-allowed; }
+.wordmark { font-family: var(--font-display); font-size: 1.0625rem; }
+
+.progress { display: flex; gap: 0.375rem; margin-bottom: 1.75rem; }
+.progress span { height: 4px; flex: 1; border-radius: var(--radius-pill); background: var(--color-action-primary); }
+.eyebrow { margin-bottom: 0.625rem; color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 0.71875rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.onboarding-card h1 { margin-bottom: 0.625rem; font-family: var(--font-display); font-size: clamp(2rem, 6vw, 2.125rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.015em; }
+.onboarding-lede { margin-bottom: 1.625rem; color: var(--color-text-secondary); font-size: 0.96875rem; line-height: 1.55; text-wrap: pretty; }
+
+.household-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; margin-bottom: 1.625rem; }
+.household-summary > div { min-width: 0; display: flex; align-items: center; gap: 0.625rem; border: 1px solid var(--color-border-default); border-radius: var(--radius-lg); padding: 0.75rem 0.875rem; }
+.household-summary span:not(.avatar) { min-width: 0; display: flex; flex-direction: column; }
+.household-summary strong { font-size: 0.875rem; }
+.household-summary small { margin-top: 0.125rem; overflow: hidden; color: var(--color-text-secondary); font-size: 0.75rem; text-overflow: ellipsis; white-space: nowrap; }
+
+.error-summary { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: var(--space-5); border: 1px solid #e6b5af; border-radius: var(--radius-lg); background: var(--color-feedback-error-surface); padding: 0.75rem 0.875rem; color: var(--color-feedback-error-text); font-size: 0.8125rem; line-height: 1.5; }
+
+.choice-fieldset { min-width: 0; margin: 0 0 1.5rem; padding: 0; border: 0; }
+.choice-fieldset legend { width: 100%; margin-bottom: 0.625rem; padding: 0; font-size: 0.875rem; font-weight: 700; }
+.chip-group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.choice-chip, .add-chip { min-height: 44px; border-radius: var(--radius-pill); padding: 0.5625rem 0.875rem; font-size: 0.84375rem; font-weight: 600; cursor: pointer; }
+.choice-chip { display: inline-flex; align-items: center; gap: 0.375rem; border: 1px solid var(--color-border-control); background: var(--color-surface-raised); color: var(--color-text-body); }
+.choice-chip:hover { border-color: var(--color-action-primary); background: var(--color-action-subtle); }
+.choice-chip:active { transform: scale(0.98); }
+.choice-chip--selected { border-color: var(--color-action-primary); background: var(--color-action-subtle); color: var(--color-action-pressed); font-weight: 700; }
+.add-chip { border: 1px dashed var(--color-border-control); background: transparent; color: var(--color-text-secondary); }
+.add-chip:hover { background: var(--color-surface-sunken); color: var(--color-text-primary); }
+
+.removable-chip { min-height: 44px; display: inline-flex; align-items: center; gap: 0.4375rem; border-radius: var(--radius-pill); background: var(--color-surface-sunken); padding: 0.4375rem 0.375rem 0.4375rem 0.875rem; color: var(--color-text-body); font-size: 0.84375rem; font-weight: 600; }
+.removable-chip button { width: 30px; height: 30px; border: 0; border-radius: 50%; background: var(--color-border-default); color: var(--color-text-primary); font-size: 1rem; cursor: pointer; }
+.removable-chip button:hover { background: #d8d2c6; }
+
+.add-food-control { display: inline-flex; align-items: center; gap: 0.375rem; }
+.add-food-control input { width: 9rem; min-height: 44px; border: 1px solid var(--color-border-control); border-radius: var(--radius-pill); padding: 0.5rem 0.875rem; font-size: 0.84375rem; }
+.add-food-control input[aria-invalid='true'] { border-color: var(--color-feedback-error); }
+.add-food-control .button { border-radius: var(--radius-pill); padding-inline: 1rem; }
+
+.stepper-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: 1.375rem; }
+.cook-time-fieldset { margin-bottom: 1.875rem; }
+.segmented-control { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.125rem; border-radius: var(--radius-lg); background: var(--color-surface-sunken); padding: 0.25rem; }
+.segmented-control button { min-height: 44px; border: 0; border-radius: 0.5625rem; background: transparent; color: var(--color-text-secondary); font-size: 0.875rem; font-weight: 600; cursor: pointer; }
+.segmented-control button:hover { color: var(--color-text-primary); }
+.segmented-control button[aria-pressed='true'] { background: var(--color-surface-raised); color: var(--color-action-pressed); font-weight: 700; box-shadow: var(--shadow-sm); }
+
+.onboarding-action > span { display: block; margin-top: 0.75rem; color: var(--color-text-secondary); font-size: 0.75rem; text-align: center; }
+
+@media (max-width: 36rem) {
+  .onboarding-main { display: block; padding: 1.375rem 1.125rem 6.5rem; }
+  .onboarding-header { margin-bottom: var(--space-5); }
+  .progress { margin-bottom: var(--space-5); }
+  .eyebrow { display: none; }
+  .onboarding-card h1 { font-size: 1.75rem; }
+  .onboarding-lede { font-size: 0.875rem; }
+  .household-summary > div { padding: 0.625rem; }
+  .household-summary small { display: none; }
+  .stepper-grid { grid-template-columns: 1fr; gap: 1.125rem; }
+  .choice-chip, .add-chip { font-size: 0.78125rem; padding-inline: 0.75rem; }
+  .segmented-control button { padding-inline: 0.25rem; font-size: 0.8125rem; }
+  .onboarding-action { position: fixed; z-index: 5; right: 0; bottom: 0; left: 0; border-top: 1px solid var(--color-border-default); background: var(--color-surface-raised); padding: 0.875rem 1.125rem calc(0.875rem + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -8px 24px rgb(28 38 32 / 5%); }
+  .onboarding-action > span { display: none; }
+}

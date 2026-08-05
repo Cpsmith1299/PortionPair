@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>PortionPair Product Screens v0.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #F0EDE4; -webkit-font-smoothing: antialiased; }
+  a { color: #2E5C40; text-decoration: none; }
+  a:hover { color: #234A33; }
+  @keyframes ppShimmer2 { 0% { background-position: -420px 0; } 100% { background-position: 420px 0; } }
+  @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+</style>
+</helmet>
+
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1C2620; background: #F0EDE4;">
+
+  <div style="padding: 40px clamp(16px, 4vw, 56px) 28px; background: #FFFFFF; border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">PortionPair &middot; Product screens v0.1 &middot; built on design system v0.2.2 (locked)</div>
+    <h1 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(32px, 5vw, 50px); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 12px;">Same meal, same table.</h1>
+    <p style="font-size: 17px; line-height: 1.55; color: #4F5A53; margin: 0; max-width: 640px;">One shared household meal, personalized portions for each person. Six connected high-fidelity screens for Charlie and Sam&rsquo;s week &mdash; onboarding, the weekly plan, replacing a meal, cooking, portion comparison, and groceries.</p>
+  </div>
+
+  <div style="padding: 24px clamp(16px, 4vw, 56px); background: #FBF9F5; border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">Flow overview</div>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px;">
+      <a href="#screen-1" style="display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 8px 14px 8px 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">1</span><span style="font-size: 13.5px; font-weight: 600;">Onboarding</span></a>
+      <span aria-hidden="true" style="color: #948A70;">&rarr;</span>
+      <a href="#screen-2" style="display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 8px 14px 8px 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">2</span><span style="font-size: 13.5px; font-weight: 600;">Weekly plan</span></a>
+      <span aria-hidden="true" style="color: #948A70;">&rarr;</span>
+      <a href="#screen-3" style="display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 8px 14px 8px 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">3</span><span style="font-size: 13.5px; font-weight: 600;">Replace a meal</span></a>
+      <span aria-hidden="true" style="color: #948A70;">&rarr;</span>
+      <a href="#screen-4" style="display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 8px 14px 8px 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">4</span><span style="font-size: 13.5px; font-weight: 600;">Meal details</span></a>
+      <span aria-hidden="true" style="color: #948A70;">&rarr;</span>
+      <a href="#screen-5" style="display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 8px 14px 8px 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">5</span><span style="font-size: 13.5px; font-weight: 600;">Portion comparison</span></a>
+      <span aria-hidden="true" style="color: #948A70;">&rarr;</span>
+      <a href="#screen-6" style="display: flex; align-items: center; gap: 9px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 8px 14px 8px 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">6</span><span style="font-size: 13.5px; font-weight: 600;">Grocery list</span></a>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 14px; max-width: 760px;">Household: Charlie (goal &mdash; maintain energy and build healthy habits, larger dinner portion) and Sam (goal &mdash; balanced nutrition, smaller dinner portion). Featured meal: Lemon herb chicken bowls, Wednesday. Every screen below shares this data, and the household switcher, day selector and grocery checks are live &mdash; try them.</div>
+  </div>
+
+  <section id="screen-1" data-screen-label="01 Onboarding" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 12px;">Screen 1 / Onboarding and plan setup</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;">Let&rsquo;s shape your week</h2>
+    <p style="font-size: 15px; color: #4F5A53; margin: 0 0 24px; max-width: 640px;">Final setup step before the plan generates. Focused flow &mdash; no global navigation, no distractions.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 1440px; max-width: 100%; overflow-x: auto; border: 1px solid #E6E1D6; border-radius: 20px; box-shadow: 0 1px 3px rgba(28,38,32,0.06);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Desktop &middot; 1440px &middot; frame scrolls horizontally on narrow viewports &rarr;</div>
+        <div style="width: 1440px; background: #FFFFFF; padding: 56px 0 72px;">
+          <div style="max-width: 620px; margin: 0 auto; padding: 0 40px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px;">
+              <a href="#" style="font-size: 13.5px; font-weight: 600; color: #79817A;">&larr; Back</a>
+              <div style="font-family: 'Newsreader', serif; font-size: 17px; color: #1C2620;">PortionPair</div>
+            </div>
+            <div style="display: flex; gap: 6px; margin-bottom: 28px;" role="progressbar" aria-valuenow="3" aria-valuemin="1" aria-valuemax="3" aria-label="Setup progress, step 3 of 3">
+              <span style="height: 4px; flex: 1; border-radius: 999px; background: #3D7551;"></span>
+              <span style="height: 4px; flex: 1; border-radius: 999px; background: #3D7551;"></span>
+              <span style="height: 4px; flex: 1; border-radius: 999px; background: #3D7551;"></span>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #636C65; margin-bottom: 10px;">Step 3 of 3 &middot; Plan setup</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 34px; line-height: 1.12; margin: 0 0 10px; letter-spacing: -0.015em;">Let&rsquo;s shape your week</h3>
+            <p style="font-size: 15.5px; line-height: 1.55; color: #4F5A53; margin: 0 0 26px; text-wrap: pretty;">These choices shape tonight&rsquo;s shared dinner. Charlie&rsquo;s and Sam&rsquo;s plates stay personalized no matter what you pick here.</p>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 26px;">
+              <div style="flex: 1; display: flex; gap: 10px; align-items: center; border: 1px solid #E6E1D6; border-radius: 14px; padding: 12px 14px;"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1F6D6A; color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none;">C</span><div style="min-width: 0;"><div style="font-size: 14px; font-weight: 700;">Charlie</div><div style="font-size: 12px; color: #4F5A53;">Larger portion</div></div></div>
+              <div style="flex: 1; display: flex; gap: 10px; align-items: center; border: 1px solid #E6E1D6; border-radius: 14px; padding: 12px 14px;"><span style="width: 32px; height: 32px; border-radius: 999px; background: #9B3B63; color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none;">S</span><div style="min-width: 0;"><div style="font-size: 14px; font-weight: 700;">Sam</div><div style="font-size: 12px; color: #4F5A53;">Smaller portion</div></div></div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">Dietary preferences</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <sc-for list="{{ dietChips }}" as="chip" hint-placeholder-count="6">
+                  <sc-if value="{{ chip.selected }}" hint-placeholder-val="{{ false }}">
+                    <button type="button" onClick="{{ chip.onClick }}" aria-pressed="true" style="display: inline-flex; align-items: center; gap: 6px; background: #EEF4EE; border: 1px solid #3D7551; color: #234A33; border-radius: 999px; padding: 9px 14px; font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg>{{ chip.label }}</button>
+                  </sc-if>
+                  <sc-if value="{{ chip.notSelected }}" hint-placeholder-val="{{ true }}">
+                    <button type="button" onClick="{{ chip.onClick }}" aria-pressed="false" style="background: #FFFFFF; border: 1px solid #948A70; color: #38423C; border-radius: 999px; padding: 9px 14px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer;">{{ chip.label }}</button>
+                  </sc-if>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">Foods to avoid</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <span style="display: inline-flex; align-items: center; gap: 7px; background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 7px 8px 7px 14px; font-size: 13.5px; font-weight: 600;">Mushrooms<span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 999px; background: #E6E1D6; display: flex; align-items: center; justify-content: center; font-size: 11px;">&times;</span></span>
+                <span style="display: inline-flex; align-items: center; gap: 7px; background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 7px 8px 7px 14px; font-size: 13.5px; font-weight: 600;">Cilantro<span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 999px; background: #E6E1D6; display: flex; align-items: center; justify-content: center; font-size: 11px;">&times;</span></span>
+                <span style="display: inline-flex; align-items: center; gap: 7px; background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 7px 8px 7px 14px; font-size: 13.5px; font-weight: 600;">Blue cheese<span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 999px; background: #E6E1D6; display: flex; align-items: center; justify-content: center; font-size: 11px;">&times;</span></span>
+                <button type="button" style="background: none; border: 1px dashed #948A70; color: #4F5A53; border-radius: 999px; padding: 7px 14px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer;">+ Add</button>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 6px;">
+              <div>
+                <label for="pp-budget" style="display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px;">Weekly food budget</label>
+                <div id="pp-budget" style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #948A70; border-radius: 14px; padding: 6px;">
+                  <button type="button" onClick="{{ budgetDown }}" aria-label="Decrease weekly budget by $5" style="width: 44px; height: 44px; flex: none; border: none; border-radius: 10px; background: #F4F1EA; color: #1C2620; font-size: 20px; font-weight: 700; cursor: pointer;">&minus;</button>
+                  <div style="flex: 1; text-align: center; font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ budgetLabel }}</div>
+                  <button type="button" onClick="{{ budgetUp }}" aria-label="Increase weekly budget by $5" style="width: 44px; height: 44px; flex: none; border: none; border-radius: 10px; background: #F4F1EA; color: #1C2620; font-size: 20px; font-weight: 700; cursor: pointer;">+</button>
+                </div>
+                <div style="font-size: 12px; color: #636C65; margin-top: 6px;">Typical for two people: $70&ndash;$100</div>
+              </div>
+              <div>
+                <label for="pp-dinners" style="display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px;">Dinners this week</label>
+                <div id="pp-dinners" style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #948A70; border-radius: 14px; padding: 6px;">
+                  <button type="button" onClick="{{ dinnersDown }}" aria-label="Decrease dinners needed" style="width: 44px; height: 44px; flex: none; border: none; border-radius: 10px; background: #F4F1EA; color: #1C2620; font-size: 20px; font-weight: 700; cursor: pointer;">&minus;</button>
+                  <div style="flex: 1; text-align: center; font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ dinners }}</div>
+                  <button type="button" onClick="{{ dinnersUp }}" aria-label="Increase dinners needed" style="width: 44px; height: 44px; flex: none; border: none; border-radius: 10px; background: #F4F1EA; color: #1C2620; font-size: 20px; font-weight: 700; cursor: pointer;">+</button>
+                </div>
+                <div style="font-size: 12px; color: #636C65; margin-top: 6px;">We&rsquo;ll fill the rest with leftovers</div>
+              </div>
+            </div>
+
+            <div style="margin: 22px 0 30px;">
+              <div style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">Maximum cooking time</div>
+              <div style="display: inline-flex; background: #F4F1EA; border-radius: 12px; padding: 4px; gap: 2px;">
+                <sc-for list="{{ cookTimeOpts }}" as="opt" hint-placeholder-count="4">
+                  <sc-if value="{{ opt.active }}" hint-placeholder-val="{{ false }}"><button type="button" aria-pressed="true" onClick="{{ opt.onClick }}" style="padding: 10px 16px; border-radius: 9px; border: none; background: #FFFFFF; color: #234A33; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 2px rgba(28,38,32,0.08); min-height: 44px;">{{ opt.label }}</button></sc-if>
+                  <sc-if value="{{ opt.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" aria-pressed="false" onClick="{{ opt.onClick }}" style="padding: 10px 16px; border-radius: 9px; border: none; background: transparent; color: #4F5A53; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; min-height: 44px;">{{ opt.label }}</button></sc-if>
+                </sc-for>
+              </div>
+            </div>
+
+            <sc-if value="{{ onboardingDone }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; gap: 10px; align-items: center; background: #EAF4EE; border: 1px solid #B4CFB9; border-radius: 14px; padding: 12px 14px; margin-bottom: 14px;"><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 999px; background: #2E7D5B; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; flex: none;">&#10003;</span><div style="font-size: 14px; font-weight: 600; color: #1C2620;">Your week is ready &mdash; 7 dinners planned. Jump to <a href="#screen-2" style="font-weight: 700;">the weekly plan &rarr;</a></div></div>
+            </sc-if>
+
+            <button type="button" onClick="{{ createPlan }}" style="width: 100%; background: #3D7551; color: #FFFFFF; border: none; border-radius: 14px; padding: 17px; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer; min-height: 44px;">
+              <sc-if value="{{ onboardingLoading }}" hint-placeholder-val="{{ false }}">Creating your week&hellip;</sc-if>
+              <sc-if value="{{ onboardingNotLoading }}" hint-placeholder-val="{{ true }}">Create our meal plan</sc-if>
+            </button>
+            <div style="font-size: 12.5px; color: #636C65; text-align: center; margin-top: 12px;">You can change any of this later from Profile &rarr; Preferences.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 390px; max-width: 100%; border: 1px solid #E6E1D6; border-radius: 32px; overflow: hidden; box-shadow: 0 1px 3px rgba(28,38,32,0.06); background: #FFFFFF; position: relative; min-height: 780px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Mobile &middot; 390px</div>
+        <div style="padding: 22px 18px 100px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;"><a href="#" style="font-size: 13px; font-weight: 600; color: #79817A;">&larr; Back</a><div style="font-family: 'Newsreader', serif; font-size: 15px;">PortionPair</div></div>
+          <div style="display: flex; gap: 5px; margin-bottom: 20px;"><span style="height: 4px; flex: 1; border-radius: 999px; background: #3D7551;"></span><span style="height: 4px; flex: 1; border-radius: 999px; background: #3D7551;"></span><span style="height: 4px; flex: 1; border-radius: 999px; background: #3D7551;"></span></div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 27px; line-height: 1.15; margin: 0 0 8px;">Let&rsquo;s shape your week</h3>
+          <p style="font-size: 14px; line-height: 1.5; color: #4F5A53; margin: 0 0 20px;">Charlie&rsquo;s and Sam&rsquo;s plates stay personalized no matter what you pick.</p>
+          <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+            <div style="flex: 1; display: flex; gap: 8px; align-items: center; border: 1px solid #E6E1D6; border-radius: 12px; padding: 10px;"><span style="width: 26px; height: 26px; border-radius: 999px; background: #1F6D6A; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none;">C</span><div style="font-size: 12.5px; font-weight: 700;">Charlie</div></div>
+            <div style="flex: 1; display: flex; gap: 8px; align-items: center; border: 1px solid #E6E1D6; border-radius: 12px; padding: 10px;"><span style="width: 26px; height: 26px; border-radius: 999px; background: #9B3B63; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none;">S</span><div style="font-size: 12.5px; font-weight: 700;">Sam</div></div>
+          </div>
+          <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 8px;">Dietary preferences</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px;">
+            <sc-for list="{{ dietChips }}" as="chip" hint-placeholder-count="6">
+              <sc-if value="{{ chip.selected }}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; gap: 5px; background: #EEF4EE; border: 1px solid #3D7551; color: #234A33; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 700;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg>{{ chip.label }}</span></sc-if>
+              <sc-if value="{{ chip.notSelected }}" hint-placeholder-val="{{ true }}"><span style="background: #FFFFFF; border: 1px solid #948A70; color: #38423C; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 600;">{{ chip.label }}</span></sc-if>
+            </sc-for>
+          </div>
+          <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 8px;">Weekly food budget</div>
+          <div style="display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #948A70; border-radius: 14px; padding: 6px; margin-bottom: 18px;">
+            <button type="button" onClick="{{ budgetDown }}" aria-label="Decrease weekly budget" style="width: 44px; height: 44px; flex: none; border: none; border-radius: 10px; background: #F4F1EA; font-size: 18px; font-weight: 700;">&minus;</button>
+            <div style="flex: 1; text-align: center; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ budgetLabel }}</div>
+            <button type="button" onClick="{{ budgetUp }}" aria-label="Increase weekly budget" style="width: 44px; height: 44px; flex: none; border: none; border-radius: 10px; background: #F4F1EA; font-size: 18px; font-weight: 700;">+</button>
+          </div>
+          <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 8px;">Maximum cooking time</div>
+          <div style="display: flex; background: #F4F1EA; border-radius: 12px; padding: 4px; gap: 2px;">
+            <sc-for list="{{ cookTimeOpts }}" as="opt" hint-placeholder-count="4">
+              <sc-if value="{{ opt.active }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ opt.onClick }}" style="flex: 1; padding: 10px 4px; border-radius: 9px; border: none; background: #FFFFFF; color: #234A33; font-size: 13px; font-weight: 700; min-height: 44px;">{{ opt.label }}</button></sc-if>
+              <sc-if value="{{ opt.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ opt.onClick }}" style="flex: 1; padding: 10px 4px; border-radius: 9px; border: none; background: transparent; color: #4F5A53; font-size: 13px; font-weight: 600; min-height: 44px;">{{ opt.label }}</button></sc-if>
+            </sc-for>
+          </div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFFFF; border-top: 1px solid #E6E1D6; padding: 14px 18px calc(14px + env(safe-area-inset-bottom, 0px));">
+          <button type="button" onClick="{{ createPlan }}" style="width: 100%; background: #3D7551; color: #FFFFFF; border: none; border-radius: 14px; padding: 15px; font-family: inherit; font-size: 15.5px; font-weight: 700; min-height: 44px;">
+            <sc-if value="{{ onboardingLoading }}" hint-placeholder-val="{{ false }}">Creating your week&hellip;</sc-if>
+            <sc-if value="{{ onboardingNotLoading }}" hint-placeholder-val="{{ true }}">Create our meal plan</sc-if>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 18px; max-width: 820px;">Progressive disclosure keeps this feeling short: household, diet and dislikes are quick taps; budget, dinners and cook time are the only numeric inputs. Sticky bottom action bar on mobile keeps &ldquo;Create our meal plan&rdquo; reachable without covering the form. No global navigation during this focused step. Completing this screen generates the plan and scrolls to Screen 2.</div>
+  </section>
+
+  <section id="screen-2" data-screen-label="02 Weekly plan" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 12px;">Screen 2 / Weekly plan dashboard</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;">The product&rsquo;s home screen</h2>
+    <p style="font-size: 15px; color: #4F5A53; margin: 0 0 24px; max-width: 640px;">The shared meal leads; personalized portions sit right below it. Try the day selector and the household switcher &mdash; both are live.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 1440px; max-width: 100%; overflow-x: auto; border: 1px solid #E6E1D6; border-radius: 20px; box-shadow: 0 1px 3px rgba(28,38,32,0.06);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Desktop &middot; 1440px &middot; frame scrolls horizontally on narrow viewports &rarr;</div>
+        <div style="width: 1440px; background: #F7F4EE;">
+          <dc-import name="Nav" variant="desktop" active="week" hint-size="100%,64px"></dc-import>
+          <div style="padding: 32px 40px 48px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px;">
+              <div>
+                <div style="font-size: 22px; font-weight: 700;">Good evening, Charlie</div>
+                <div style="font-size: 14px; color: #4F5A53; margin-top: 2px;">Here&rsquo;s what&rsquo;s cooking this week.</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px; font-size: 14.5px; font-weight: 600;">
+                <button type="button" aria-label="Previous week" style="width: 36px; height: 36px; border-radius: 999px; border: 1px solid #E6E1D6; background: #FFFFFF; cursor: pointer; font-size: 15px;">&lsaquo;</button>
+                <span>Week of Aug 3&ndash;9</span>
+                <button type="button" aria-label="Next week" style="width: 36px; height: 36px; border-radius: 999px; border: 1px solid #E6E1D6; background: #FFFFFF; cursor: pointer; font-size: 15px;">&rsaquo;</button>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-bottom: 18px;">
+              <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+                <sc-if value="{{ d.active }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" onClick="{{ d.onClick }}" aria-current="date" style="flex: 1; min-height: 64px; border-radius: 14px; border: none; background: #3D7551; color: #FFFFFF; cursor: pointer; padding: 10px 4px; display: flex; flex-direction: column; align-items: center; gap: 3px;"><span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;">{{ d.day }}</span><span style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ d.date }}</span></button>
+                </sc-if>
+                <sc-if value="{{ d.inactive }}" hint-placeholder-val="{{ true }}">
+                  <button type="button" onClick="{{ d.onClick }}" style="flex: 1; min-height: 64px; border-radius: 14px; border: 1px solid #E6E1D6; background: #FFFFFF; color: #38423C; cursor: pointer; padding: 10px 4px; display: flex; flex-direction: column; align-items: center; gap: 3px;"><span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #636C65;">{{ d.day }}</span><span style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ d.date }}</span></button>
+                </sc-if>
+              </sc-for>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 22px;">
+              <div role="tablist" aria-label="Whose portions to show" style="display: inline-flex; background: #F4F1EA; border-radius: 999px; padding: 4px; gap: 2px;">
+                <sc-for list="{{ householdTabs }}" as="t" hint-placeholder-count="3">
+                  <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}"><button type="button" role="tab" aria-selected="true" onClick="{{ t.onClick }}" style="padding: 9px 18px; border-radius: 999px; border: none; background: #FFFFFF; color: #234A33; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 2px rgba(28,38,32,0.08); min-height: 44px;">{{ t.label }}</button></sc-if>
+                  <sc-if value="{{ t.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" role="tab" aria-selected="false" onClick="{{ t.onClick }}" style="padding: 9px 18px; border-radius: 999px; border: none; background: transparent; color: #4F5A53; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; min-height: 44px;">{{ t.label }}</button></sc-if>
+                </sc-for>
+              </div>
+              <div style="font-size: 14px; color: #4F5A53; font-weight: 600;">{{ weekStatusText }} &middot; {{ avgCookTimeText }}</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px;">
+              <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 18px; overflow: hidden;">
+                <image-slot id="hero-dash" shape="rect" placeholder="{{ selectedMeal.name }} — photo" style="width: 100%; height: 260px; display: block;"></image-slot>
+                <div style="padding: 22px 24px;">
+                  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
+                    <div style="font-size: 21px; font-weight: 700;">{{ selectedMeal.name }}</div>
+                    <div style="display: flex; gap: 8px;">
+                      <button type="button" aria-label="Favorite this meal" style="width: 40px; height: 40px; border-radius: 999px; border: 1px solid #E6E1D6; background: #FFFFFF; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F5A53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto; display: block;"><path d="M12 21s-7.5-4.6-10-9C.6 9 2 5 6 5c2.2 0 3.7 1.2 4.5 2.4C11.3 6.2 12.8 5 15 5c4 0 5.4 4 4 7-2.5 4.4-10 9-10 9z"></path></svg></button>
+                      <button type="button" aria-label="More options" style="width: 40px; height: 40px; border-radius: 999px; border: 1px solid #E6E1D6; background: #FFFFFF; cursor: pointer; font-size: 18px; color: #4F5A53;">&#8942;</button>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px;">
+                    <span style="background: #F4F1EA; border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; color: #38423C;">{{ selectedMeal.time }} min</span>
+                    <sc-for list="{{ selectedMeal.tags }}" as="tag" hint-placeholder-count="2"><span style="background: #F4F1EA; border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; color: #38423C;">{{ tag }}</span></sc-for>
+                    <span style="background: #F4F1EA; border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; color: #38423C;">${{ selectedMeal.cost }}/serving</span>
+                  </div>
+                  <sc-if value="{{ mealUpdated }}" hint-placeholder-val="{{ false }}"><div style="display: inline-block; background: #EAF4EE; color: #234A33; border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 700; margin-bottom: 14px;">Updated just now</div></sc-if>
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; margin-bottom: 18px;">
+                    <div style="opacity: {{ dimCharlieStyle }};"><span style="color: #1F6D6A; font-weight: 700;">Charlie</span> &middot; 6 oz chicken, 1&frac12; cups rice, 1 cup vegetables, 2 tbsp dressing</div>
+                    <div style="opacity: {{ dimSamStyle }};"><span style="color: #9B3B63; font-weight: 700;">Sam</span> &middot; 4 oz chicken, 1 cup rice, &frac34; cup vegetables, 1&frac12; tbsp dressing</div>
+                  </div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <button type="button" onClick="{{ goToScreen4 }}" style="background: #3D7551; color: #FFFFFF; border: none; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer; min-height: 44px;">View details</button>
+                    <button type="button" onClick="{{ goToScreen3 }}" style="background: #FFFFFF; color: #1C2620; border: 1px solid #948A70; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">Replace</button>
+                    <button type="button" onClick="{{ goToScreen5 }}" style="background: #FFFFFF; color: #1C2620; border: 1px solid #948A70; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">Compare portions</button>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                <button type="button" onClick="{{ goToScreen6 }}" style="text-align: left; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; cursor: pointer; font-family: inherit;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;"><span style="font-size: 15px; font-weight: 700;">Grocery list</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F5A53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></div>
+                  <div style="font-size: 13.5px; color: #4F5A53;">{{ groceryProgressText }} &middot; est. $86</div>
+                  <div style="height: 6px; border-radius: 999px; background: #E6E1D6; margin-top: 10px; overflow: hidden;"><div style="height: 100%; width: {{ groceryProgressPct }}; background: #636C65; border-radius: 999px;"></div></div>
+                </button>
+                <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px;">
+                  <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #636C65; margin-bottom: 10px;">Rest of the week</div>
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <sc-for list="{{ otherDays }}" as="d" hint-placeholder-count="6">
+                      <button type="button" onClick="{{ d.onClick }}" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; background: transparent; border: none; border-top: 1px solid #EFE9DC; padding: 9px 2px 0; cursor: pointer; font-family: inherit; text-align: left; min-height: 44px;">
+                        <span style="font-size: 13px; color: #636C65; width: 34px; flex: none;">{{ d.day }}</span>
+                        <span style="font-size: 14px; color: #1C2620; flex: 1; min-width: 0;">{{ d.name }}</span>
+                        <span style="font-size: 12.5px; color: #79817A; flex: none;">{{ d.time }} min</span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 390px; max-width: 100%; border: 1px solid #E6E1D6; border-radius: 32px; overflow: hidden; box-shadow: 0 1px 3px rgba(28,38,32,0.06); background: #F7F4EE; position: relative; min-height: 900px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Mobile &middot; 390px</div>
+        <div style="padding: 18px 16px 84px;">
+          <div style="font-size: 19px; font-weight: 700; margin-bottom: 2px;">Good evening, Charlie</div>
+          <div style="font-size: 13px; color: #4F5A53; margin-bottom: 14px;">Week of Aug 3&ndash;9</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 2px;">
+            <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+              <sc-if value="{{ d.active }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ d.onClick }}" style="flex: none; width: 46px; min-height: 58px; border-radius: 12px; border: none; background: #3D7551; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;"><span style="font-size: 10.5px; font-weight: 700;">{{ d.day }}</span><span style="font-size: 13.5px; font-weight: 700;">{{ d.date }}</span></button></sc-if>
+              <sc-if value="{{ d.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ d.onClick }}" style="flex: none; width: 46px; min-height: 58px; border-radius: 12px; border: 1px solid #E6E1D6; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;"><span style="font-size: 10.5px; font-weight: 700; color: #636C65;">{{ d.day }}</span><span style="font-size: 13.5px; font-weight: 700;">{{ d.date }}</span></button></sc-if>
+            </sc-for>
+          </div>
+          <div role="tablist" aria-label="Whose portions to show" style="display: flex; background: #F4F1EA; border-radius: 999px; padding: 4px; gap: 2px; margin-bottom: 14px;">
+            <sc-for list="{{ householdTabs }}" as="t" hint-placeholder-count="3">
+              <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ t.onClick }}" style="flex: 1; padding: 9px 4px; border-radius: 999px; border: none; background: #FFFFFF; color: #234A33; font-size: 13px; font-weight: 700; min-height: 44px;">{{ t.label }}</button></sc-if>
+              <sc-if value="{{ t.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ t.onClick }}" style="flex: 1; padding: 9px 4px; border-radius: 999px; border: none; background: transparent; color: #4F5A53; font-size: 13px; font-weight: 600; min-height: 44px;">{{ t.label }}</button></sc-if>
+            </sc-for>
+          </div>
+          <div style="font-size: 12.5px; color: #4F5A53; font-weight: 600; margin-bottom: 14px;">{{ weekStatusText }}</div>
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; overflow: hidden; margin-bottom: 16px;">
+            <image-slot id="hero-dash-m" shape="rect" placeholder="{{ selectedMeal.name }} — photo" style="width: 100%; height: 180px; display: block;"></image-slot>
+            <div style="padding: 16px;">
+              <div style="font-size: 17px; font-weight: 700; margin-bottom: 8px;">{{ selectedMeal.name }}</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;"><span style="background: #F4F1EA; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600;">{{ selectedMeal.time }} min</span><span style="background: #F4F1EA; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600;">${{ selectedMeal.cost }}/serving</span></div>
+              <div style="display: flex; flex-direction: column; gap: 5px; font-size: 13.5px; margin-bottom: 14px;">
+                <div><span style="color: #1F6D6A; font-weight: 700;">Charlie</span> &middot; 6 oz chicken, 1&frac12; cups rice</div>
+                <div><span style="color: #9B3B63; font-weight: 700;">Sam</span> &middot; 4 oz chicken, 1 cup rice</div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" onClick="{{ goToScreen4 }}" style="flex: 1; background: #3D7551; color: #FFFFFF; border: none; border-radius: 12px; padding: 12px 8px; font-size: 13.5px; font-weight: 700; min-height: 44px;">Details</button>
+                <button type="button" onClick="{{ goToScreen3 }}" style="flex: 1; background: #FFFFFF; color: #1C2620; border: 1px solid #948A70; border-radius: 12px; padding: 12px 8px; font-size: 13.5px; font-weight: 600; min-height: 44px;">Replace</button>
+              </div>
+            </div>
+          </div>
+          <button type="button" onClick="{{ goToScreen6 }}" style="width: 100%; text-align: left; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 16px; font-family: inherit; margin-bottom: 8px; min-height: 44px;">
+            <div style="display: flex; justify-content: space-between; font-size: 14.5px; font-weight: 700; margin-bottom: 6px;"><span>Grocery list</span><span>&rsaquo;</span></div>
+            <div style="font-size: 13px; color: #4F5A53;">{{ groceryProgressText }}</div>
+          </button>
+        </div>
+        <dc-import name="Nav" variant="mobile" active="week" hint-size="100%,62px"></dc-import>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 18px; max-width: 820px;">Desktop uses a two-column reading order: shared meal first, grocery and rest-of-week second. Mobile stacks the same order and keeps the day strip horizontally scrollable with 46&ndash;64px touch targets. The household switcher dims the other person&rsquo;s line rather than hiding it &mdash; nothing about either portion reads as better or worse.</div>
+  </section>
+
+  <section id="screen-3" data-screen-label="03 Replace a meal" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 12px;">Screen 3 / Replace a meal</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;">Choose another meal</h2>
+    <p style="font-size: 15px; color: #4F5A53; margin: 0 0 24px; max-width: 640px;">Opened from Wednesday&rsquo;s meal card. Preferences, time and budget already apply &mdash; nothing to re-enter.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 1440px; max-width: 100%; overflow-x: auto; border: 1px solid #E6E1D6; border-radius: 20px; box-shadow: 0 1px 3px rgba(28,38,32,0.06);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Desktop &middot; 1440px &middot; side panel over the dimmed week &rarr;</div>
+        <div style="width: 1440px; height: 760px; display: flex; background: #F7F4EE;">
+          <div style="flex: 1; position: relative; padding: 40px;">
+            <div style="opacity: 0.5; filter: saturate(0.7); max-width: 520px;">
+              <div style="font-size: 20px; font-weight: 700; margin-bottom: 14px;">Wednesday</div>
+              <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; overflow: hidden;"><div style="height: 160px; background: #E6E1D6;"></div><div style="padding: 16px;"><div style="font-size: 16px; font-weight: 700;">Lemon herb chicken bowls</div></div></div>
+            </div>
+            <div aria-hidden="true" style="position: absolute; inset: 0; background: rgba(28,38,32,0.28);"></div>
+          </div>
+          <div style="width: 540px; flex: none; background: #FFFFFF; box-shadow: -8px 0 24px rgba(28,38,32,0.08); overflow-y: auto; padding: 28px 32px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;">
+              <div style="font-size: 12.5px; color: #636C65; font-weight: 600;">Replacing Wednesday&rsquo;s dinner</div>
+              <button type="button" aria-label="Close" style="width: 36px; height: 36px; border-radius: 999px; border: 1px solid #E6E1D6; background: #FFFFFF; font-size: 15px; cursor: pointer;">&times;</button>
+            </div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 27px; margin: 0 0 10px; letter-spacing: -0.01em;">Choose another meal</h3>
+            <p style="font-size: 14px; color: #4F5A53; line-height: 1.5; margin: 0 0 20px;">These still fit your household&rsquo;s preferences, time and budget &mdash; no need to re-enter anything.</p>
+            <div style="display: flex; align-items: center; gap: 10px; background: #FBF9F5; border: 1px solid #EFE9DC; border-radius: 12px; padding: 10px 14px; margin-bottom: 16px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg><span style="font-size: 14px; color: #79817A;">Search meals</span></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;">
+              <span style="background: #EEF4EE; border: 1px solid #C9D6C8; color: #234A33; border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 700;">&le;30 min</span>
+              <span style="background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 600;">Gluten-free</span>
+              <span style="background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 7px 13px; font-size: 12.5px; font-weight: 600;">Cuisine: Any &#9662;</span>
+            </div>
+
+            <sc-for list="{{ alts }}" as="alt" hint-placeholder-count="4">
+              <sc-if value="{{ alt.isFeatured }}" hint-placeholder-val="{{ true }}">
+                <button type="button" onClick="{{ alt.onClick }}" style="width: 100%; text-align: left; font-family: inherit; cursor: pointer; display: block; background: #FFFFFF; border-radius: 16px; padding: 3px; margin-bottom: 12px;" style-hover="background: #FBF9F5;">
+                  <sc-if value="{{ alt.selected }}" hint-placeholder-val="{{ true }}"><div style="border: 2px solid #3D7551; border-radius: 14px; overflow: hidden; position: relative;"><span aria-hidden="true" style="position: absolute; top: 10px; right: 10px; z-index: 1; width: 26px; height: 26px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></span><image-slot id="alt-salmon" shape="rect" placeholder="Herb-crusted salmon — photo" style="width: 100%; height: 140px; display: block;"></image-slot><div style="padding: 14px;"><div style="font-size: 15.5px; font-weight: 700; margin-bottom: 6px;">{{ alt.name }}</div><div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;"><span style="background: #F4F1EA; border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-weight: 600;">{{ alt.time }} min</span><span style="background: #F4F1EA; border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-weight: 600;">${{ alt.cost }}/serving</span></div><div style="font-size: 12px; color: #4F5A53;">Portions ready for Charlie &amp; Sam</div></div></div></sc-if>
+                  <sc-if value="{{ alt.notSelected }}" hint-placeholder-val="{{ false }}"><div style="border: 1px solid #E6E1D6; border-radius: 14px; overflow: hidden;"><image-slot id="alt-salmon" shape="rect" placeholder="Herb-crusted salmon — photo" style="width: 100%; height: 140px; display: block;"></image-slot><div style="padding: 14px;"><div style="font-size: 15.5px; font-weight: 700; margin-bottom: 6px;">{{ alt.name }}</div><div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;"><span style="background: #F4F1EA; border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-weight: 600;">{{ alt.time }} min</span><span style="background: #F4F1EA; border-radius: 999px; padding: 3px 10px; font-size: 11.5px; font-weight: 600;">${{ alt.cost }}/serving</span></div><div style="font-size: 12px; color: #4F5A53;">Portions ready for Charlie &amp; Sam</div></div></div></sc-if>
+                </button>
+              </sc-if>
+              <sc-if value="{{ alt.isStandard }}" hint-placeholder-val="{{ false }}">
+                <sc-if value="{{ alt.selected }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ alt.onClick }}" style="width: 100%; text-align: left; font-family: inherit; cursor: pointer; display: flex; gap: 12px; align-items: center; background: #FFFFFF; border: 2px solid #3D7551; border-radius: 14px; padding: 10px; margin-bottom: 10px;"><image-slot id="alt-{{ alt.id }}" shape="rounded" radius="10" placeholder="photo" style="width: 64px; height: 64px; flex: none;"></image-slot><div style="flex: 1; min-width: 0;"><div style="font-size: 14.5px; font-weight: 700;">{{ alt.name }}</div><div style="font-size: 12px; color: #4F5A53; margin-top: 2px;">{{ alt.time }} min &middot; ${{ alt.cost }}/serving</div></div><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; flex: none;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></span></button></sc-if>
+                <sc-if value="{{ alt.notSelected }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ alt.onClick }}" style="width: 100%; text-align: left; font-family: inherit; cursor: pointer; display: flex; gap: 12px; align-items: center; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 10px; margin-bottom: 10px;"><image-slot id="alt-{{ alt.id }}" shape="rounded" radius="10" placeholder="photo" style="width: 64px; height: 64px; flex: none;"></image-slot><div style="flex: 1; min-width: 0;"><div style="font-size: 14.5px; font-weight: 700;">{{ alt.name }}</div><div style="font-size: 12px; color: #4F5A53; margin-top: 2px;">{{ alt.time }} min &middot; ${{ alt.cost }}/serving</div></div></button></sc-if>
+              </sc-if>
+              <sc-if value="{{ alt.isCompact }}" hint-placeholder-val="{{ false }}">
+                <button type="button" onClick="{{ alt.onClick }}" style="width: 100%; text-align: left; font-family: inherit; cursor: pointer; display: flex; gap: 10px; align-items: center; background: transparent; border: 1px solid #EFE9DC; border-radius: 12px; padding: 8px 10px; margin-bottom: 10px;"><image-slot id="alt-{{ alt.id }}" shape="rounded" radius="8" placeholder="photo" style="width: 40px; height: 40px; flex: none;"></image-slot><div style="flex: 1; min-width: 0; font-size: 13.5px;">{{ alt.name }}</div><div style="font-size: 12px; color: #79817A; flex: none;">{{ alt.time }} min</div></button>
+              </sc-if>
+            </sc-for>
+
+            <div style="display: flex; gap: 12px; align-items: center; background: #FBF9F5; border: 1px dashed #E6E1D6; border-radius: 14px; padding: 12px; margin-bottom: 20px;">
+              <div style="width: 40px; height: 40px; flex: none; border-radius: 8px; background: linear-gradient(90deg, #EFE9DC 25%, #F7F4EE 37%, #EFE9DC 63%); background-size: 400% 100%; animation: ppShimmer2 1.4s ease infinite;"></div>
+              <div style="flex: 1;"><div style="height: 10px; width: 60%; border-radius: 999px; background: linear-gradient(90deg, #EFE9DC 25%, #F7F4EE 37%, #EFE9DC 63%); background-size: 400% 100%; animation: ppShimmer2 1.4s ease infinite; margin-bottom: 6px;"></div><div style="height: 9px; width: 35%; border-radius: 999px; background: linear-gradient(90deg, #EFE9DC 25%, #F7F4EE 37%, #EFE9DC 63%); background-size: 400% 100%; animation: ppShimmer2 1.4s ease infinite;"></div></div>
+            </div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #79817A; margin: -12px 0 20px;">Example &middot; no results state</div>
+            <div style="background: #FBF9F5; border: 1px solid #EFE9DC; border-radius: 14px; padding: 16px; text-align: center; margin-bottom: 24px;"><div style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">No matches for &ldquo;sushi&rdquo;</div><div style="font-size: 12.5px; color: #4F5A53;">Try removing a filter, or search a main ingredient instead.</div></div>
+
+            <sc-if value="{{ replaceConfirmed }}" hint-placeholder-val="{{ false }}"><div style="display: flex; gap: 10px; align-items: center; background: #EAF4EE; border: 1px solid #B4CFB9; border-radius: 14px; padding: 12px 14px; margin-bottom: 14px;"><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 999px; background: #2E7D5B; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; flex: none;">&#10003;</span><div style="font-size: 13.5px; font-weight: 600;">Wednesday updated to {{ selectedAltName }}. Back to <a href="#screen-2" style="font-weight: 700;">the week &rarr;</a></div></div></sc-if>
+
+            <div style="display: flex; gap: 10px;">
+              <button type="button" style="flex: none; background: #FFFFFF; color: #4F5A53; border: 1px solid #948A70; border-radius: 12px; padding: 13px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">Cancel</button>
+              <button type="button" onClick="{{ confirmReplace }}" style="flex: 1; background: #3D7551; color: #FFFFFF; border: none; border-radius: 12px; padding: 13px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; min-height: 44px;">
+                <sc-if value="{{ replaceLoading }}" hint-placeholder-val="{{ false }}">Updating Wednesday&hellip;</sc-if>
+                <sc-if value="{{ replaceNotLoading }}" hint-placeholder-val="{{ true }}">Replace meal</sc-if>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 390px; max-width: 100%; border: 1px solid #E6E1D6; border-radius: 32px; overflow: hidden; box-shadow: 0 1px 3px rgba(28,38,32,0.06); background: #FFFFFF; position: relative; min-height: 780px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Mobile &middot; full-height sheet</div>
+        <div style="display: flex; justify-content: center; padding: 10px 0 2px;"><span aria-hidden="true" style="width: 36px; height: 4px; border-radius: 999px; background: #E6E1D6;"></span></div>
+        <div style="padding: 6px 18px 100px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><div style="font-size: 12px; color: #636C65; font-weight: 600;">Replacing Wednesday</div><button type="button" aria-label="Close" style="width: 32px; height: 32px; border-radius: 999px; border: 1px solid #E6E1D6; background: #FFFFFF; font-size: 14px;">&times;</button></div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 23px; margin: 0 0 8px;">Choose another meal</h3>
+          <p style="font-size: 13px; color: #4F5A53; margin: 0 0 14px;">Still fits your preferences, time and budget.</p>
+          <div style="display: flex; align-items: center; gap: 8px; background: #FBF9F5; border: 1px solid #EFE9DC; border-radius: 12px; padding: 10px 12px; margin-bottom: 12px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg><span style="font-size: 13.5px; color: #79817A;">Search meals</span></div>
+          <div style="display: flex; gap: 7px; margin-bottom: 14px; overflow-x: auto;"><span style="background: #EEF4EE; border: 1px solid #C9D6C8; color: #234A33; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 700; flex: none;">&le;30 min</span><span style="background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 600; flex: none;">Gluten-free</span></div>
+          <sc-for list="{{ alts }}" as="alt" hint-placeholder-count="4">
+            <sc-if value="{{ alt.selected }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ alt.onClick }}" style="width: 100%; text-align: left; font-family: inherit; display: flex; gap: 10px; align-items: center; background: #FFFFFF; border: 2px solid #3D7551; border-radius: 14px; padding: 9px; margin-bottom: 9px; min-height: 44px;"><image-slot id="alt-m-{{ alt.id }}" shape="rounded" radius="9" placeholder="photo" style="width: 52px; height: 52px; flex: none;"></image-slot><div style="flex: 1; min-width: 0;"><div style="font-size: 13.5px; font-weight: 700;">{{ alt.name }}</div><div style="font-size: 11.5px; color: #4F5A53;">{{ alt.time }} min &middot; ${{ alt.cost }}</div></div><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 999px; background: #3D7551; flex: none;"></span></button></sc-if>
+            <sc-if value="{{ alt.notSelected }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ alt.onClick }}" style="width: 100%; text-align: left; font-family: inherit; display: flex; gap: 10px; align-items: center; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 9px; margin-bottom: 9px; min-height: 44px;"><image-slot id="alt-m-{{ alt.id }}" shape="rounded" radius="9" placeholder="photo" style="width: 52px; height: 52px; flex: none;"></image-slot><div style="flex: 1; min-width: 0;"><div style="font-size: 13.5px; font-weight: 700;">{{ alt.name }}</div><div style="font-size: 11.5px; color: #4F5A53;">{{ alt.time }} min &middot; ${{ alt.cost }}</div></div></button></sc-if>
+          </sc-for>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFFFF; border-top: 1px solid #E6E1D6; padding: 12px 18px calc(12px + env(safe-area-inset-bottom, 0px)); display: flex; gap: 8px;">
+          <button type="button" style="flex: none; background: #FFFFFF; color: #4F5A53; border: 1px solid #948A70; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-weight: 600; min-height: 44px;">Cancel</button>
+          <button type="button" onClick="{{ confirmReplace }}" style="flex: 1; background: #3D7551; color: #FFFFFF; border: none; border-radius: 12px; padding: 13px; font-size: 14.5px; font-weight: 700; min-height: 44px;">
+            <sc-if value="{{ replaceLoading }}" hint-placeholder-val="{{ false }}">Updating&hellip;</sc-if>
+            <sc-if value="{{ replaceNotLoading }}" hint-placeholder-val="{{ true }}">Replace meal</sc-if>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 18px; max-width: 820px;">Desktop keeps the current week dimmed behind a 540px side panel; mobile uses a full-height sheet with a drag handle and sticky footer. Selecting an alternative shows an immediate ring + checkmark; confirming crossfades back to Screen 2 with the Wednesday card updated.</div>
+  </section>
+
+  <section id="screen-4" data-screen-label="04 Meal details" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 12px;">Screen 4 / Meal details and cooking view</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;">What&rsquo;s cooking, and for whom</h2>
+    <p style="font-size: 15px; color: #4F5A53; margin: 0 0 24px; max-width: 640px;">The shared dish leads, portions come next, then ingredients and steps. Nutrition is there if you want it &mdash; never first.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 1440px; max-width: 100%; overflow-x: auto; border: 1px solid #E6E1D6; border-radius: 20px; box-shadow: 0 1px 3px rgba(28,38,32,0.06);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Desktop &middot; 1440px &middot; frame scrolls horizontally on narrow viewports &rarr;</div>
+        <div style="width: 1440px; background: #F7F4EE;">
+          <dc-import name="Nav" variant="desktop" active="week" hint-size="100%,64px"></dc-import>
+          <div style="position: relative; height: 320px;">
+            <image-slot id="hero-detail" shape="rect" placeholder="Lemon herb chicken bowls — two portions, photo" style="width: 100%; height: 100%; display: block;"></image-slot>
+            <div style="position: absolute; top: 20px; right: 20px; display: flex; gap: 8px;">
+              <button type="button" aria-label="Favorite this meal" style="width: 44px; height: 44px; border-radius: 999px; border: none; background: rgba(255,255,255,0.92); cursor: pointer;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto; display: block;"><path d="M12 21s-7.5-4.6-10-9C.6 9 2 5 6 5c2.2 0 3.7 1.2 4.5 2.4C11.3 6.2 12.8 5 15 5c4 0 5.4 4 4 7-2.5 4.4-10 9-10 9z"></path></svg></button>
+              <button type="button" aria-label="More options" style="width: 44px; height: 44px; border-radius: 999px; border: none; background: rgba(255,255,255,0.92); cursor: pointer; font-size: 18px; color: #1C2620;">&#8942;</button>
+            </div>
+          </div>
+          <div style="max-width: 900px; margin: 0 auto; padding: 28px 40px 56px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 12px;">
+              <div style="font-size: 28px; font-weight: 700;">Lemon herb chicken bowls</div>
+              <div style="font-size: 15px; font-weight: 700; color: #234A33;">$4.80/serving</div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;">
+              <span style="background: #F4F1EA; border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600;">30 min</span>
+              <span style="background: #F4F1EA; border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600;">Easy</span>
+              <span style="background: #F4F1EA; border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600;">High protein</span>
+              <span style="background: #F4F1EA; border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600;">Gluten-free</span>
+            </div>
+
+            <div role="tablist" aria-label="Whose portions to show" style="display: inline-flex; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; padding: 4px; gap: 2px; margin-bottom: 20px;">
+              <sc-for list="{{ householdTabs }}" as="t" hint-placeholder-count="3">
+                <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}"><button type="button" role="tab" aria-selected="true" onClick="{{ t.onClick }}" style="padding: 9px 18px; border-radius: 999px; border: none; background: #F4F1EA; color: #234A33; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; min-height: 44px;">{{ t.label }}</button></sc-if>
+                <sc-if value="{{ t.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" role="tab" aria-selected="false" onClick="{{ t.onClick }}" style="padding: 9px 18px; border-radius: 999px; border: none; background: transparent; color: #4F5A53; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; min-height: 44px;">{{ t.label }}</button></sc-if>
+              </sc-for>
+            </div>
+
+            <p style="font-size: 16px; line-height: 1.6; color: #38423C; margin: 0 0 28px; max-width: 640px;">A bright, protein-forward bowl the whole table shares &mdash; juicy roasted chicken, herbed rice, and charred vegetables finished with a lemon dressing. Each plate is portioned to fit the person eating it.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px;">
+              <div style="border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; opacity: {{ dimCharlieStyle }};">
+                <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 26px; height: 26px; border-radius: 999px; background: #1F6D6A; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><span style="font-size: 15px; font-weight: 700;">Charlie&rsquo;s serving</span></div>
+                <div style="font-size: 15px; line-height: 1.7; color: #38423C;">6 oz chicken<br />1&frac12; cups rice<br />1 cup roasted vegetables<br />2 tbsp dressing</div>
+                <div style="font-size: 12.5px; color: #79817A; margin-top: 8px;">~720 cal</div>
+              </div>
+              <div style="border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; opacity: {{ dimSamStyle }};">
+                <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 12px;"><span style="width: 26px; height: 26px; border-radius: 999px; background: #9B3B63; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">S</span><span style="font-size: 15px; font-weight: 700;">Sam&rsquo;s serving</span></div>
+                <div style="font-size: 15px; line-height: 1.7; color: #38423C;">4 oz chicken<br />1 cup rice<br />&frac34; cup roasted vegetables<br />1&frac12; tbsp dressing</div>
+                <div style="font-size: 12.5px; color: #79817A; margin-top: 8px;">~540 cal</div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 32px;">
+              <div style="font-size: 18px; font-weight: 700; margin-bottom: 14px;">Ingredients</div>
+              <div style="display: flex; flex-direction: column;">
+                <div style="display: grid; grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr; gap: 10px; padding: 8px 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #636C65; border-bottom: 1px solid #E6E1D6;"><div>Ingredient</div><div>Total</div><div>Charlie</div><div>Sam</div></div>
+                <div style="display: grid; grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr; gap: 10px; padding: 13px 4px; border-bottom: 1px solid #EFE9DC; align-items: center; font-size: 14.5px;"><div style="font-weight: 600;">Chicken thighs</div><div style="font-variant-numeric: tabular-nums;">10 oz</div><div style="color: #1F6D6A; font-weight: 700; font-variant-numeric: tabular-nums;">6 oz</div><div style="color: #9B3B63; font-weight: 700; font-variant-numeric: tabular-nums;">4 oz</div></div>
+                <div style="display: grid; grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr; gap: 10px; padding: 13px 4px; border-bottom: 1px solid #EFE9DC; align-items: center; font-size: 14.5px;"><div style="font-weight: 600;">Jasmine rice</div><div style="font-variant-numeric: tabular-nums;">2&frac12; cups</div><div style="color: #1F6D6A; font-weight: 700; font-variant-numeric: tabular-nums;">1&frac12; cups</div><div style="color: #9B3B63; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</div></div>
+                <div style="display: grid; grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr; gap: 10px; padding: 13px 4px; border-bottom: 1px solid #EFE9DC; align-items: center; font-size: 14.5px;"><div style="font-weight: 600;">Roasted vegetables</div><div style="font-variant-numeric: tabular-nums;">1&frac34; cups</div><div style="color: #1F6D6A; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</div><div style="color: #9B3B63; font-weight: 700; font-variant-numeric: tabular-nums;">&frac34; cup</div></div>
+                <div style="display: grid; grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr; gap: 10px; padding: 13px 4px; align-items: center; font-size: 14.5px;"><div style="font-weight: 600;">Lemon-herb dressing</div><div style="font-variant-numeric: tabular-nums;">3&frac12; tbsp</div><div style="color: #1F6D6A; font-weight: 700; font-variant-numeric: tabular-nums;">2 tbsp</div><div style="color: #9B3B63; font-weight: 700; font-variant-numeric: tabular-nums;">1&frac12; tbsp</div></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <div style="font-size: 18px; font-weight: 700; margin-bottom: 14px;">Cooking steps</div>
+              <div style="display: flex; flex-direction: column;">
+                <sc-for list="{{ steps }}" as="step" hint-placeholder-count="6">
+                  <div style="display: flex; gap: 14px; align-items: flex-start; padding: 13px 4px; border-bottom: 1px solid #EFE9DC;">
+                    <sc-if value="{{ step.done }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ step.toggle }}" aria-label="Mark step {{ step.num }} not done" style="width: 28px; height: 28px; border-radius: 999px; background: #2E7D5B; border: none; color: #fff; display: flex; align-items: center; justify-content: center; flex: none; cursor: pointer; margin-top: 1px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></button></sc-if>
+                    <sc-if value="{{ step.notDone }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ step.toggle }}" aria-label="Mark step {{ step.num }} done" style="width: 28px; height: 28px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #948A70; color: #4F5A53; display: flex; align-items: center; justify-content: center; flex: none; cursor: pointer; font-size: 12px; font-weight: 700; margin-top: 1px;">{{ step.num }}</button></sc-if>
+                    <div style="flex: 1; min-width: 0;">
+                      <sc-if value="{{ step.done }}" hint-placeholder-val="{{ false }}"><div style="font-size: 15.5px; line-height: 1.5; color: #79817A; text-decoration: line-through; text-decoration-color: #C9C2AE;">{{ step.text }}</div></sc-if>
+                      <sc-if value="{{ step.notDone }}" hint-placeholder-val="{{ true }}"><div style="font-size: 15.5px; line-height: 1.5; color: #1C2620;">{{ step.text }}</div></sc-if>
+                      <sc-if value="{{ step.isTimerStep }}" hint-placeholder-val="{{ false }}">
+                        <sc-if value="{{ timerRunning }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ toggleTimer }}" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; background: #EEF4EE; border: 1px solid #C9D6C8; color: #234A33; border-radius: 999px; padding: 9px 16px; font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; min-height: 44px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2M9 2h6"></path></svg>{{ timerLabel }} remaining &middot; Pause</button></sc-if>
+                        <sc-if value="{{ timerNotRunning }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ toggleTimer }}" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #948A70; color: #1C2620; border-radius: 999px; padding: 9px 16px; font-family: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; min-height: 44px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l3 2M9 2h6"></path></svg>Start 18 min timer</button></sc-if>
+                      </sc-if>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="border: 1px solid #E6E1D6; border-radius: 16px; overflow: hidden; margin-bottom: 24px;">
+              <button type="button" id="nutrition-btn" aria-expanded="true" aria-controls="nutrition-panel" style="width: 100%; box-sizing: border-box; background: #FBF9F5; border: none; text-align: left; padding: 14px 18px; font-family: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 44px;">Nutrition per serving <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F5A53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"></path></svg></button>
+              <div id="nutrition-panel" role="region" aria-labelledby="nutrition-btn" style="border-top: 1px solid #EFE9DC;">
+                <div style="padding: 16px 18px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; font-variant-numeric: tabular-nums;">
+                  <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 10px; padding: 12px;"><div style="font-size: 12px; color: #4F5A53;">Calories</div><div style="font-size: 18px; font-weight: 700;">720</div></div>
+                  <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 10px; padding: 12px;"><div style="font-size: 12px; color: #4F5A53;">Protein</div><div style="font-size: 18px; font-weight: 700;">52g</div></div>
+                  <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 10px; padding: 12px;"><div style="font-size: 12px; color: #4F5A53;">Carbs</div><div style="font-size: 18px; font-weight: 700;">68g</div></div>
+                  <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 10px; padding: 12px;"><div style="font-size: 12px; color: #4F5A53;">Fat</div><div style="font-size: 18px; font-weight: 700;">21g</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <button type="button" onClick="{{ goToScreen3 }}" style="background: #FFFFFF; color: #1C2620; border: 1px solid #948A70; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">Replace this meal</button>
+              <button type="button" style="background: #FFFFFF; color: #4F5A53; border: 1px solid #E6E1D6; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">Leave feedback</button>
+              <button type="button" onClick="{{ goToScreen5 }}" style="background: #FFFFFF; color: #4F5A53; border: 1px solid #E6E1D6; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">Compare portions</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 390px; max-width: 100%; border: 1px solid #E6E1D6; border-radius: 32px; overflow: hidden; box-shadow: 0 1px 3px rgba(28,38,32,0.06); background: #FFFFFF; position: relative; min-height: 900px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Mobile &middot; 390px</div>
+        <div style="height: 200px; position: relative;">
+          <image-slot id="hero-detail-m" shape="rect" placeholder="Lemon herb chicken bowls — photo" style="width: 100%; height: 100%; display: block;"></image-slot>
+          <div style="position: absolute; top: 14px; right: 14px; display: flex; gap: 6px;"><button type="button" aria-label="Favorite" style="width: 40px; height: 40px; border-radius: 999px; border: none; background: rgba(255,255,255,0.92);"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto; display: block;"><path d="M12 21s-7.5-4.6-10-9C.6 9 2 5 6 5c2.2 0 3.7 1.2 4.5 2.4C11.3 6.2 12.8 5 15 5c4 0 5.4 4 4 7-2.5 4.4-10 9-10 9z"></path></svg></button></div>
+        </div>
+        <div style="padding: 18px 16px 90px;">
+          <div style="font-size: 21px; font-weight: 700; margin-bottom: 10px;">Lemon herb chicken bowls</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;"><span style="background: #F4F1EA; border-radius: 999px; padding: 5px 11px; font-size: 12px; font-weight: 600;">30 min</span><span style="background: #F4F1EA; border-radius: 999px; padding: 5px 11px; font-size: 12px; font-weight: 600;">Easy</span><span style="background: #F4F1EA; border-radius: 999px; padding: 5px 11px; font-size: 12px; font-weight: 600;">$4.80/serving</span></div>
+          <div role="tablist" aria-label="Whose portions to show" style="display: flex; background: #F4F1EA; border-radius: 999px; padding: 4px; gap: 2px; margin-bottom: 16px;">
+            <sc-for list="{{ householdTabs }}" as="t" hint-placeholder-count="3">
+              <sc-if value="{{ t.active }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ t.onClick }}" style="flex: 1; padding: 9px 4px; border-radius: 999px; border: none; background: #FFFFFF; color: #234A33; font-size: 13px; font-weight: 700; min-height: 44px;">{{ t.label }}</button></sc-if>
+              <sc-if value="{{ t.inactive }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ t.onClick }}" style="flex: 1; padding: 9px 4px; border-radius: 999px; border: none; background: transparent; color: #4F5A53; font-size: 13px; font-weight: 600; min-height: 44px;">{{ t.label }}</button></sc-if>
+            </sc-for>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+            <div style="border: 1px solid #E6E1D6; border-radius: 14px; padding: 14px; opacity: {{ dimCharlieStyle }};"><div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1F6D6A; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><span style="font-size: 13.5px; font-weight: 700;">Charlie</span></div><div style="font-size: 13.5px; line-height: 1.6;">6 oz chicken &middot; 1&frac12; cups rice &middot; 1 cup vegetables &middot; 2 tbsp dressing</div></div>
+            <div style="border: 1px solid #E6E1D6; border-radius: 14px; padding: 14px; opacity: {{ dimSamStyle }};"><div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #9B3B63; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">S</span><span style="font-size: 13.5px; font-weight: 700;">Sam</span></div><div style="font-size: 13.5px; line-height: 1.6;">4 oz chicken &middot; 1 cup rice &middot; &frac34; cup vegetables &middot; 1&frac12; tbsp dressing</div></div>
+          </div>
+          <div style="font-size: 16px; font-weight: 700; margin-bottom: 10px;">Cooking steps</div>
+          <div style="display: flex; flex-direction: column;">
+            <sc-for list="{{ steps }}" as="step" hint-placeholder-count="6">
+              <div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 2px; border-bottom: 1px solid #EFE9DC; min-height: 44px;">
+                <sc-if value="{{ step.done }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ step.toggle }}" aria-label="Mark step {{ step.num }} not done" style="width: 30px; height: 30px; border-radius: 999px; background: #2E7D5B; border: none; color: #fff; display: flex; align-items: center; justify-content: center; flex: none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></button></sc-if>
+                <sc-if value="{{ step.notDone }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ step.toggle }}" aria-label="Mark step {{ step.num }} done" style="width: 30px; height: 30px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #948A70; display: flex; align-items: center; justify-content: center; flex: none; font-size: 12px; font-weight: 700;">{{ step.num }}</button></sc-if>
+                <div style="flex: 1; min-width: 0; font-size: 14.5px; line-height: 1.5;">{{ step.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <dc-import name="Nav" variant="mobile" active="week" hint-size="100%,62px"></dc-import>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 18px; max-width: 820px;">Order of hierarchy: shared meal, portions, ingredients, steps, nutrition &mdash; nutrition stays collapsed until asked for. Step 2 (index 3) carries the timer; toggling it runs a real countdown. Favorite/overflow sit on a translucent pill over the photo; the meal name itself never overlaps the image.</div>
+  </section>
+
+  <section id="screen-5" data-screen-label="05 Portion comparison" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 12px;">Screen 5 / Portion comparison</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;">Same meal, personalized for both of you</h2>
+    <p style="font-size: 15px; color: #4F5A53; margin: 0 0 24px; max-width: 640px;">Quantities are the comparison &mdash; not charts. Adjust Charlie&rsquo;s rice below; it&rsquo;s a live control.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 1440px; max-width: 100%; overflow-x: auto; border: 1px solid #E6E1D6; border-radius: 20px; box-shadow: 0 1px 3px rgba(28,38,32,0.06);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Desktop &middot; 1440px &middot; frame scrolls horizontally on narrow viewports &rarr;</div>
+        <div style="width: 1440px; background: #F7F4EE;">
+          <dc-import name="Nav" variant="desktop" active="week" hint-size="100%,64px"></dc-import>
+          <div style="max-width: 980px; margin: 0 auto; padding: 40px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #636C65; margin-bottom: 10px;">Lemon herb chicken bowls &middot; Wednesday</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 32px; margin: 0 0 28px; letter-spacing: -0.015em;">Same meal, personalized for both of you</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+              <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 18px; padding: 24px; position: relative; overflow: hidden;">
+                <div aria-hidden="true" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); width: 180px; height: 180px; border-radius: 999px; border: 1.5px solid #E6E1D6;"></div>
+                <div style="position: relative;">
+                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1F6D6A; color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><span style="font-size: 18px; font-weight: 700;">Charlie</span></div>
+                  <div style="font-size: 13px; color: #4F5A53; margin-bottom: 20px;">Goal: maintain energy and build healthy habits</div>
+                  <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #EFE9DC; padding-bottom: 10px;"><span style="font-size: 14.5px; color: #38423C;">Chicken</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">6 oz</span></div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #EFE9DC; padding-bottom: 10px;">
+                      <span style="font-size: 14.5px; color: #38423C;">Rice</span>
+                      <div style="display: flex; align-items: center; gap: 8px; background: #FBF9F5; border: 1px solid #948A70; border-radius: 12px; padding: 4px;">
+                        <button type="button" onClick="{{ riceDown }}" aria-label="Decrease Charlie's rice" style="width: 36px; height: 36px; border: none; border-radius: 8px; background: #F4F1EA; font-size: 16px; font-weight: 700; cursor: pointer;">&minus;</button>
+                        <span role="spinbutton" aria-label="Charlie's rice" aria-valuemin="0.5" aria-valuemax="3" aria-valuenow="{{ riceLabel }}" style="min-width: 60px; text-align: center; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ riceLabel }}</span>
+                        <button type="button" onClick="{{ riceUp }}" aria-label="Increase Charlie's rice" style="width: 36px; height: 36px; border: none; border-radius: 8px; background: #F4F1EA; font-size: 16px; font-weight: 700; cursor: pointer;">+</button>
+                      </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #EFE9DC; padding-bottom: 10px;"><span style="font-size: 14.5px; color: #38423C;">Roasted vegetables</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</span></div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 14.5px; color: #38423C;">Dressing</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">2 tbsp</span></div>
+                  </div>
+                  <div style="font-size: 13px; color: #4F5A53; line-height: 1.5; margin-bottom: 10px;">Portioned to support Charlie&rsquo;s goal of maintaining energy and building habits.</div>
+                  <details style="font-size: 13px;"><summary style="cursor: pointer; color: #4F5A53; font-weight: 600;">Nutrition details</summary><div style="margin-top: 8px; color: #4F5A53;">~720 cal &middot; 52g protein &middot; 68g carbs &middot; 21g fat</div></details>
+                </div>
+              </div>
+
+              <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 18px; padding: 24px; position: relative; overflow: hidden;">
+                <div aria-hidden="true" style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); width: 180px; height: 180px; border-radius: 999px; border: 1.5px solid #E6E1D6;"></div>
+                <div style="position: relative;">
+                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;"><span style="width: 34px; height: 34px; border-radius: 999px; background: #9B3B63; color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;">S</span><span style="font-size: 18px; font-weight: 700;">Sam</span></div>
+                  <div style="font-size: 13px; color: #4F5A53; margin-bottom: 20px;">Goal: balanced nutrition</div>
+                  <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #EFE9DC; padding-bottom: 10px;"><span style="font-size: 14.5px; color: #38423C;">Chicken</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">4 oz</span></div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #EFE9DC; padding-bottom: 10px;"><span style="font-size: 14.5px; color: #38423C;">Rice</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</span></div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #EFE9DC; padding-bottom: 10px;"><span style="font-size: 14.5px; color: #38423C;">Roasted vegetables</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">&frac34; cup</span></div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 14.5px; color: #38423C;">Dressing</span><span style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">1&frac12; tbsp</span></div>
+                  </div>
+                  <div style="font-size: 13px; color: #4F5A53; line-height: 1.5; margin-bottom: 10px;">Portioned to support Sam&rsquo;s goal of balanced nutrition.</div>
+                  <details style="font-size: 13px;"><summary style="cursor: pointer; color: #4F5A53; font-weight: 600;">Nutrition details</summary><div style="margin-top: 8px; color: #4F5A53;">~540 cal &middot; 38g protein &middot; 52g carbs &middot; 15g fat</div></details>
+                </div>
+              </div>
+            </div>
+
+            <sc-if value="{{ portionUnsaved }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; background: #FFFFFF; border: 1px solid #948A70; border-radius: 14px; padding: 14px 16px;">
+                <div style="flex: 1; min-width: 200px;"><div style="font-size: 14.5px; font-weight: 700;">Unsaved changes to Charlie&rsquo;s portions</div><div style="font-size: 12.5px; color: #4F5A53;">Tonight only, unless you save it as the new default.</div></div>
+                <div style="display: flex; gap: 8px;">
+                  <button type="button" onClick="{{ resetPortions }}" style="background: #FFFFFF; border: 1px solid #948A70; border-radius: 10px; font-family: inherit; font-size: 14px; font-weight: 600; color: #1C2620; cursor: pointer; min-height: 44px; padding: 0 16px;">Reset to recommended</button>
+                  <button type="button" onClick="{{ savePortions }}" style="background: #3D7551; border: none; border-radius: 10px; font-family: inherit; font-size: 14px; font-weight: 700; color: #fff; cursor: pointer; min-height: 44px; padding: 0 16px;">Save changes</button>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ portionSaved }}" hint-placeholder-val="{{ false }}">
+              <div style="display: flex; gap: 10px; align-items: center; background: #EAF4EE; border: 1px solid #B4CFB9; border-radius: 14px; padding: 12px 14px;"><span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 999px; background: #2E7D5B; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; flex: none;">&#10003;</span><div style="font-size: 13.5px; font-weight: 600;">Saved &mdash; Charlie&rsquo;s Wednesday portion updated.</div></div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 390px; max-width: 100%; border: 1px solid #E6E1D6; border-radius: 32px; overflow: hidden; box-shadow: 0 1px 3px rgba(28,38,32,0.06); background: #F7F4EE; position: relative; min-height: 900px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Mobile &middot; 390px</div>
+        <div style="padding: 18px 16px 90px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #636C65; margin-bottom: 8px;">Lemon herb chicken bowls</div>
+          <h3 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 23px; margin: 0 0 18px; line-height: 1.2;">Same meal, personalized for both</h3>
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 4px;"><span style="width: 28px; height: 28px; border-radius: 999px; background: #1F6D6A; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><span style="font-size: 16px; font-weight: 700;">Charlie</span></div>
+            <div style="font-size: 12px; color: #4F5A53; margin-bottom: 14px;">Maintain energy and build habits</div>
+            <div style="display: flex; flex-direction: column; gap: 9px;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="font-size: 13.5px;">Chicken</span><span style="font-size: 16px; font-weight: 700;">6 oz</span></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;">
+                <span style="font-size: 13.5px;">Rice</span>
+                <div style="display: flex; align-items: center; gap: 6px; background: #FBF9F5; border: 1px solid #948A70; border-radius: 10px; padding: 3px;">
+                  <button type="button" onClick="{{ riceDown }}" aria-label="Decrease Charlie's rice" style="width: 34px; height: 34px; border: none; border-radius: 7px; background: #F4F1EA; font-size: 15px; font-weight: 700;">&minus;</button>
+                  <span style="min-width: 46px; text-align: center; font-size: 14.5px; font-weight: 700;">{{ riceLabel }}</span>
+                  <button type="button" onClick="{{ riceUp }}" aria-label="Increase Charlie's rice" style="width: 34px; height: 34px; border: none; border-radius: 7px; background: #F4F1EA; font-size: 15px; font-weight: 700;">+</button>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="font-size: 13.5px;">Vegetables</span><span style="font-size: 16px; font-weight: 700;">1 cup</span></div>
+              <div style="display: flex; justify-content: space-between;"><span style="font-size: 13.5px;">Dressing</span><span style="font-size: 16px; font-weight: 700;">2 tbsp</span></div>
+            </div>
+          </div>
+          <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #79817A; margin-bottom: 12px;">vs</div>
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 4px;"><span style="width: 28px; height: 28px; border-radius: 999px; background: #9B3B63; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">S</span><span style="font-size: 16px; font-weight: 700;">Sam</span></div>
+            <div style="font-size: 12px; color: #4F5A53; margin-bottom: 14px;">Balanced nutrition</div>
+            <div style="display: flex; flex-direction: column; gap: 9px;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="font-size: 13.5px;">Chicken</span><span style="font-size: 16px; font-weight: 700;">4 oz</span></div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="font-size: 13.5px;">Rice</span><span style="font-size: 16px; font-weight: 700;">1 cup</span></div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="font-size: 13.5px;">Vegetables</span><span style="font-size: 16px; font-weight: 700;">&frac34; cup</span></div>
+              <div style="display: flex; justify-content: space-between;"><span style="font-size: 13.5px;">Dressing</span><span style="font-size: 16px; font-weight: 700;">1&frac12; tbsp</span></div>
+            </div>
+          </div>
+          <sc-if value="{{ portionUnsaved }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FFFFFF; border: 1px solid #948A70; border-radius: 14px; padding: 12px;"><div style="font-size: 13.5px; font-weight: 700; margin-bottom: 8px;">Unsaved changes</div><div style="display: flex; gap: 8px;"><button type="button" onClick="{{ resetPortions }}" style="flex: 1; background: #FFFFFF; border: 1px solid #948A70; border-radius: 10px; font-size: 13px; font-weight: 600; min-height: 44px;">Reset</button><button type="button" onClick="{{ savePortions }}" style="flex: 1; background: #3D7551; border: none; border-radius: 10px; font-size: 13px; font-weight: 700; color: #fff; min-height: 44px;">Save</button></div></div>
+          </sc-if>
+        </div>
+        <dc-import name="Nav" variant="mobile" active="week" hint-size="100%,62px"></dc-import>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 18px; max-width: 820px;">Desktop compares side by side; mobile stacks with a neutral &ldquo;vs&rdquo; divider. The faint ring behind each column is fixed-size decoration, not a data visualization &mdash; it never scales with the portion, so neither side reads as &ldquo;more&rdquo; or &ldquo;less.&rdquo; Calories and macros sit inside a closed disclosure.</div>
+  </section>
+
+  <section id="screen-6" data-screen-label="06 Grocery list" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 12px;">Screen 6 / Grocery list</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;">One list for the whole week</h2>
+    <p style="font-size: 15px; color: #4F5A53; margin: 0 0 24px; max-width: 640px;">Consolidated from all seven dinners. Checkboxes, category disclosures and the hide-collected toggle are all live.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+
+      <div style="width: 1440px; max-width: 100%; overflow-x: auto; border: 1px solid #E6E1D6; border-radius: 20px; box-shadow: 0 1px 3px rgba(28,38,32,0.06);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Desktop &middot; 1440px &middot; frame scrolls horizontally on narrow viewports &rarr;</div>
+        <div style="width: 1440px; background: #F7F4EE;">
+          <dc-import name="Nav" variant="desktop" active="grocery" hint-size="100%,64px"></dc-import>
+          <div style="max-width: 820px; margin: 0 auto; padding: 32px 40px 56px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px; margin-bottom: 18px;">
+              <div>
+                <div style="font-size: 22px; font-weight: 700;">Grocery list</div>
+                <div style="font-size: 13.5px; color: #4F5A53; margin-top: 2px;">Week of Aug 3&ndash;9</div>
+              </div>
+              <button type="button" style="background: #3D7551; color: #FFFFFF; border: none; border-radius: 12px; padding: 11px 18px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; min-height: 44px;">+ Add item</button>
+            </div>
+
+            <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px 18px; margin-bottom: 18px;">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-bottom: 10px;"><span style="font-size: 15px; font-weight: 700;">{{ groceryProgressText }}</span><span style="font-size: 14px; color: #4F5A53; font-weight: 600;">Estimated total $86</span></div>
+              <div style="height: 7px; border-radius: 999px; background: #E6E1D6; overflow: hidden;"><div style="height: 100%; width: {{ groceryProgressPct }}; background: #636C65; border-radius: 999px;"></div></div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center;">
+              <div style="flex: 1; min-width: 200px; display: flex; align-items: center; gap: 8px; background: #FBF9F5; border: 1px solid #EFE9DC; border-radius: 12px; padding: 10px 14px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg><span style="font-size: 13.5px; color: #79817A;">Search items</span></div>
+              <span style="background: #EEF4EE; border: 1px solid #C9D6C8; color: #234A33; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700;">All</span>
+              <span style="background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 600;">Still to buy</span>
+              <span style="background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 600;">Collected</span>
+              <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4F5A53; font-weight: 600; cursor: pointer; padding: 8px 4px; min-height: 44px;"><input type="checkbox" onChange="{{ toggleHideCollected }}" style="width: 18px; height: 18px;" />Hide collected</label>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+                <div style="border: 1px solid #E6E1D6; border-radius: 14px; background: #FFFFFF; overflow: hidden;">
+                  <button type="button" id="{{ cat.btnId }}" aria-expanded="{{ cat.chevronDown }}" aria-controls="{{ cat.panelId }}" onClick="{{ cat.toggle }}" style="width: 100%; box-sizing: border-box; background: transparent; border: none; font-family: inherit; color: #1C2620; text-align: left; cursor: pointer; padding: 14px 16px; min-height: 52px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+                    <sc-if value="{{ cat.chevronDown }}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E5C40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M6 10l6 6 6-6"></path></svg></sc-if>
+                    <sc-if value="{{ cat.chevronRight }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4F5A53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M9 6l6 6-6 6"></path></svg></sc-if>
+                    <span style="font-size: 15.5px; font-weight: 700;">{{ cat.name }}</span>
+                    <span style="font-size: 13px; color: #4F5A53; font-variant-numeric: tabular-nums;">{{ cat.countText }}</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #4F5A53; background: #F4F1EA; border-radius: 999px; padding: 3px 9px;">{{ cat.stateText }}</span>
+                    <sc-if value="{{ cat.complete }}" hint-placeholder-val="{{ false }}"><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: #234A33;"><span aria-hidden="true" style="width: 18px; height: 18px; border-radius: 999px; background: #2E7D5B; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 10px;">&#10003;</span>All in the basket</span></sc-if>
+                    <span aria-hidden="true" style="flex: 1; min-width: 60px; height: 4px; background: #E6E1D6; border-radius: 999px; max-width: 120px;"><span style="display: block; width: {{ cat.pct }}; height: 4px; background: #636C65; border-radius: 999px;"></span></span>
+                  </button>
+                  <div id="{{ cat.panelId }}" role="region" aria-labelledby="{{ cat.btnId }}" hidden="{{ cat.hidden }}" style="border-top: 1px solid #EFE9DC;">
+                    <div style="padding: 6px 16px 12px;">
+                      <sc-if value="{{ cat.hasOpen }}" hint-placeholder-val="{{ true }}">
+                        <div role="group" aria-label="Still to buy" style="display: flex; flex-direction: column; gap: 2px; padding-top: 8px;">
+                          <sc-for list="{{ cat.openItems }}" as="item" hint-placeholder-count="3">
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 9px 0; min-height: 44px;">
+                              <button type="button" role="checkbox" aria-checked="false" onClick="{{ item.toggle }}" aria-label="{{ item.name }}" style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #948A70; background: #fff; flex: none; cursor: pointer;"></button>
+                              <div style="flex: 1; min-width: 0;">
+                                <div style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 15px; font-weight: 600;">{{ item.name }}</span><sc-if value="{{ item.hasBadge }}" hint-placeholder-val="{{ false }}"><span style="font-size: 10.5px; font-weight: 700; border-radius: 999px; padding: 2px 8px; background: {{ item.badgeBg }}; color: {{ item.badgeColor }};">{{ item.badgeLabel }}</span></sc-if></div>
+                                <div style="font-size: 12.5px; color: #636C65;">For {{ item.meals }}<sc-if value="{{ item.hasNote }}" hint-placeholder-val="{{ false }}"> &middot; {{ item.note }}</sc-if></div>
+                              </div>
+                              <span style="font-weight: 700; font-variant-numeric: tabular-nums; flex: none;">{{ item.qty }}</span>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ cat.hasDone }}" hint-placeholder-val="{{ false }}">
+                        <div role="group" aria-label="In the basket" style="display: flex; flex-direction: column; gap: 2px; border-top: 1px dashed #EFE9DC; margin-top: 8px; padding-top: 8px;">
+                          <sc-for list="{{ cat.doneItems }}" as="item" hint-placeholder-count="1">
+                            <div style="display: flex; align-items: center; gap: 12px; padding: 9px 0; min-height: 44px;">
+                              <button type="button" role="checkbox" aria-checked="true" onClick="{{ item.toggle }}" aria-label="{{ item.name }}" style="width: 24px; height: 24px; border-radius: 8px; background: #3D7551; border: none; flex: none; display: flex; align-items: center; justify-content: center; cursor: pointer;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></button>
+                              <div style="flex: 1; min-width: 0; font-size: 15px; font-weight: 600; color: #5C6660; text-decoration: line-through; text-decoration-color: #A79E8D;">{{ item.name }}</div>
+                              <span style="font-weight: 700; font-variant-numeric: tabular-nums; color: #79817A; flex: none;">{{ item.qty }}</span>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width: 390px; max-width: 100%; border: 1px solid #E6E1D6; border-radius: 32px; overflow: hidden; box-shadow: 0 1px 3px rgba(28,38,32,0.06); background: #F7F4EE; position: relative; min-height: 900px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #79817A; text-align: center; padding: 4px 0; background: #FBF9F5; border-bottom: 1px dashed #EFE9DC;">Mobile &middot; 390px</div>
+        <div style="padding: 16px 14px 90px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;"><div style="font-size: 19px; font-weight: 700;">Grocery list</div><button type="button" aria-label="Add item" style="width: 40px; height: 40px; border-radius: 999px; background: #3D7551; color: #fff; border: none; font-size: 18px;">+</button></div>
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 14px; margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px; font-weight: 700; margin-bottom: 8px;"><span>{{ groceryProgressText }}</span></div>
+            <div style="height: 6px; border-radius: 999px; background: #E6E1D6; overflow: hidden; margin-bottom: 6px;"><div style="height: 100%; width: {{ groceryProgressPct }}; background: #636C65; border-radius: 999px;"></div></div>
+            <div style="font-size: 12px; color: #4F5A53;">Estimated total $86</div>
+          </div>
+          <div style="display: flex; gap: 7px; margin-bottom: 14px; overflow-x: auto;">
+            <span style="background: #EEF4EE; border: 1px solid #C9D6C8; color: #234A33; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 700; flex: none;">All</span>
+            <span style="background: #F4F1EA; color: #38423C; border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 600; flex: none;">Still to buy</span>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #4F5A53; font-weight: 600; flex: none; min-height: 44px;"><input type="checkbox" onChange="{{ toggleHideCollected }}" style="width: 18px; height: 18px;" />Hide collected</label>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+              <div style="border: 1px solid #E6E1D6; border-radius: 14px; background: #FFFFFF; overflow: hidden;">
+                <button type="button" id="m-{{ cat.btnId }}" aria-expanded="{{ cat.chevronDown }}" aria-controls="m-{{ cat.panelId }}" onClick="{{ cat.toggle }}" style="width: 100%; box-sizing: border-box; background: transparent; border: none; text-align: left; cursor: pointer; padding: 13px 14px; min-height: 52px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: inherit;">
+                  <sc-if value="{{ cat.chevronDown }}" hint-placeholder-val="{{ true }}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E5C40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"></path></svg></sc-if>
+                  <sc-if value="{{ cat.chevronRight }}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F5A53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></sc-if>
+                  <span style="font-size: 14.5px; font-weight: 700;">{{ cat.name }}</span>
+                  <span style="font-size: 12px; color: #4F5A53;">{{ cat.countText }}</span>
+                  <span style="font-size: 11px; font-weight: 600; color: #4F5A53; background: #F4F1EA; border-radius: 999px; padding: 2px 8px;">{{ cat.stateText }}</span>
+                </button>
+                <div id="m-{{ cat.panelId }}" role="region" aria-labelledby="m-{{ cat.btnId }}" hidden="{{ cat.hidden }}" style="border-top: 1px solid #EFE9DC;">
+                  <div style="padding: 4px 14px 10px;">
+                    <sc-if value="{{ cat.hasOpen }}" hint-placeholder-val="{{ true }}">
+                      <sc-for list="{{ cat.openItems }}" as="item" hint-placeholder-count="3">
+                        <div style="display: flex; align-items: center; gap: 10px; padding: 9px 0; min-height: 44px;">
+                          <button type="button" role="checkbox" aria-checked="false" onClick="{{ item.toggle }}" aria-label="{{ item.name }}" style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #948A70; background: #fff; flex: none;"></button>
+                          <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600;">{{ item.name }}</div>
+                          <span style="font-weight: 700; font-size: 13.5px; flex: none;">{{ item.qty }}</span>
+                        </div>
+                      </sc-for>
+                    </sc-if>
+                    <sc-if value="{{ cat.hasDone }}" hint-placeholder-val="{{ false }}">
+                      <sc-for list="{{ cat.doneItems }}" as="item" hint-placeholder-count="1">
+                        <div style="display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px dashed #EFE9DC; min-height: 44px;">
+                          <button type="button" role="checkbox" aria-checked="true" onClick="{{ item.toggle }}" aria-label="{{ item.name }}" style="width: 24px; height: 24px; border-radius: 8px; background: #3D7551; border: none; flex: none; display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></button>
+                          <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; color: #5C6660; text-decoration: line-through;">{{ item.name }}</div>
+                          <span style="font-weight: 700; font-size: 13.5px; color: #79817A; flex: none;">{{ item.qty }}</span>
+                        </div>
+                      </sc-for>
+                    </sc-if>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <dc-import name="Nav" variant="mobile" active="grocery" hint-size="100%,62px"></dc-import>
+      </div>
+    </div>
+    <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6; margin-top: 18px; max-width: 820px;">Category buttons are real disclosures (aria-expanded, aria-controls, state text). Collapsed categories are genuinely hidden and out of the accessibility tree; the item count stays visible either way. Checking an item moves it to &ldquo;In the basket&rdquo; with a filled check and strikethrough &mdash; never opacity alone &mdash; and updates both the category and overall progress immediately. Dairy demonstrates the fully-collected state.</div>
+  </section>
+
+  <section data-screen-label="Key interaction states" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6; background: #FBF9F5;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">Key interaction states</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: clamp(24px, 3vw, 30px); margin: 0 0 20px; letter-spacing: -0.01em;">Where every state lives</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; font-size: 13.5px; line-height: 1.6;">
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px;"><span style="font-weight: 700;">Loading</span><br /><span style="color: #4F5A53;">Screen 1 CTA while the plan generates; Screen 3&rsquo;s skeleton suggestion card.</span></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px;"><span style="font-weight: 700;">Empty / no-results</span><br /><span style="color: #4F5A53;">Screen 3&rsquo;s &ldquo;no matches&rdquo; example beneath the results list.</span></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px;"><span style="font-weight: 700;">Selected</span><br /><span style="color: #4F5A53;">Screen 3&rsquo;s ring + checkmark on the chosen alternative; Screen 2&rsquo;s active day and household tab.</span></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px;"><span style="font-weight: 700;">Success / confirmation</span><br /><span style="color: #4F5A53;">Screen 1&rsquo;s plan-ready banner, Screen 3&rsquo;s replacement confirmation, Screen 5&rsquo;s saved-portion flash.</span></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px;"><span style="font-weight: 700;">Unsaved changes</span><br /><span style="color: #4F5A53;">Screen 5, after adjusting Charlie&rsquo;s rice &mdash; reset or save before it clears.</span></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px;"><span style="font-weight: 700;">Edited / substituted / unavailable</span><br /><span style="color: #4F5A53;">Screen 6&rsquo;s Bell peppers, Salmon fillets and Cilantro rows.</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Responsive notes" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">Responsive notes</div>
+    <div style="display: flex; flex-direction: column; gap: 9px; font-size: 14px; line-height: 1.6; color: #38423C; max-width: 820px;">
+      <div><span style="font-weight: 700;">Navigation</span> <span style="color: #4F5A53;">persistent top bar &ge;1024; fixed bottom bar with 4 destinations &lt;1024. Global nav is hidden during onboarding and inside the replace-meal sheet.</span></div>
+      <div><span style="font-weight: 700;">Day selector</span> <span style="color: #4F5A53;">7 fixed columns on desktop; horizontally scrollable 46px chips on mobile, never squeezed below a 44px hit target.</span></div>
+      <div><span style="font-weight: 700;">Weekly plan</span> <span style="color: #4F5A53;">two-column reading order (meal, then grocery/rest-of-week) collapses to one column, same order, on mobile.</span></div>
+      <div><span style="font-weight: 700;">Replace a meal</span> <span style="color: #4F5A53;">540px side panel over a dimmed week on desktop; full-height bottom sheet with a drag handle on mobile.</span></div>
+      <div><span style="font-weight: 700;">Meal details</span> <span style="color: #4F5A53;">ingredient table keeps its three quantity columns to 768px, then the per-person chips would wrap under the name (not shown at this width).</span></div>
+      <div><span style="font-weight: 700;">Portion comparison</span> <span style="color: #4F5A53;">side-by-side columns on desktop; stacked with a neutral divider on mobile, never a tab that hides one person.</span></div>
+      <div><span style="font-weight: 700;">Grocery list</span> <span style="color: #4F5A53;">identical structure at both widths; mobile keeps checkboxes, quantities and category headers at full touch size for one-handed store use.</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Accessibility and motion notes" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6; background: #FBF9F5;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">Accessibility and motion notes</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 20px; font-size: 14px; line-height: 1.6; color: #38423C;">
+      <div>
+        <div style="font-weight: 700; margin-bottom: 8px;">Accessibility</div>
+        <div style="color: #4F5A53;">All controls keep the 44px minimum, visible 3px focus rings on interactive elements, and labelled icon buttons. Grocery and step checkboxes are role=checkbox with aria-checked, activated by Space and Enter. Category disclosures are real buttons with aria-expanded/aria-controls, a genuinely hidden region (no display override fighting the hidden attribute), and a text state (&ldquo;n items hidden&rdquo;) that doesn&rsquo;t depend on the chevron. Household and day tabs use role=tablist/tab/aria-selected. Text sits at 14&ndash;16px minimum in the interface and never directly over the hero photo &mdash; only icon-only buttons do, on an opaque pill. Layouts use relative units and wrapping flex/grid so 320px and 200% zoom don&rsquo;t clip or overlap.</div>
+      </div>
+      <div>
+        <div style="font-weight: 700; margin-bottom: 8px;">Motion</div>
+        <div style="color: #4F5A53;">Selections and toggles respond within a frame (no delay); the replace-meal confirmation and onboarding completion use a smooth scroll to the updated screen, not a hard jump. Quantity changes (Screen 5) and progress bars (Screens 2 and 6) update their width/value directly rather than resetting. All animation respects <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">prefers-reduced-motion</span>: durations collapse to near-zero and the smooth scroll becomes an instant jump.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Reused components and extensions" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px); border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">Reused components and any proposed extensions</div>
+    <div style="font-size: 14px; line-height: 1.6; color: #38423C; margin-bottom: 20px; max-width: 820px;">Every control below is a direct reuse of v0.2.2: profile chips and ramp, the household switcher tabs, the serving stepper, the grocery checkbox and category disclosure, macro tiles, banners and toasts, tag chips, and all typography, spacing, radius and color tokens. Nothing was restyled.</div>
+    <div style="background: #FFFFFF; border: 1px solid #948A70; border-radius: 16px; padding: 20px; max-width: 640px;">
+      <div style="display: inline-block; background: #FBF1DE; color: #8A6212; border-radius: 999px; padding: 4px 12px; font-size: 11.5px; font-weight: 700; margin-bottom: 10px;">Proposed extension &mdash; requires approval</div>
+      <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px;">Dual-portion micro-chip</div>
+      <div style="font-size: 13.5px; color: #4F5A53; line-height: 1.6;">The locked system&rsquo;s ingredient definition-list and profile-tag components both assume full-width rows. The dashboard&rsquo;s &ldquo;rest of the week&rdquo; strip and any future compact meal card need a single-line way to show both people&rsquo;s portion size where there isn&rsquo;t room for the full definition-list &mdash; e.g. a tiny &ldquo;C 6oz &middot; S 4oz&rdquo; chip pair. Smallest possible addition: reuses the existing profile colors, 999px radius and tabular-nums type; no new color, spacing or motion token.</div>
+    </div>
+  </section>
+
+  <section data-screen-label="Open questions" style="padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 56px);">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #636C65; margin-bottom: 14px;">Open questions</div>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; line-height: 1.6; color: #38423C; max-width: 720px;">
+      <div>&middot; Does saving an adjusted portion (Screen 5) apply to that single dinner only, or become the new recommended default for future weeks?</div>
+      <div>&middot; Should the grocery list auto-split by store section (produce, protein&hellip;) or does the household ever shop from more than one store?</div>
+      <div>&middot; Is the dual-portion micro-chip extension (above) worth adding, or is the full definition-list acceptable everywhere it would appear?</div>
+      <div>&middot; How many alternative meals should the replace flow show before falling back to search &mdash; is four to five enough on a typical week?</div>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+const FRACTIONS = {'0.50':'\u00bd','0.75':'\u00be','1.00':'1','1.25':'1\u00bc','1.50':'1\u00bd','1.75':'1\u00be','2.00':'2','2.25':'2\u00bc','2.50':'2\u00bd','2.75':'2\u00be','3.00':'3'};
+const DIET_OPTS = [
+  {key:'balanced', label:'Balanced'},
+  {key:'highProtein', label:'High protein'},
+  {key:'vegetarian', label:'Vegetarian'},
+  {key:'glutenFree', label:'Gluten-free'},
+  {key:'lowCarb', label:'Low-carb'},
+  {key:'dairyFree', label:'Dairy-free'}
+];
+const ALTS = [
+  {id:'salmon-potatoes', name:'Herb-crusted salmon with roasted potatoes', time:35, tags:['High protein','Gluten-free'], cost:5.60, tier:'featured'},
+  {id:'chickpea-curry', name:'Chickpea and spinach curry', time:25, tags:['Vegetarian','Dairy-free'], cost:3.20, tier:'standard'},
+  {id:'shrimp-zoodles', name:'Garlic shrimp zoodles', time:20, tags:['Low-carb','Gluten-free'], cost:5.10, tier:'standard'},
+  {id:'sausage-peppers', name:'Sheet-pan sausage and peppers', time:30, tags:['Dairy-free'], cost:4.10, tier:'compact'}
+];
+const CATS = [
+  {key:'produce', label:'Produce'},
+  {key:'protein', label:'Protein'},
+  {key:'pantry', label:'Pantry'},
+  {key:'dairy', label:'Dairy'},
+  {key:'frozen', label:'Frozen'}
+];
+const STEPS = [
+  'Rinse rice and simmer in salted water, 18 minutes, then rest covered.',
+  'Pat chicken thighs dry, season with salt, pepper and lemon zest.',
+  'Toss vegetables in oil, spread on a sheet pan, roast at 425\u00b0F.',
+  'Sear chicken 5 minutes a side until golden, then rest 5 minutes.',
+  'Whisk lemon juice, olive oil, garlic and herbs for the dressing.',
+  'Slice chicken and portion everything by the numbers below.'
+];
+
+class Component extends DCLogic {
+  state = {
+    activePerson: 'household',
+    selectedDay: 2,
+    dietSelected: { balanced: true, highProtein: false, vegetarian: false, glutenFree: true, lowCarb: false, dairyFree: false },
+    budget: 90,
+    cookTime: 30,
+    dinners: 5,
+    onboardingLoading: false,
+    onboardingDone: false,
+    weekMeals: [
+      { day: 'Mon', date: 'Aug 3', name: 'Sheet-pan chicken fajitas', time: 25, tags: ['Gluten-free'], cost: 4.20 },
+      { day: 'Tue', date: 'Aug 4', name: 'Creamy tomato orzo', time: 20, tags: ['Vegetarian'], cost: 3.40 },
+      { day: 'Wed', date: 'Aug 5', name: 'Lemon herb chicken bowls', time: 30, tags: ['High protein', 'Gluten-free'], cost: 4.80 },
+      { day: 'Thu', date: 'Aug 6', name: 'Miso salmon with sesame greens', time: 25, tags: ['Gluten-free'], cost: 6.10 },
+      { day: 'Fri', date: 'Aug 7', name: 'Turkey pesto pasta', time: 20, tags: ['High protein'], cost: 4.50 },
+      { day: 'Sat', date: 'Aug 8', name: 'Roasted vegetable tacos', time: 30, tags: ['Vegetarian'], cost: 3.90 },
+      { day: 'Sun', date: 'Aug 9', name: 'Ginger beef lettuce bowls', time: 30, tags: ['Gluten-free'], cost: 5.30 }
+    ],
+    replaceSelectedId: 'salmon-potatoes',
+    replaceLoading: false,
+    replaceConfirmed: false,
+    completedSteps: { 0: true },
+    timerRunning: false,
+    timerSeconds: 18 * 60,
+    riceCups: 1.5,
+    savedRiceCups: 1.5,
+    portionUnsaved: false,
+    portionSaved: false,
+    catCollapsed: { produce: false, protein: false, pantry: true, dairy: false, frozen: true },
+    hideCollected: false,
+    groceryItems: [
+      { id: 'lemons', name: 'Lemons', qty: '3', cat: 'produce', meals: 'Wed', checked: true },
+      { id: 'peppers', name: 'Bell peppers', qty: '4', cat: 'produce', meals: 'Mon, Sat', checked: false, status: 'edited', note: 'Swapped for a milder pepper \u2014 still 4' },
+      { id: 'zucchini', name: 'Zucchini', qty: '2', cat: 'produce', meals: 'Wed', checked: true },
+      { id: 'spinach', name: 'Baby spinach', qty: '5 oz', cat: 'produce', meals: 'Thu', checked: false },
+      { id: 'broccoli', name: 'Broccoli florets', qty: '1 lb', cat: 'produce', meals: 'Sun', checked: false },
+      { id: 'greenonions', name: 'Green onions', qty: '1 bunch', cat: 'produce', meals: 'Wed, Sun', checked: false },
+      { id: 'cilantro', name: 'Cilantro', qty: '1 bunch', cat: 'produce', meals: 'Sat', checked: false, status: 'unavailable', note: 'Store was out \u2014 recipe still works without it' },
+      { id: 'chicken', name: 'Chicken breast', qty: '3 lb', cat: 'protein', meals: 'Wed, Mon', checked: true },
+      { id: 'salmon', name: 'Salmon fillets', qty: '4', cat: 'protein', meals: 'Thu', checked: false, status: 'substituted', note: 'Substituted: frozen fillets, thawed' },
+      { id: 'turkey', name: 'Ground turkey', qty: '1 lb', cat: 'protein', meals: 'Fri', checked: false },
+      { id: 'beef', name: 'Ground beef', qty: '1 lb', cat: 'protein', meals: 'Sun', checked: true },
+      { id: 'shrimp', name: 'Shrimp', qty: '1 lb', cat: 'protein', meals: 'Favorites', checked: false },
+      { id: 'rice', name: 'Brown rice', qty: '2 lb', cat: 'pantry', meals: 'Wed', checked: true },
+      { id: 'orzo', name: 'Orzo', qty: '1 lb', cat: 'pantry', meals: 'Tue', checked: false },
+      { id: 'tortillas', name: 'Corn tortillas', qty: '12 ct', cat: 'pantry', meals: 'Mon, Sat', checked: false },
+      { id: 'pesto', name: 'Basil pesto', qty: '1 jar', cat: 'pantry', meals: 'Fri', checked: false },
+      { id: 'soysauce', name: 'Soy sauce', qty: '1 bottle', cat: 'pantry', meals: 'Sun', checked: true },
+      { id: 'sesameoil', name: 'Sesame oil', qty: '1 bottle', cat: 'pantry', meals: 'Thu, Sun', checked: false },
+      { id: 'tacoseasoning', name: 'Taco seasoning', qty: '1 packet', cat: 'pantry', meals: 'Sat', checked: false },
+      { id: 'yogurt', name: 'Greek yogurt', qty: '32 oz', cat: 'dairy', meals: 'Favorites', checked: true },
+      { id: 'parmesan', name: 'Parmesan cheese', qty: '1 wedge', cat: 'dairy', meals: 'Fri', checked: true },
+      { id: 'butter', name: 'Butter', qty: '1 lb', cat: 'dairy', meals: 'Tue', checked: true },
+      { id: 'peas', name: 'Frozen peas', qty: '1 bag', cat: 'frozen', meals: 'Orzo night', checked: false },
+      { id: 'edamame', name: 'Frozen edamame', qty: '1 bag', cat: 'frozen', meals: 'Miso salmon', checked: false }
+    ]
+  };
+
+  componentWillUnmount() { if (this._timerInt) clearInterval(this._timerInt); }
+
+  scrollToId(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 16;
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
+  }
+
+  pickPerson(p) { this.setState({ activePerson: p }); }
+  pickDay(i) { this.setState({ selectedDay: i }); }
+  toggleDiet(key) { this.setState(s => ({ dietSelected: { ...s.dietSelected, [key]: !s.dietSelected[key] } })); }
+  adjustBudget(delta) { this.setState(s => ({ budget: Math.min(200, Math.max(40, s.budget + delta)) })); }
+  adjustDinners(delta) { this.setState(s => ({ dinners: Math.min(7, Math.max(3, s.dinners + delta)) })); }
+  setCookTime(v) { this.setState({ cookTime: v }); }
+
+  createPlan() {
+    this.setState({ onboardingLoading: true });
+    setTimeout(() => {
+      this.setState({ onboardingLoading: false, onboardingDone: true });
+      this.scrollToId('screen-2');
+    }, 900);
+  }
+
+  selectAlt(id) { this.setState({ replaceSelectedId: id }); }
+  confirmReplace() {
+    this.setState({ replaceLoading: true });
+    setTimeout(() => {
+      const chosen = ALTS.find(a => a.id === this.state.replaceSelectedId);
+      const wm = this.state.weekMeals.map((m, i) => i === 2 ? { ...m, name: chosen.name, time: chosen.time, tags: chosen.tags, cost: chosen.cost, updated: true } : m);
+      this.setState({ weekMeals: wm, replaceLoading: false, replaceConfirmed: true });
+      this.scrollToId('screen-2');
+    }, 700);
+  }
+
+  toggleStep(i) { this.setState(s => ({ completedSteps: { ...s.completedSteps, [i]: !s.completedSteps[i] } })); }
+  toggleTimer() {
+    if (this.state.timerRunning) {
+      clearInterval(this._timerInt);
+      this.setState({ timerRunning: false });
+    } else {
+      this.setState({ timerRunning: true });
+      this._timerInt = setInterval(() => {
+        this.setState(s => {
+          const next = Math.max(0, s.timerSeconds - 1);
+          if (next === 0) clearInterval(this._timerInt);
+          return { timerSeconds: next, timerRunning: next > 0 };
+        });
+      }, 1000);
+    }
+  }
+
+  adjustRice(delta) {
+    this.setState(s => {
+      const nv = Math.min(3, Math.max(0.5, +(s.riceCups + delta).toFixed(2)));
+      return { riceCups: nv, portionUnsaved: nv !== s.savedRiceCups, portionSaved: false };
+    });
+  }
+  savePortions() { this.setState(s => ({ savedRiceCups: s.riceCups, portionUnsaved: false, portionSaved: true })); }
+  resetPortions() { this.setState({ riceCups: 1.5, savedRiceCups: 1.5, portionUnsaved: false, portionSaved: false }); }
+
+  toggleCat(key) { this.setState(s => ({ catCollapsed: { ...s.catCollapsed, [key]: !s.catCollapsed[key] } })); }
+  toggleGroceryItem(id) { this.setState(s => ({ groceryItems: s.groceryItems.map(it => it.id === id ? { ...it, checked: !it.checked } : it) })); }
+  toggleHideCollected() { this.setState(s => ({ hideCollected: !s.hideCollected })); }
+
+  itemVals(it) {
+    const badge = it.status === 'edited' ? { label: 'Edited', bg: '#F4F1EA', color: '#4F5A53' }
+      : it.status === 'substituted' ? { label: 'Substituted', bg: '#E7EFF4', color: '#35617D' }
+      : it.status === 'unavailable' ? { label: 'Unavailable', bg: '#FBF1DE', color: '#8A6212' }
+      : null;
+    return {
+      id: it.id, name: it.name, qty: it.qty, meals: it.meals,
+      hasBadge: !!badge, badgeLabel: badge ? badge.label : '', badgeBg: badge ? badge.bg : '', badgeColor: badge ? badge.color : '',
+      hasNote: !!it.note, note: it.note || '',
+      toggle: () => this.toggleGroceryItem(it.id)
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+
+    const days = s.weekMeals.map((m, i) => ({
+      key: i, day: m.day, date: m.date, name: m.name,
+      active: i === s.selectedDay, inactive: i !== s.selectedDay,
+      onClick: () => this.pickDay(i)
+    }));
+    const selectedMeal = s.weekMeals[s.selectedDay];
+    const otherDays = s.weekMeals.map((m, i) => ({ ...m, key: i, isSelected: i === s.selectedDay, onClick: () => this.pickDay(i) })).filter(d => !d.isSelected);
+
+    const householdTabs = ['household', 'charlie', 'sam'].map(p => ({
+      key: p, label: p === 'household' ? 'Household' : p === 'charlie' ? 'Charlie' : 'Sam',
+      active: s.activePerson === p, inactive: s.activePerson !== p,
+      onClick: () => this.pickPerson(p)
+    }));
+
+    const dietChips = DIET_OPTS.map(o => ({ key: o.key, label: o.label, selected: !!s.dietSelected[o.key], notSelected: !s.dietSelected[o.key], onClick: () => this.toggleDiet(o.key) }));
+    const cookTimeOpts = [15, 30, 45, 60].map(v => ({ value: v, label: v + ' min', active: v === s.cookTime, inactive: v !== s.cookTime, onClick: () => this.setCookTime(v) }));
+
+    const avg = Math.round(s.weekMeals.reduce((a, m) => a + m.time, 0) / s.weekMeals.length);
+
+    const alts = ALTS.map(a => ({
+      id: a.id, name: a.name, time: a.time, cost: a.cost.toFixed(2), tags: a.tags,
+      tier: a.tier, isFeatured: a.tier === 'featured', isStandard: a.tier === 'standard', isCompact: a.tier === 'compact',
+      selected: a.id === s.replaceSelectedId, notSelected: a.id !== s.replaceSelectedId,
+      onClick: () => this.selectAlt(a.id)
+    }));
+    const selectedAlt = ALTS.find(a => a.id === s.replaceSelectedId);
+
+    const dimCharlie = s.activePerson === 'sam';
+    const dimSam = s.activePerson === 'charlie';
+
+    const steps = STEPS.map((text, i) => ({
+      index: i, num: i + 1, text, done: !!s.completedSteps[i], notDone: !s.completedSteps[i],
+      isTimerStep: i === 2, toggle: () => this.toggleStep(i)
+    }));
+    const timerM = Math.floor(s.timerSeconds / 60);
+    const timerSec = s.timerSeconds % 60;
+    const timerLabel = timerM + ':' + (timerSec < 10 ? '0' : '') + timerSec;
+
+    const riceLabel = (FRACTIONS[s.riceCups.toFixed(2)] || s.riceCups) + ' cups';
+
+    const categories = CATS.map(c => {
+      const items = s.groceryItems.filter(it => it.cat === c.key);
+      const done = items.filter(it => it.checked);
+      const open = items.filter(it => !it.checked);
+      const total = items.length, doneCount = done.length;
+      const collapsed = !!s.catCollapsed[c.key];
+      return {
+        key: c.key, name: c.label,
+        btnId: 'cat-btn-' + c.key, panelId: 'cat-panel-' + c.key,
+        collapsed, hidden: collapsed,
+        chevronDown: !collapsed, chevronRight: collapsed,
+        countText: doneCount + ' of ' + total,
+        stateText: collapsed ? (total - doneCount) + ' items hidden' : 'showing ' + total + ' items',
+        complete: doneCount === total,
+        pct: total ? Math.round((doneCount / total) * 100) + '%' : '0%',
+        hasOpen: open.length > 0,
+        hasDone: done.length > 0 && !s.hideCollected,
+        openItems: open.map(it => this.itemVals(it)),
+        doneItems: done.map(it => this.itemVals(it)),
+        toggle: () => this.toggleCat(c.key)
+      };
+    });
+    const totalItems = s.groceryItems.length;
+    const checkedCount = s.groceryItems.filter(it => it.checked).length;
+    const groceryProgressPct = Math.round((checkedCount / totalItems) * 100) + '%';
+
+    return {
+      dietChips, cookTimeOpts,
+      budgetLabel: '$' + s.budget, budgetDown: () => this.adjustBudget(-5), budgetUp: () => this.adjustBudget(5),
+      dinners: s.dinners, dinnersDown: () => this.adjustDinners(-1), dinnersUp: () => this.adjustDinners(1),
+      onboardingLoading: s.onboardingLoading, onboardingNotLoading: !s.onboardingLoading, onboardingDone: s.onboardingDone,
+      createPlan: () => this.createPlan(),
+
+      days, selectedMeal, selectedDayLabel: selectedMeal.day, otherDays,
+      householdTabs, dimCharlieStyle: dimCharlie ? 0.4 : 1, dimSamStyle: dimSam ? 0.4 : 1,
+      weekStatusText: s.weekMeals.length + ' dinners planned \u00b7 Estimated groceries $86',
+      avgCookTimeText: avg + ' min avg cook time',
+      goToScreen3: () => this.scrollToId('screen-3'),
+      goToScreen4: () => this.scrollToId('screen-4'),
+      goToScreen5: () => this.scrollToId('screen-5'),
+      goToScreen6: () => this.scrollToId('screen-6'),
+      mealUpdated: !!selectedMeal.updated,
+      heroIsFeatured: s.selectedDay === 2, heroNotFeatured: s.selectedDay !== 2,
+
+      alts, selectedAltName: selectedAlt ? selectedAlt.name : '', replaceLoading: s.replaceLoading, replaceNotLoading: !s.replaceLoading, replaceConfirmed: s.replaceConfirmed,
+      confirmReplace: () => this.confirmReplace(),
+
+      steps, timerRunning: s.timerRunning, timerNotRunning: !s.timerRunning, timerLabel,
+      toggleTimer: () => this.toggleTimer(),
+
+      riceLabel, riceDown: () => this.adjustRice(-0.25), riceUp: () => this.adjustRice(0.25),
+      portionUnsaved: s.portionUnsaved, portionSaved: s.portionSaved && !s.portionUnsaved,
+      savePortions: () => this.savePortions(), resetPortions: () => this.resetPortions(),
+
+      categories, groceryProgressPct, groceryProgressText: checkedCount + ' of ' + totalItems + ' items collected',
+      hideCollected: s.hideCollected, toggleHideCollected: () => this.toggleHideCollected()
+    };
+  }
+}
+
+</script>
+</body>
+</html>

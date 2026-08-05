@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F7F4EE; -webkit-font-smoothing: antialiased; }
+  a { color: #3D7551; text-decoration: none; }
+  a:hover { color: #234A33; text-decoration: underline; }
+  @keyframes ppShimmer { 0% { background-position: -420px 0; } 100% { background-position: 420px 0; } }
+  @keyframes ppSpin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+</style>
+</helmet>
+
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1C2620; background: #F7F4EE; max-width: 1440px; margin: 0 auto;">
+
+  <div style="padding: 88px 64px 64px; background: #FFFFFF; border-bottom: 1px solid #E6E1D6;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; flex-wrap: wrap;">
+      <div style="max-width: 720px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 24px;">Design system exploration &middot; v0.1</div>
+        <h1 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 68px; line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 20px;">PortionPair<br />design foundations</h1>
+        <p style="font-size: 20px; line-height: 1.55; color: #5C665E; margin: 0; max-width: 600px; text-wrap: pretty;">One menu, different portions. This canvas defines the visual language, motion behaviour and component library before any product screens are designed.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; min-width: 260px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A9490;">Contents</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; font-size: 13px; color: #5C665E; font-variant-numeric: tabular-nums;">
+          <div>01 Personality</div><div>11 Iconography</div>
+          <div>02 Warm minimal</div><div>12 Buttons</div>
+          <div>03 Editorial wellness</div><div>13 Forms</div>
+          <div>04 Modern premium</div><div>14 Navigation</div>
+          <div>05 Comparison</div><div>15 Meal</div>
+          <div>06 Recommendation</div><div>16 Portions</div>
+          <div>07 Color</div><div>17 Grocery</div>
+          <div>08 Typography</div><div>18 States</div>
+          <div>09 Spacing &amp; shape</div><div>19 Motion</div>
+          <div>10 Elevation</div><div>20 Accessibility</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding: 72px 64px; border-bottom: 1px solid #E6E1D6;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">01 / Product personality</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 40px; letter-spacing: -0.015em;">Calm, warm and precise &mdash; never clinical</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #3D7551; margin-bottom: 14px;">We are</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Elegant</span>
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Fluid</span>
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Warm</span>
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Calm</span>
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Premium</span>
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Trustworthy</span>
+          <span style="background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500;">Food-focused</span>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #A9622A; margin-bottom: 14px;">We are not</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Clinical</span>
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Sterile</span>
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Calorie tracker</span>
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Childish</span>
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Futuristic</span>
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Crowded</span>
+          <span style="background: #F4F1EA; color: #6E645A; border-radius: 999px; padding: 7px 14px; font-size: 14px; font-weight: 500; text-decoration: line-through; text-decoration-color: #C9BFAF;">Over-animated</span>
+        </div>
+      </div>
+      <div style="background: #1A3726; border-radius: 16px; padding: 28px; color: #EAF1E9; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8AB394;">Core promise</div>
+        <div style="font-family: 'Newsreader', serif; font-size: 30px; line-height: 1.2; margin-top: 20px;">One meal.<br />Personalized portions.<br />Less planning.</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 14px;">Design principles</div>
+        <ol style="margin: 0; padding-left: 18px; font-size: 14.5px; line-height: 1.7; color: #3B443E;">
+          <li>Food before numbers &mdash; cups and ounces lead, macros follow.</li>
+          <li>Difference without judgement &mdash; no portion looks better.</li>
+          <li>Motion explains relationships, never decorates.</li>
+          <li>Spacious by default; density is an opt-in.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 72px 64px 40px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">02&ndash;04 / Three visual directions</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.015em;">Same content, three treatments</h2>
+    <p style="font-size: 17px; color: #5C665E; margin: 0 0 44px; max-width: 640px;">Each direction shows the identical sample: palette, type specimen, buttons, form control and the Lemon herb chicken bowls meal card with two personalized portions.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 28px; align-items: start;">
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; overflow: hidden;">
+        <div style="padding: 26px 26px 22px; background: #FBF9F5; border-bottom: 1px solid #E6E1D6;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490;">Direction 1</div>
+          <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 8px 0 8px;">Warm minimal</div>
+          <div style="font-size: 14.5px; line-height: 1.6; color: #5C665E;">Soft natural colour, calm surfaces, generous whitespace, whisper-light shadows, simple interaction styling.</div>
+        </div>
+        <div style="padding: 24px 26px;">
+          <div style="display: flex; gap: 6px; margin-bottom: 22px;">
+            <div style="flex: 1; height: 44px; border-radius: 8px; background: #3D7551;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 8px; background: #8AB394;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 8px; background: #D98A45;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 8px; background: #EFE9DC;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 8px; background: #FBF9F5; border: 1px solid #E6E1D6;"></div>
+          </div>
+          <div style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;">This week&rsquo;s plan</div>
+          <div style="font-size: 15px; color: #5C665E; margin: 6px 0 22px;">Plus&nbsp;Jakarta&nbsp;Sans &middot; friendly geometric sans throughout</div>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 22px;">
+            <button style="background: #3D7551; color: #FFFFFF; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 160ms ease, transform 120ms ease; box-shadow: 0 1px 2px rgba(28,38,32,0.10);" style-hover="background: #2E5C40; transform: translateY(-1px);" style-active="transform: translateY(0px); background: #234A33;">Generate plan</button>
+            <button style="background: #FFFFFF; color: #234A33; border: 1px solid #C9D6C8; border-radius: 12px; padding: 12px 20px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 160ms ease;" style-hover="background: #EEF4EE;">Adjust</button>
+          </div>
+          <div style="border: 1px solid #E6E1D6; border-radius: 16px; overflow: hidden; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,38,32,0.05), 0 8px 20px -12px rgba(28,38,32,0.14);">
+            <div style="height: 150px; background: repeating-linear-gradient(135deg, #EFEAE0 0 10px, #E8E2D6 10px 20px); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8073; background: rgba(255,255,255,0.8); padding: 5px 9px; border-radius: 6px;">meal photo &middot; 4:3</span>
+            </div>
+            <div style="padding: 16px 18px 18px;">
+              <div style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em;">Lemon herb chicken bowls</div>
+              <div style="font-size: 13.5px; color: #5C665E; margin: 6px 0 12px;">30 min &middot; High protein &middot; Gluten-free</div>
+              <div style="display: flex; gap: 8px;">
+                <span style="display: inline-flex; align-items: center; gap: 7px; background: #EEF4EE; border-radius: 999px; padding: 6px 12px 6px 6px; font-size: 13px; font-weight: 600; color: #234A33;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #35786B; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center;">C</span>6 oz</span>
+                <span style="display: inline-flex; align-items: center; gap: 7px; background: #FDF3EA; border-radius: 999px; padding: 6px 12px 6px 6px; font-size: 13px; font-weight: 600; color: #7A4718;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center;">P</span>4 oz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; overflow: hidden;">
+        <div style="padding: 26px 26px 22px; background: #F6F2EA; border-bottom: 1px solid #E6E1D6;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490;">Direction 2</div>
+          <div style="font-family: 'Newsreader', serif; font-size: 28px; font-weight: 400; letter-spacing: -0.01em; margin: 8px 0 8px;">Editorial wellness</div>
+          <div style="font-size: 14.5px; line-height: 1.6; color: #5C665E;">Serif display voice, deliberate whitespace, magazine-grade image treatment, sophisticated small details.</div>
+        </div>
+        <div style="padding: 24px 26px;">
+          <div style="display: flex; gap: 6px; margin-bottom: 22px;">
+            <div style="flex: 1; height: 44px; border-radius: 4px; background: #1F3D2B;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 4px; background: #4E6B52;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 4px; background: #B4643C;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 4px; background: #E8E1D3;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 4px; background: #FAF6EE; border: 1px solid #E6E1D6;"></div>
+          </div>
+          <div style="font-family: 'Newsreader', serif; font-size: 36px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.1;">This week&rsquo;s plan</div>
+          <div style="font-size: 15px; color: #5C665E; margin: 8px 0 22px;">Newsreader display &middot; Plus&nbsp;Jakarta&nbsp;Sans for UI</div>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 22px;">
+            <button style="background: #1F3D2B; color: #F7F2E7; border: none; border-radius: 4px; padding: 14px 24px; font-family: inherit; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; cursor: pointer; transition: background 180ms ease;" style-hover="background: #12271B;">Generate plan</button>
+            <button style="background: transparent; color: #1F3D2B; border: none; border-bottom: 1px solid #1F3D2B; border-radius: 0; padding: 8px 2px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;" style-hover="opacity: 0.65;">Adjust</button>
+          </div>
+          <div style="border: 1px solid #E2DCCE; border-radius: 4px; overflow: hidden; background: #FFFFFF;">
+            <div style="height: 190px; background: repeating-linear-gradient(135deg, #EAE3D4 0 10px, #E2DACA 10px 20px); display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8073; background: rgba(255,255,255,0.8); padding: 5px 9px; border-radius: 3px;">meal photo &middot; 3:2</span>
+            </div>
+            <div style="padding: 20px 20px 22px;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #B4643C; margin-bottom: 10px;">Tuesday &middot; dinner</div>
+              <div style="font-family: 'Newsreader', serif; font-size: 24px; font-weight: 400; line-height: 1.2;">Lemon herb chicken bowls</div>
+              <div style="font-size: 13.5px; color: #5C665E; margin: 8px 0 14px; border-bottom: 1px solid #EFE9DC; padding-bottom: 14px;">30 min &middot; High protein &middot; Gluten-free</div>
+              <div style="display: flex; gap: 22px; font-size: 13px;">
+                <div><div style="color: #8A8073; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Charlie</div><div style="font-weight: 600; margin-top: 3px;">6 oz chicken</div></div>
+                <div><div style="color: #8A8073; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Partner</div><div style="font-weight: 600; margin-top: 3px;">4 oz chicken</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; overflow: hidden;">
+        <div style="padding: 26px 26px 22px; background: #F5F7F5; border-bottom: 1px solid #E6E1D6;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490;">Direction 3</div>
+          <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0 8px;">Modern premium product</div>
+          <div style="font-size: 14.5px; line-height: 1.6; color: #5C665E;">Crisp interface structure, polished cards, dynamic controls, refined microinteractions, SaaS-level consistency.</div>
+        </div>
+        <div style="padding: 24px 26px;">
+          <div style="display: flex; gap: 6px; margin-bottom: 22px;">
+            <div style="flex: 1; height: 44px; border-radius: 10px; background: #17794F;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 10px; background: #5DBF8E;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 10px; background: #E08A3C;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 10px; background: #E9EDEA;"></div>
+            <div style="flex: 1; height: 44px; border-radius: 10px; background: #FAFBFA; border: 1px solid #E2E7E3;"></div>
+          </div>
+          <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12;">This week&rsquo;s plan</div>
+          <div style="font-size: 15px; color: #5C665E; margin: 6px 0 22px;">Plus&nbsp;Jakarta&nbsp;Sans tight &middot; tabular numerics</div>
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 22px;">
+            <button style="background: #17794F; color: #FFFFFF; border: none; border-radius: 10px; padding: 12px 20px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 2px rgba(16,40,28,0.16), inset 0 1px 0 rgba(255,255,255,0.16); transition: transform 120ms cubic-bezier(0.2,0,0,1), box-shadow 160ms ease;" style-hover="box-shadow: 0 4px 14px -4px rgba(23,121,79,0.5);" style-active="transform: scale(0.975);">Generate plan</button>
+            <button style="background: #F1F4F2; color: #16342A; border: 1px solid #E2E7E3; border-radius: 10px; padding: 11px 18px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer;" style-hover="background: #E9EDEA;">Adjust</button>
+          </div>
+          <div style="border: 1px solid #E2E7E3; border-radius: 14px; overflow: hidden; background: #FFFFFF; box-shadow: 0 2px 4px rgba(16,40,28,0.04), 0 12px 28px -14px rgba(16,40,28,0.18);">
+            <div style="height: 150px; background: repeating-linear-gradient(135deg, #E9EDEA 0 10px, #E1E7E3 10px 20px); position: relative; display: flex; align-items: center; justify-content: center;">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7C8A82; background: rgba(255,255,255,0.85); padding: 5px 9px; border-radius: 6px;">meal photo &middot; 4:3</span>
+              <span style="position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.94); border-radius: 8px; padding: 5px 10px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums;">30 min</span>
+            </div>
+            <div style="padding: 14px 16px 16px;">
+              <div style="font-size: 17px; font-weight: 700; letter-spacing: -0.015em;">Lemon herb chicken bowls</div>
+              <div style="display: flex; gap: 6px; margin: 10px 0 12px;">
+                <span style="background: #EAF6F0; color: #0F5537; border-radius: 6px; padding: 4px 9px; font-size: 12px; font-weight: 600;">High protein</span>
+                <span style="background: #F1F4F2; color: #46524B; border-radius: 6px; padding: 4px 9px; font-size: 12px; font-weight: 600;">Gluten-free</span>
+              </div>
+              <div style="display: flex; border: 1px solid #E2E7E3; border-radius: 10px; overflow: hidden; font-variant-numeric: tabular-nums;">
+                <div style="flex: 1; padding: 9px 12px; border-right: 1px solid #E2E7E3;"><div style="font-size: 11px; color: #7C8A82;">Charlie</div><div style="font-size: 15px; font-weight: 700;">720 cal</div></div>
+                <div style="flex: 1; padding: 9px 12px;"><div style="font-size: 11px; color: #7C8A82;">Partner</div><div style="font-size: 15px; font-weight: 700;">520 cal</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="padding: 32px 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">04b / Direction 3 &mdash; accent alternatives</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.015em;">Replacing the clay accent</h2>
+    <p style="font-size: 17px; color: #5C665E; margin: 0 0 36px; max-width: 720px;">The accent does one heavy job in this product: it identifies the second household member next to a green-coded first member. Each option below is shown on the same Direction 3 components &mdash; profile pill, portion block, favourite state and tag &mdash; against primary green <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px;">17794F</span>.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+
+      <div style="background: #FFFFFF; border: 1.5px solid #17794F; border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 3px rgba(23,121,79,0.10);">
+        <div style="display: flex; height: 56px;"><div style="flex: 1; background: #17794F;"></div><div style="flex: 1; background: #E08A3C;"></div></div>
+        <div style="padding: 18px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px;"><div style="font-size: 16.5px; font-weight: 700;">Warm clay</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490;">current</div></div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8A9490; margin: 4px 0 14px;">E08A3C</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #EAF6F0; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #0F5537;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #17794F; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">C</span>6 oz</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #FBEEE0; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #7A4A14;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #E08A3C; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">P</span>4 oz</span>
+          </div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px; margin-bottom: 6px;"><div style="width: 100%; height: 7px; background: #17794F; border-radius: 999px;"></div></div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px;"><div style="width: 67%; height: 7px; background: #E08A3C; border-radius: 999px;"></div></div>
+          <div style="font-size: 13px; color: #5C665E; line-height: 1.55; margin-top: 14px;">Warmest and most food-adjacent. Risk: reads as a warning colour, and needs ink-on-clay text because white fails contrast.</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E2E7E3; border-radius: 18px; overflow: hidden;">
+        <div style="display: flex; height: 56px;"><div style="flex: 1; background: #17794F;"></div><div style="flex: 1; background: #C25E52;"></div></div>
+        <div style="padding: 18px;">
+          <div style="font-size: 16.5px; font-weight: 700;">Terracotta</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8A9490; margin: 4px 0 14px;">C25E52</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #EAF6F0; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #0F5537;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #17794F; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">C</span>6 oz</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #FAEBE8; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #7C3229;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #C25E52; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">P</span>4 oz</span>
+          </div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px; margin-bottom: 6px;"><div style="width: 100%; height: 7px; background: #17794F; border-radius: 999px;"></div></div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px;"><div style="width: 67%; height: 7px; background: #C25E52; border-radius: 999px;"></div></div>
+          <div style="font-size: 13px; color: #5C665E; line-height: 1.55; margin-top: 14px;">Deeper and more grown-up; carries white text at 4.6:1. Risk: sits close to the error red, so error states must move to a cooler crimson.</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E2E7E3; border-radius: 18px; overflow: hidden;">
+        <div style="display: flex; height: 56px;"><div style="flex: 1; background: #17794F;"></div><div style="flex: 1; background: #B0873A;"></div></div>
+        <div style="padding: 18px;">
+          <div style="font-size: 16.5px; font-weight: 700;">Ochre</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8A9490; margin: 4px 0 14px;">B0873A</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #EAF6F0; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #0F5537;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #17794F; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">C</span>6 oz</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #F7F0DF; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #6B5218;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #B0873A; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">P</span>4 oz</span>
+          </div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px; margin-bottom: 6px;"><div style="width: 100%; height: 7px; background: #17794F; border-radius: 999px;"></div></div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px;"><div style="width: 67%; height: 7px; background: #B0873A; border-radius: 999px;"></div></div>
+          <div style="font-size: 13px; color: #5C665E; line-height: 1.55; margin-top: 14px;">Quietest of the warm options and very natural next to food. Risk: lowest separation from green for deuteranopes &mdash; the initials do real work here.</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E2E7E3; border-radius: 18px; overflow: hidden;">
+        <div style="display: flex; height: 56px;"><div style="flex: 1; background: #17794F;"></div><div style="flex: 1; background: #8C5A86;"></div></div>
+        <div style="padding: 18px;">
+          <div style="font-size: 16.5px; font-weight: 700;">Dried plum</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8A9490; margin: 4px 0 14px;">8C5A86</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #EAF6F0; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #0F5537;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #17794F; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">C</span>6 oz</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #F5EBF3; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #5C325A;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #8C5A86; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">P</span>4 oz</span>
+          </div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px; margin-bottom: 6px;"><div style="width: 100%; height: 7px; background: #17794F; border-radius: 999px;"></div></div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px;"><div style="width: 67%; height: 7px; background: #8C5A86; border-radius: 999px;"></div></div>
+          <div style="font-size: 13px; color: #5C665E; line-height: 1.55; margin-top: 14px;">Highest separation from green in every colour-vision simulation, and it never collides with success, warning or error. Risk: less &ldquo;food&rdquo; and slightly cosmetic on large fills.</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E2E7E3; border-radius: 18px; overflow: hidden;">
+        <div style="display: flex; height: 56px;"><div style="flex: 1; background: #17794F;"></div><div style="flex: 1; background: #4A7A96;"></div></div>
+        <div style="padding: 18px;">
+          <div style="font-size: 16.5px; font-weight: 700;">Slate blue</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #8A9490; margin: 4px 0 14px;">4A7A96</div>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #EAF6F0; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #0F5537;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #17794F; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">C</span>6 oz</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; background: #E9F0F5; border-radius: 8px; padding: 5px 10px 5px 5px; font-size: 12.5px; font-weight: 600; color: #2C4E62;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #4A7A96; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">P</span>4 oz</span>
+          </div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px; margin-bottom: 6px;"><div style="width: 100%; height: 7px; background: #17794F; border-radius: 999px;"></div></div>
+          <div style="height: 7px; background: #F1F4F2; border-radius: 999px;"><div style="width: 67%; height: 7px; background: #4A7A96; border-radius: 999px;"></div></div>
+          <div style="font-size: 13px; color: #5C665E; line-height: 1.55; margin-top: 14px;">Crispest and most product-like &mdash; a natural fit for Direction 3. Risk: it is the coolest option and it competes with the information blue.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px; margin-top: 20px;">
+      <div style="background: #0F1F19; border-radius: 18px; padding: 24px; color: #E4EFE9;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7FC3A0; margin-bottom: 12px;">Recommendation</div>
+        <div style="font-size: 17px; line-height: 1.6; margin-bottom: 14px;">Take <span style="font-weight: 700; color: #fff;">terracotta C25E52</span> as Direction 3&rsquo;s accent, and move error to a cooler <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px;">A32E33</span> so the two never blur.</div>
+        <div style="font-size: 14.5px; line-height: 1.6; color: #B9CFC3;">It keeps the warmth that stops Direction 3 reading clinical, holds white text at button size, and is clearly separable from green without going cosmetic. Dried plum is the fallback if colour-vision testing shows terracotta and green are still being confused.</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E2E7E3; border-radius: 18px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 14px;">Rules that apply whichever we pick</div>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14.5px; line-height: 1.7; color: #3B443E;">
+          <li>The accent identifies a <em>person</em>, never a state &mdash; it is banned from primary buttons, links and alerts.</li>
+          <li>The accent pill always carries the initial and a dashed ring; green always carries a solid ring.</li>
+          <li>Whatever we choose must clear 3:1 against white as a fill and 4.5:1 as text at its 700 step.</li>
+          <li>A third and fourth household member extend into plum then slate &mdash; so the accent choice sets the whole profile ramp.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 32px 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">05 / Side-by-side comparison</div>
+    <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 200px repeat(3, 1fr); font-size: 14px;">
+        <div style="padding: 16px 20px; background: #F4F1EA; font-weight: 700; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C665E;">Attribute</div>
+        <div style="padding: 16px 20px; background: #F4F1EA; font-weight: 700;">1 &middot; Warm minimal</div>
+        <div style="padding: 16px 20px; background: #F4F1EA; font-weight: 700;">2 &middot; Editorial wellness</div>
+        <div style="padding: 16px 20px; background: #F4F1EA; font-weight: 700;">3 &middot; Modern premium</div>
+
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #5C665E;">Warmth</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; font-weight: 600; color: #234A33;">Highest</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">High</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Moderate</div>
+
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #5C665E;">Information density</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Low</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Lowest</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; font-weight: 600; color: #234A33;">Highest</div>
+
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #5C665E;">Scales to dense data<br /><span style="font-size: 12.5px; color: #8A9490;">grocery lists, macros</span></div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Good</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #A9622A;">Weak &mdash; serif slows scanning</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; font-weight: 600; color: #234A33;">Excellent</div>
+
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #5C665E;">Mobile ergonomics</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; font-weight: 600; color: #234A33;">Excellent</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Fair &mdash; large type eats space</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Good</div>
+
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #5C665E;">Risk</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Can read generic if imagery is weak</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Can read exclusive / precious</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Can read clinical &mdash; the one thing to avoid</div>
+
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC; color: #5C665E;">Build cost</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Low</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Medium &mdash; needs art direction</div>
+        <div style="padding: 14px 20px; border-top: 1px solid #EFE9DC;">Medium</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="background: #1A3726; border-radius: 24px; padding: 48px; color: #EAF1E9; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px;">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8AB394; margin-bottom: 16px;">06 / Recommendation</div>
+        <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.12; margin: 0 0 20px; letter-spacing: -0.015em;">Direction 1, with editorial typography and premium controls</h2>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #C7D8C6; margin: 0 0 16px; text-wrap: pretty;">Warm minimal is the only direction that hits &ldquo;personalized nutrition&rdquo; without sliding toward a tracking app. Its calm surfaces let food photography carry the emotion, and its low density keeps a seven-day plan legible on a phone.</p>
+        <p style="font-size: 16.5px; line-height: 1.65; color: #C7D8C6; margin: 0;">The rest of this canvas &mdash; sections 07 to 20 &mdash; documents that recommended system in full.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8AB394; margin-bottom: 8px;">Borrow from direction 2</div>
+          <div style="font-size: 15px; line-height: 1.6; color: #DCE7DB;">Newsreader for display and H1 only, the mono eyebrow labels, and the generous 3:2 hero image ratio on meal detail.</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #8AB394; margin-bottom: 8px;">Borrow from direction 3</div>
+          <div style="font-size: 15px; line-height: 1.6; color: #DCE7DB;">Tabular numerics, the stepper and slider mechanics, press-scale feedback, and the two-up portion data block.</div>
+        </div>
+        <div style="background: rgba(216,138,69,0.14); border: 1px solid rgba(216,138,69,0.35); border-radius: 14px; padding: 18px 20px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #EBB482; margin-bottom: 8px;">Test with users</div>
+          <div style="font-size: 15px; line-height: 1.6; color: #F0DCC6;">Whether the portion comparison reads as neutral rather than competitive; whether profile colour alone is enough to identify whose portion is shown; whether cream surfaces still feel clean at 100% brightness outdoors.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">07 / Color foundations</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 36px; letter-spacing: -0.015em;">Colour</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 28px;">
+      <div>
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 12px;">Primary &mdash; herb green</div>
+        <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 6px;">
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #EEF4EE;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">50<br />EEF4EE</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #D9E7DB;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">100<br />D9E7DB</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #B4CFB9;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">200<br />B4CFB9</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #8AB394;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">300<br />8AB394</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #5E9270;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">400<br />5E9270</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #3D7551;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1C2620; font-weight: 500;">500 &middot; base<br />3D7551</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #2E5C40;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">600<br />2E5C40</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #234A33;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">700<br />234A33</div></div>
+          <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 64px; background: #12271B;"></div><div style="padding: 8px 10px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">900<br />12271B</div></div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+        <div>
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 12px;">Accent &mdash; warm clay (restrained)</div>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #FDF3EA;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">50</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #F8E1CA;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">100</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #EBB482;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">300</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #D98A45;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #1C2620;">500</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #A9622A;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">700</div></div>
+          </div>
+          <div style="font-size: 13.5px; color: #5C665E; margin-top: 10px;">Accent is reserved for the second household profile, favourites and editorial eyebrows &mdash; never for primary actions.</div>
+        </div>
+        <div>
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 12px;">Warm neutrals</div>
+          <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;">
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #FFFFFF;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">0</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #FBF9F5;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">50</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #F4F1EA;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">100</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #E6E1D6;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">200</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #8A9490;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">400</div></div>
+            <div style="border-radius: 10px; overflow: hidden; border: 1px solid #E6E1D6;"><div style="height: 56px; background: #1C2620;"></div><div style="padding: 7px 9px; background: #fff; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: #5C665E;">900</div></div>
+          </div>
+          <div style="font-size: 13.5px; color: #5C665E; margin-top: 10px;">Neutrals carry a slight warm cast (hue ~85) so cream surfaces never read as grey or clinical.</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 22px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 14px;">Semantic roles</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #2E7D5B;"></span>Success &middot; 2E7D5B &middot; plan generated, item checked</div>
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #C08419;"></span>Warning &middot; C08419 &middot; over budget, long prep</div>
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #B4432F;"></span>Error &middot; B4432F &middot; invalid goal, failed save</div>
+            <div style="display: flex; align-items: center; gap: 10px;"><span style="width: 20px; height: 20px; border-radius: 6px; background: #3E6E8E;"></span>Information &middot; 3E6E8E &middot; tips, substitutions</div>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 22px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 14px;">Surfaces &amp; borders</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #3B443E;">
+            <div>Background &middot; <span style="font-family: 'IBM Plex Mono', monospace;">FBF9F5</span></div>
+            <div>Surface &middot; <span style="font-family: 'IBM Plex Mono', monospace;">FFFFFF</span></div>
+            <div>Surface sunken &middot; <span style="font-family: 'IBM Plex Mono', monospace;">F4F1EA</span></div>
+            <div>Border default &middot; <span style="font-family: 'IBM Plex Mono', monospace;">E6E1D6</span></div>
+            <div>Border strong &middot; <span style="font-family: 'IBM Plex Mono', monospace;">C9BFAF</span></div>
+            <div>Text primary <span style="font-family: 'IBM Plex Mono', monospace;">1C2620</span> &middot; secondary <span style="font-family: 'IBM Plex Mono', monospace;">5C665E</span></div>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 22px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 14px;">Household profile colours</div>
+          <div style="display: flex; gap: 12px;">
+            <div style="flex: 1; background: #E7F1EF; border: 1px solid #B9D7D1; border-radius: 12px; padding: 14px;">
+              <div style="width: 34px; height: 34px; border-radius: 999px; background: #35786B; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 10px;">C</div>
+              <div style="font-weight: 700; font-size: 14px;">Charlie</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4C6B65;">35786B &middot; solid ring</div>
+            </div>
+            <div style="flex: 1; background: #FBEEE2; border: 1px solid #E5C4A2; border-radius: 12px; padding: 14px;">
+              <div style="width: 34px; height: 34px; border-radius: 999px; background: #C07A3E; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 10px;">P</div>
+              <div style="font-weight: 700; font-size: 14px;">Partner</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #7A5936;">C07A3E &middot; dashed ring</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: #5C665E; margin-top: 12px;">Teal and clay are separable in both protanopia and deuteranopia, and are always paired with an initial plus a solid/dashed ring so colour is never the only cue.</div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 24px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 16px;">Accessible pairings &middot; measured contrast</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+          <div style="background: #FBF9F5; border: 1px solid #E6E1D6; border-radius: 12px; padding: 16px;"><div style="color: #1C2620; font-size: 15px; font-weight: 600;">Text on background</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E; margin-top: 6px;">14.8:1 &middot; AAA</div></div>
+          <div style="background: #FBF9F5; border: 1px solid #E6E1D6; border-radius: 12px; padding: 16px;"><div style="color: #5C665E; font-size: 15px; font-weight: 600;">Secondary on background</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E; margin-top: 6px;">5.4:1 &middot; AA</div></div>
+          <div style="background: #3D7551; border-radius: 12px; padding: 16px;"><div style="color: #FFFFFF; font-size: 15px; font-weight: 600;">White on primary 500</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #D9E7DB; margin-top: 6px;">5.1:1 &middot; AA</div></div>
+          <div style="background: #EEF4EE; border-radius: 12px; padding: 16px;"><div style="color: #234A33; font-size: 15px; font-weight: 600;">Primary 700 on 50</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4C6B55; margin-top: 6px;">9.2:1 &middot; AAA</div></div>
+          <div style="background: #FDF3EA; border-radius: 12px; padding: 16px;"><div style="color: #7A4718; font-size: 15px; font-weight: 600;">Clay 700 on clay 50</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A6B4A; margin-top: 6px;">7.4:1 &middot; AAA</div></div>
+          <div style="background: #D98A45; border-radius: 12px; padding: 16px;"><div style="color: #1C2620; font-size: 15px; font-weight: 600;">Ink on clay 500</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #40331F; margin-top: 6px;">7.9:1 &middot; use ink, never white</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">08 / Typography</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.015em;">Type</h2>
+    <p style="font-size: 16px; color: #5C665E; margin: 0 0 32px; max-width: 620px;">Plus Jakarta Sans carries the interface; Newsreader appears only at display and H1 for editorial warmth; IBM Plex Mono is reserved for spec labels and eyebrows. Sentence case everywhere.</p>
+    <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 14px 24px; background: #F4F1EA; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5C665E;"><div>Style</div><div>Sample</div><div>Spec</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Display</div><div style="font-family: 'Newsreader', serif; font-size: 56px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.05;">Eat together</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Newsreader 400 &middot; 56/59 &middot; -2%</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Heading 1</div><div style="font-family: 'Newsreader', serif; font-size: 38px; font-weight: 400; letter-spacing: -0.015em;">This week&rsquo;s plan</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Newsreader 400 &middot; 38/44</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Heading 2</div><div style="font-size: 26px; font-weight: 700; letter-spacing: -0.015em;">Tuesday dinner</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 700 &middot; 26/32</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Heading 3</div><div style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em;">Lemon herb chicken bowls</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 700 &middot; 19/26</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Body large</div><div style="font-size: 18px; line-height: 1.6; color: #3B443E;">Roast the chicken while the rice finishes &mdash; both are ready at the same time.</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 400 &middot; 18/29</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Body</div><div style="font-size: 16px; line-height: 1.6; color: #3B443E;">Portions are calculated from each person&rsquo;s calorie and protein target.</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 400 &middot; 16/26</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Body small</div><div style="font-size: 14px; line-height: 1.55; color: #5C665E;">Swapping this meal keeps your grocery list balanced.</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 400 &middot; 14/22</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Label</div><div style="font-size: 14px; font-weight: 600;">Weekly food budget</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 600 &middot; 14/20</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Caption</div><div style="font-size: 12.5px; color: #8A9490;">Estimated from average local prices</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 400 &middot; 12.5/18</div></div>
+      <div style="display: grid; grid-template-columns: 190px 1fr 230px; padding: 20px 24px; border-top: 1px solid #EFE9DC; align-items: baseline;"><div style="font-size: 14px; font-weight: 600;">Numeric</div><div style="font-variant-numeric: tabular-nums; display: flex; gap: 22px; align-items: baseline;"><span style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">720<span style="font-size: 15px; font-weight: 500; color: #5C665E; margin-left: 3px;">cal</span></span><span style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">6<span style="font-size: 15px; font-weight: 500; color: #5C665E; margin-left: 3px;">oz</span></span><span style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">1&frac12;<span style="font-size: 15px; font-weight: 500; color: #5C665E; margin-left: 3px;">cups</span></span><span style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em;">$86</span></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C665E;">Jakarta 700 &middot; tabular-nums &middot; unit at 50% size in secondary, vulgar fractions preferred over decimals</div></div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">09 / Spacing and shape</div>
+    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: start;">
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 28px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 6px;">4-pixel spacing scale</h3>
+        <p style="font-size: 14.5px; color: #5C665E; margin: 0 0 22px;">Steps 1&ndash;16. Sizes 4, 6, 8, 10, 12 carry most of the interface.</p>
+        <div style="display: flex; align-items: flex-end; gap: 8px; margin-bottom: 26px;">
+          <div style="text-align: center;"><div style="width: 4px; height: 4px; background: #8AB394; border-radius: 2px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">4</div></div>
+          <div style="text-align: center;"><div style="width: 8px; height: 8px; background: #8AB394; border-radius: 2px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">8</div></div>
+          <div style="text-align: center;"><div style="width: 12px; height: 12px; background: #8AB394; border-radius: 2px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">12</div></div>
+          <div style="text-align: center;"><div style="width: 16px; height: 16px; background: #5E9270; border-radius: 3px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">16</div></div>
+          <div style="text-align: center;"><div style="width: 24px; height: 24px; background: #5E9270; border-radius: 4px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">24</div></div>
+          <div style="text-align: center;"><div style="width: 32px; height: 32px; background: #3D7551; border-radius: 5px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">32</div></div>
+          <div style="text-align: center;"><div style="width: 48px; height: 48px; background: #3D7551; border-radius: 6px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">48</div></div>
+          <div style="text-align: center;"><div style="width: 64px; height: 64px; background: #2E5C40; border-radius: 8px; margin: 0 auto 6px;"></div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490;">64</div></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; font-size: 14px;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Inline gap</span><span style="font-family: 'IBM Plex Mono', monospace;">8</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Component padding</span><span style="font-family: 'IBM Plex Mono', monospace;">12 / 16</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Card padding</span><span style="font-family: 'IBM Plex Mono', monospace;">20 mobile / 24 desktop</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Stack between cards</span><span style="font-family: 'IBM Plex Mono', monospace;">12 / 16</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Section spacing</span><span style="font-family: 'IBM Plex Mono', monospace;">40 mobile / 64 desktop</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Page margin</span><span style="font-family: 'IBM Plex Mono', monospace;">16 / 32 / 64</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Max content width</span><span style="font-family: 'IBM Plex Mono', monospace;">1200</span></div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #EFE9DC; padding-bottom: 8px;"><span style="color: #5C665E;">Grid</span><span style="font-family: 'IBM Plex Mono', monospace;">4 / 8 / 12 col</span></div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 28px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 22px;">Shape</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px;">
+          <div style="text-align: center;"><div style="height: 62px; background: #EEF4EE; border: 1px solid #B4CFB9; border-radius: 8px;"></div><div style="font-size: 12.5px; margin-top: 8px; color: #5C665E;">sm &middot; 8<br />chips, inputs</div></div>
+          <div style="text-align: center;"><div style="height: 62px; background: #EEF4EE; border: 1px solid #B4CFB9; border-radius: 12px;"></div><div style="font-size: 12.5px; margin-top: 8px; color: #5C665E;">md &middot; 12<br />buttons, rows</div></div>
+          <div style="text-align: center;"><div style="height: 62px; background: #EEF4EE; border: 1px solid #B4CFB9; border-radius: 16px;"></div><div style="font-size: 12.5px; margin-top: 8px; color: #5C665E;">lg &middot; 16<br />cards</div></div>
+          <div style="text-align: center;"><div style="height: 62px; background: #EEF4EE; border: 1px solid #B4CFB9; border-radius: 24px;"></div><div style="font-size: 12.5px; margin-top: 8px; color: #5C665E;">xl &middot; 24<br />feature cards</div></div>
+          <div style="text-align: center;"><div style="height: 62px; background: #EEF4EE; border: 1px solid #B4CFB9; border-radius: 999px;"></div><div style="font-size: 12.5px; margin-top: 8px; color: #5C665E;">pill &middot; 999<br />tags, avatars</div></div>
+          <div style="text-align: center;"><div style="height: 62px; background: #FBF9F5; border: 1px solid #E6E1D6; border-radius: 16px 16px 0 0;"></div><div style="font-size: 12.5px; margin-top: 8px; color: #5C665E;">sheet &middot; 24 top<br />bottom sheets</div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="border: 1px solid #E6E1D6; border-radius: 12px; padding: 14px 16px; font-size: 14px;">Standard border &middot; 1px solid E6E1D6</div>
+          <div style="border: 1.5px solid #3D7551; border-radius: 12px; padding: 13.5px 16px; font-size: 14px; background: #F6FAF6; box-shadow: 0 0 0 3px rgba(61,117,81,0.12); display: flex; justify-content: space-between; align-items: center;">Selected &middot; 1.5px 3D7551 + 3px halo<span style="color: #3D7551; font-weight: 700;">&#10003;</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">10&ndash;11 / Elevation and iconography</div>
+    <div style="display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: start;">
+      <div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px; height: 96px;"><div style="font-weight: 700; font-size: 14px;">0 &middot; Flat</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">none &middot; border only</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; padding: 20px; height: 96px; box-shadow: 0 1px 2px rgba(28,38,32,0.06);"><div style="font-weight: 700; font-size: 14px;">1 &middot; Card</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">0 1 2 / 6%</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; padding: 20px; height: 96px; box-shadow: 0 2px 4px rgba(28,38,32,0.05), 0 10px 22px -12px rgba(28,38,32,0.16);"><div style="font-weight: 700; font-size: 14px;">2 &middot; Interactive</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">hover lift</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; padding: 20px; height: 96px; box-shadow: 0 4px 8px rgba(28,38,32,0.06), 0 16px 32px -16px rgba(28,38,32,0.22);"><div style="font-weight: 700; font-size: 14px;">3 &middot; Floating</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">FAB, sticky bar</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; padding: 20px; height: 96px; box-shadow: 0 6px 12px rgba(28,38,32,0.07), 0 22px 44px -20px rgba(28,38,32,0.26);"><div style="font-weight: 700; font-size: 14px;">4 &middot; Dropdown</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">menus, tooltips</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; padding: 20px; height: 96px; box-shadow: 0 -2px 8px rgba(28,38,32,0.05), 0 -18px 44px -18px rgba(28,38,32,0.24);"><div style="font-weight: 700; font-size: 14px;">5 &middot; Sheet</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">upward shadow</div></div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; padding: 20px; height: 96px; box-shadow: 0 8px 16px rgba(28,38,32,0.08), 0 32px 64px -24px rgba(28,38,32,0.30);"><div style="font-weight: 700; font-size: 14px;">6 &middot; Modal</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">+ scrim 1C2620/40</div></div>
+          <div style="background: #F4F1EA; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px; height: 96px;"><div style="font-weight: 700; font-size: 14px;">Sunken</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-top: 6px;">tone, not inset shadow</div></div>
+        </div>
+        <div style="font-size: 14px; color: #5C665E; margin-top: 14px; max-width: 620px;">All shadows use the warm ink <span style="font-family: 'IBM Plex Mono', monospace;">rgba(28,38,32,&hellip;)</span> at low opacity with a wide, offset blur &mdash; never pure black, never more than two layers.</div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 6px;">Iconography</h3>
+        <p style="font-size: 14.5px; color: #5C665E; margin: 0 0 20px;">One family: rounded outline, 1.75px stroke on a 24px grid, round caps and joins.</p>
+        <div style="display: flex; align-items: flex-end; gap: 20px; margin-bottom: 22px;">
+          <div style="text-align: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490; margin-top: 6px;">16</div></div>
+          <div style="text-align: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490; margin-top: 6px;">20</div></div>
+          <div style="text-align: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490; margin-top: 6px;">24</div></div>
+          <div style="text-align: center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1C2620" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #8A9490; margin-top: 6px;">32</div></div>
+        </div>
+        <div style="display: flex; gap: 14px; margin-bottom: 20px;">
+          <div style="flex: 1; background: #FBF9F5; border: 1px solid #E6E1D6; border-radius: 12px; padding: 14px; text-align: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A9490" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg><div style="font-size: 12.5px; color: #5C665E; margin-top: 8px;">Inactive &middot; outline, neutral 400</div></div>
+          <div style="flex: 1; background: #EEF4EE; border: 1px solid #B4CFB9; border-radius: 12px; padding: 14px; text-align: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="#3D7551" stroke="#3D7551" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg><div style="font-size: 12.5px; color: #234A33; margin-top: 8px;">Active &middot; filled, primary 500</div></div>
+        </div>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.65; color: #3B443E;">
+          <li>Filled icons only for a toggled-on state (favourite, checked, active tab).</li>
+          <li>Icon-only buttons need a 44&times;44 hit area and an accessible name; anything a user might misread &mdash; replace, swap, overflow &mdash; gets a visible label or tooltip.</li>
+          <li>Never use an icon to encode nutrition data; numbers and words carry meaning.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">12 / Button system</div>
+    <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 32px;">
+      <div style="display: grid; grid-template-columns: 130px 1fr; gap: 26px 24px; align-items: center;">
+
+        <div style="font-size: 14px; font-weight: 700;">Primary</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; box-shadow: 0 1px 2px rgba(28,38,32,0.12); transition: background 160ms cubic-bezier(0.2,0,0,1), transform 120ms cubic-bezier(0.2,0,0,1), box-shadow 160ms ease;" style-hover="background: #2E5C40; box-shadow: 0 4px 12px -4px rgba(46,92,64,0.45);" style-active="transform: scale(0.98); background: #234A33;">Generate plan</button>
+          <button style="background: #2E5C40; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; box-shadow: 0 4px 12px -4px rgba(46,92,64,0.45);">Hover</button>
+          <button style="background: #234A33; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; transform: scale(0.98);">Pressed</button>
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; box-shadow: 0 0 0 3px #FBF9F5, 0 0 0 5.5px #3D7551;">Focused</button>
+          <button style="background: #E6E1D6; color: #A0A79F; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; cursor: not-allowed;">Disabled</button>
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; gap: 9px; opacity: 0.9;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" style="animation: ppSpin 900ms linear infinite;"><path d="M12 4a8 8 0 0 1 8 8"></path><circle cx="12" cy="12" r="8" stroke="rgba(255,255,255,0.32)"></circle></svg>Generating&hellip;</button>
+        </div>
+
+        <div style="font-size: 14px; font-weight: 700;">Secondary</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="background: #FFFFFF; color: #234A33; border: 1px solid #C9D6C8; border-radius: 12px; padding: 12px 20px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; transition: background 160ms ease, border-color 160ms ease;" style-hover="background: #EEF4EE; border-color: #8AB394;">Adjust portions</button>
+          <button style="background: #EEF4EE; color: #234A33; border: 1px solid #8AB394; border-radius: 12px; padding: 12px 20px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px;">Hover</button>
+          <button style="background: #FFFFFF; color: #234A33; border: 1px solid #C9D6C8; border-radius: 12px; padding: 12px 20px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; box-shadow: 0 0 0 3px rgba(61,117,81,0.18);">Focused</button>
+          <button style="background: #FFFFFF; color: #C2C7C1; border: 1px solid #E6E1D6; border-radius: 12px; padding: 12px 20px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; cursor: not-allowed;">Disabled</button>
+        </div>
+
+        <div style="font-size: 14px; font-weight: 700;">Tertiary &amp; destructive</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="background: transparent; color: #3D7551; border: none; border-radius: 12px; padding: 12px 14px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; transition: background 140ms ease;" style-hover="background: #EEF4EE;">See all recipes</button>
+          <button style="background: transparent; color: #B4432F; border: none; border-radius: 12px; padding: 12px 14px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; transition: background 140ms ease;" style-hover="background: #FBEDEA;">Remove member</button>
+          <button style="background: #B4432F; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px;" style-hover="background: #93341F;">Delete plan</button>
+        </div>
+
+        <div style="font-size: 14px; font-weight: 700;">Sizes</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 10px; padding: 8px 14px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; min-height: 36px;">Compact 36</button>
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px;">Standard 44</button>
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 14px; padding: 16px 28px; font-family: inherit; font-size: 17px; font-weight: 600; cursor: pointer; min-height: 52px;">Large 52</button>
+          <span style="font-size: 13px; color: #8A9490;">Compact never below 36px, and never used as the only tap target on mobile.</span>
+        </div>
+
+        <div style="font-size: 14px; font-weight: 700;">With icons</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 13px 20px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: 9px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Add member</button>
+          <button style="background: #FFFFFF; color: #234A33; border: 1px solid #C9D6C8; border-radius: 12px; padding: 12px 18px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: 9px;">Replace meal<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12l-3-3M20 16H8l3 3"></path></svg></button>
+          <button aria-label="Save to favourites" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 12px; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background 140ms ease, border-color 140ms ease;" style-hover="background: #FDF3EA; border-color: #EBB482;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg></button>
+          <button aria-label="More options" style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 999px; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background: #F4F1EA;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#5C665E"><circle cx="5" cy="12" r="1.7"></circle><circle cx="12" cy="12" r="1.7"></circle><circle cx="19" cy="12" r="1.7"></circle></svg></button>
+        </div>
+
+        <div style="font-size: 14px; font-weight: 700;">Full-width mobile</div>
+        <div style="max-width: 390px; background: #FBF9F5; border: 1px solid #E6E1D6; border-radius: 16px; padding: 16px;">
+          <button style="width: 100%; background: #3D7551; color: #fff; border: none; border-radius: 14px; padding: 16px; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer; min-height: 52px;">Save this week&rsquo;s plan</button>
+          <button style="width: 100%; background: transparent; color: #3D7551; border: none; padding: 12px; margin-top: 8px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px;">Not now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">13 / Form components</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px;">
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Text &amp; search</div>
+        <div>
+          <label for="pp-name" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px;">Household member name</label>
+          <input id="pp-name" type="text" placeholder="e.g. Charlie" style="width: 100%; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D8D2C4; border-radius: 12px; padding: 13px 14px; font-family: inherit; font-size: 15px; color: #1C2620; min-height: 48px; transition: border-color 160ms ease, box-shadow 160ms ease;" style-focus="outline: none; border-color: #3D7551; box-shadow: 0 0 0 3px rgba(61,117,81,0.16);" />
+        </div>
+        <div>
+          <label for="pp-cal" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px;">Daily calorie goal</label>
+          <input id="pp-cal" type="text" value="2,150 cal" style="width: 100%; box-sizing: border-box; background: #FBF9F5; border: 1px solid #3D7551; border-radius: 12px; padding: 13px 14px; font-family: inherit; font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; color: #1C2620; min-height: 48px; box-shadow: 0 0 0 3px rgba(61,117,81,0.16);" />
+          <div style="font-size: 12.5px; color: #8A9490; margin-top: 6px;">Filled &amp; focused</div>
+        </div>
+        <div>
+          <label for="pp-budget" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px;">Weekly food budget</label>
+          <input id="pp-budget" type="text" value="$0" aria-describedby="pp-budget-err" aria-invalid="true" style="width: 100%; box-sizing: border-box; background: #FFFDFC; border: 1px solid #B4432F; border-radius: 12px; padding: 13px 14px; font-family: inherit; font-size: 15px; color: #1C2620; min-height: 48px;" />
+          <div id="pp-budget-err" style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #93341F; margin-top: 7px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B4432F" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.01"></path></svg>Enter a budget of at least $25 to plan a full week.</div>
+        </div>
+        <div>
+          <label for="pp-search" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px;">Search recipes</label>
+          <div style="position: relative;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A9490" stroke-width="1.9" stroke-linecap="round" style="position: absolute; left: 14px; top: 15px;"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg>
+            <input id="pp-search" type="search" placeholder="Chicken, 30 minutes, gluten-free&hellip;" style="width: 100%; box-sizing: border-box; background: #F4F1EA; border: 1px solid transparent; border-radius: 999px; padding: 13px 16px 13px 42px; font-family: inherit; font-size: 15px; min-height: 48px;" style-focus="outline: none; background: #FFFFFF; border-color: #3D7551; box-shadow: 0 0 0 3px rgba(61,117,81,0.16);" />
+          </div>
+        </div>
+        <div>
+          <label for="pp-diet" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px;">Cuisine preference</label>
+          <select id="pp-diet" style="width: 100%; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D8D2C4; border-radius: 12px; padding: 13px 14px; font-family: inherit; font-size: 15px; color: #1C2620; min-height: 48px; appearance: none;">
+            <option>Mediterranean</option>
+            <option>Everyday comfort</option>
+            <option>East Asian</option>
+          </select>
+        </div>
+        <div>
+          <label for="pp-note" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; color: #A0A79F;">Allergy notes</label>
+          <input id="pp-note" type="text" value="Locked while plan generates" disabled="disabled" style="width: 100%; box-sizing: border-box; background: #F4F1EA; border: 1px solid #E6E1D6; border-radius: 12px; padding: 13px 14px; font-family: inherit; font-size: 15px; color: #A0A79F; min-height: 48px; cursor: not-allowed;" />
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 22px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Selection</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label style="display: flex; align-items: center; gap: 11px; font-size: 15px; cursor: pointer; min-height: 44px;"><span style="width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid #3D7551; background: #3D7551; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Gluten-free</label>
+          <label style="display: flex; align-items: center; gap: 11px; font-size: 15px; cursor: pointer; min-height: 44px;"><span style="width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid #C9BFAF; background: #fff;"></span>Dairy-free</label>
+          <label style="display: flex; align-items: center; gap: 11px; font-size: 15px; cursor: pointer; min-height: 44px;"><span style="width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid #3D7551; background: #3D7551; display: flex; align-items: center; justify-content: center;"><span style="width: 10px; height: 2.5px; background: #fff; border-radius: 2px;"></span></span>Nut-free <span style="font-size: 13px; color: #8A9490;">&mdash; mixed across household</span></label>
+          <label style="display: flex; align-items: center; gap: 11px; font-size: 15px; color: #A0A79F; min-height: 44px; cursor: not-allowed;"><span style="width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid #E6E1D6; background: #F4F1EA;"></span>Low FODMAP <span style="font-size: 13px;">&mdash; coming soon</span></label>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #EFE9DC; padding-top: 20px;">
+          <label style="display: flex; align-items: center; gap: 11px; font-size: 15px; cursor: pointer; min-height: 44px;"><span style="width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid #3D7551; display: flex; align-items: center; justify-content: center;"><span style="width: 11px; height: 11px; border-radius: 999px; background: #3D7551;"></span></span>Cook once, eat twice</label>
+          <label style="display: flex; align-items: center; gap: 11px; font-size: 15px; cursor: pointer; min-height: 44px;"><span style="width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid #C9BFAF;"></span>Fresh every night</label>
+        </div>
+        <div style="border-top: 1px solid #EFE9DC; padding-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="border: 1.5px solid #3D7551; background: #F6FAF6; border-radius: 14px; padding: 16px; box-shadow: 0 0 0 3px rgba(61,117,81,0.12); display: flex; gap: 12px; align-items: flex-start; cursor: pointer;">
+            <span style="width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid #3D7551; display: flex; align-items: center; justify-content: center; flex: none; margin-top: 2px;"><span style="width: 11px; height: 11px; border-radius: 999px; background: #3D7551;"></span></span>
+            <div><div style="font-weight: 700; font-size: 15px;">5 dinners a week</div><div style="font-size: 13.5px; color: #5C665E; margin-top: 3px;">Two nights left open for leftovers or eating out.</div></div>
+            <span style="margin-left: auto; color: #3D7551; font-weight: 700;">&#10003;</span>
+          </div>
+          <div style="border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; cursor: pointer; transition: border-color 160ms ease, background 160ms ease;" style-hover="border-color: #B4CFB9; background: #FBFCFB;">
+            <span style="width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid #C9BFAF; flex: none; margin-top: 2px;"></span>
+            <div><div style="font-weight: 700; font-size: 15px;">7 dinners a week</div><div style="font-size: 13.5px; color: #5C665E; margin-top: 3px;">A full week planned, slightly larger grocery list.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 24px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Controls</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div><div style="font-size: 15px; font-weight: 600;">Match macros, not just calories</div><div style="font-size: 13px; color: #5C665E; margin-top: 2px;">Tightens portions to protein targets.</div></div>
+          <span style="width: 52px; height: 30px; border-radius: 999px; background: #3D7551; position: relative; flex: none; cursor: pointer; transition: background 200ms cubic-bezier(0.2,0,0,1);"><span style="position: absolute; top: 3px; left: 25px; width: 24px; height: 24px; border-radius: 999px; background: #fff; box-shadow: 0 1px 3px rgba(28,38,32,0.28); transition: left 220ms cubic-bezier(0.2,0,0,1);"></span></span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div><div style="font-size: 15px; font-weight: 600;">Include weekend brunch</div><div style="font-size: 13px; color: #5C665E; margin-top: 2px;">Off</div></div>
+          <span style="width: 52px; height: 30px; border-radius: 999px; background: #DDD8CC; position: relative; flex: none; cursor: pointer;"><span style="position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 999px; background: #fff; box-shadow: 0 1px 3px rgba(28,38,32,0.22);"></span></span>
+        </div>
+        <div style="border-top: 1px solid #EFE9DC; padding-top: 22px;">
+          <div style="font-size: 14px; font-weight: 600; margin-bottom: 10px;">Servings for Charlie</div>
+          <div style="display: inline-flex; align-items: center; border: 1px solid #D8D2C4; border-radius: 12px; overflow: hidden;">
+            <button aria-label="Decrease servings" style="width: 46px; height: 46px; background: #FFFFFF; border: none; cursor: pointer; font-size: 20px; color: #234A33;" style-hover="background: #F4F1EA;">&minus;</button>
+            <div style="width: 62px; text-align: center; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; border-left: 1px solid #E6E1D6; border-right: 1px solid #E6E1D6; line-height: 46px;">1.5</div>
+            <button aria-label="Increase servings" style="width: 46px; height: 46px; background: #FFFFFF; border: none; cursor: pointer; font-size: 20px; color: #234A33;" style-hover="background: #F4F1EA;">+</button>
+          </div>
+        </div>
+        <div style="border-top: 1px solid #EFE9DC; padding-top: 22px;">
+          <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; margin-bottom: 14px;"><span>Cooking time per meal</span><span style="font-variant-numeric: tabular-nums; color: #3D7551;">30 min</span></div>
+          <div style="position: relative; height: 8px; background: #E6E1D6; border-radius: 999px;">
+            <div style="position: absolute; left: 0; top: 0; height: 8px; width: 46%; background: #3D7551; border-radius: 999px;"></div>
+            <div style="position: absolute; left: 46%; top: -8px; width: 24px; height: 24px; margin-left: -12px; border-radius: 999px; background: #fff; border: 1.5px solid #3D7551; box-shadow: 0 2px 6px rgba(28,38,32,0.18);"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: #8A9490; margin-top: 10px;"><span>15 min</span><span>60 min</span></div>
+        </div>
+        <div style="border-top: 1px solid #EFE9DC; padding-top: 22px;">
+          <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Chips</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: #3D7551; color: #fff; border-radius: 999px; padding: 9px 15px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>High protein</span>
+            <span style="background: #FFFFFF; color: #3B443E; border: 1px solid #D8D2C4; border-radius: 999px; padding: 9px 15px; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="border-color: #8AB394; background: #F6FAF6;">Vegetarian</span>
+            <span style="background: #FFFFFF; color: #3B443E; border: 1px solid #D8D2C4; border-radius: 999px; padding: 9px 15px; font-size: 14px; font-weight: 500; cursor: pointer;" style-hover="border-color: #8AB394; background: #F6FAF6;">Under 30 min</span>
+            <span style="background: #F4F1EA; color: #3B443E; border-radius: 999px; padding: 9px 9px 9px 15px; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">No mushrooms<button aria-label="Remove no mushrooms" style="width: 20px; height: 20px; border: none; border-radius: 999px; background: #DDD8CC; color: #3B443E; cursor: pointer; font-size: 12px; line-height: 1;">&times;</button></span>
+            <span style="background: #F4F1EA; color: #A0A79F; border-radius: 999px; padding: 9px 15px; font-size: 14px; font-weight: 500;">Shellfish</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">14 / Navigation and organization</div>
+    <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Tabs &amp; segmented control</div>
+          <div style="display: flex; gap: 26px; border-bottom: 1px solid #E6E1D6; margin-bottom: 22px;">
+            <div style="padding: 12px 2px 14px; font-size: 15px; font-weight: 700; color: #1C2620; box-shadow: inset 0 -2px 0 #3D7551;">Meal plan</div>
+            <div style="padding: 12px 2px 14px; font-size: 15px; font-weight: 500; color: #5C665E; cursor: pointer;" style-hover="color: #1C2620;">Grocery list</div>
+            <div style="padding: 12px 2px 14px; font-size: 15px; font-weight: 500; color: #5C665E; cursor: pointer;" style-hover="color: #1C2620;">Favourites</div>
+            <div style="padding: 12px 2px 14px; font-size: 15px; font-weight: 500; color: #C2C7C1;">Insights &middot; soon</div>
+          </div>
+          <div style="display: inline-flex; background: #F4F1EA; border-radius: 12px; padding: 4px; gap: 2px;">
+            <div style="background: #FFFFFF; border-radius: 9px; padding: 9px 18px; font-size: 14px; font-weight: 600; box-shadow: 0 1px 2px rgba(28,38,32,0.10);">Household</div>
+            <div style="padding: 9px 18px; font-size: 14px; font-weight: 500; color: #5C665E; cursor: pointer;">Charlie</div>
+            <div style="padding: 9px 18px; font-size: 14px; font-weight: 500; color: #5C665E; cursor: pointer;">Partner</div>
+          </div>
+          <div style="font-size: 13px; color: #8A9490; margin-top: 10px;">The thumb slides 240&nbsp;ms on an emphasized ease; content cross-fades 160&nbsp;ms &mdash; it never re-mounts.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Week navigator &amp; day selector</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+            <button aria-label="Previous week" style="width: 44px; height: 44px; border: 1px solid #E6E1D6; background: #fff; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #F4F1EA;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B443E" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"></path></svg></button>
+            <div style="text-align: center;"><div style="font-size: 17px; font-weight: 700;">Aug 3 &ndash; Aug 9</div><div style="font-size: 13px; color: #5C665E;">5 dinners &middot; $86 estimated</div></div>
+            <button aria-label="Next week" style="width: 44px; height: 44px; border: 1px solid #E6E1D6; background: #fff; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #F4F1EA;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B443E" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"></path></svg></button>
+          </div>
+          <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;">
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #3D7551; color: #fff;"><div style="font-size: 12px; opacity: 0.85;">Mon</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">3</div><div style="width: 5px; height: 5px; background: #fff; border-radius: 999px; margin: 6px auto 0;"></div></div>
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #fff; border: 1px solid #E6E1D6; cursor: pointer;" style-hover="border-color: #8AB394;"><div style="font-size: 12px; color: #5C665E;">Tue</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">4</div><div style="width: 5px; height: 5px; background: #B4CFB9; border-radius: 999px; margin: 6px auto 0;"></div></div>
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #fff; border: 1px solid #E6E1D6; cursor: pointer;"><div style="font-size: 12px; color: #5C665E;">Wed</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">5</div><div style="width: 5px; height: 5px; background: #B4CFB9; border-radius: 999px; margin: 6px auto 0;"></div></div>
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #fff; border: 1px solid #E6E1D6; cursor: pointer;"><div style="font-size: 12px; color: #5C665E;">Thu</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">6</div><div style="width: 5px; height: 5px; background: #B4CFB9; border-radius: 999px; margin: 6px auto 0;"></div></div>
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #FBF9F5; border: 1px dashed #DDD8CC; color: #A0A79F;"><div style="font-size: 12px;">Fri</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">7</div><div style="font-size: 10px; margin-top: 4px;">open</div></div>
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #fff; border: 1px solid #E6E1D6; cursor: pointer;"><div style="font-size: 12px; color: #5C665E;">Sat</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">8</div><div style="width: 5px; height: 5px; background: #B4CFB9; border-radius: 999px; margin: 6px auto 0;"></div></div>
+            <div style="flex: none; width: 62px; text-align: center; padding: 12px 0; border-radius: 14px; background: #fff; border: 1px solid #E6E1D6; cursor: pointer;"><div style="font-size: 12px; color: #5C665E;">Sun</div><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">9</div><div style="width: 5px; height: 5px; background: #B4CFB9; border-radius: 999px; margin: 6px auto 0;"></div></div>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Progress &amp; back navigation</div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #5C665E; margin-bottom: 20px;">
+            <button style="display: inline-flex; align-items: center; gap: 7px; background: transparent; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: #3D7551; cursor: pointer; padding: 10px 8px 10px 0; min-height: 44px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3D7551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-6 6 6 6"></path></svg>This week&rsquo;s plan</button>
+            <span style="color: #C9BFAF;">/</span><span>Tuesday</span><span style="color: #C9BFAF;">/</span><span style="color: #1C2620; font-weight: 600;">Lemon herb chicken bowls</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 96px;"><div style="width: 28px; height: 28px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px;">&#10003;</div><div style="font-size: 12.5px; font-weight: 600;">Household</div></div>
+            <div style="flex: 1; height: 2px; background: #3D7551;"></div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 96px;"><div style="width: 28px; height: 28px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px;">&#10003;</div><div style="font-size: 12.5px; font-weight: 600;">Goals</div></div>
+            <div style="flex: 1; height: 2px; background: linear-gradient(to right, #3D7551 60%, #E6E1D6 60%);"></div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 96px;"><div style="width: 28px; height: 28px; border-radius: 999px; background: #fff; border: 2px solid #3D7551; color: #234A33; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">3</div><div style="font-size: 12.5px; font-weight: 700;">Preferences</div></div>
+            <div style="flex: 1; height: 2px; background: #E6E1D6;"></div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 96px;"><div style="width: 28px; height: 28px; border-radius: 999px; background: #F4F1EA; color: #8A9490; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">4</div><div style="font-size: 12.5px; color: #8A9490;">Budget</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Desktop side navigation</div>
+          <div style="border: 1px solid #EFE9DC; border-radius: 16px; padding: 14px; background: #FBF9F5; display: flex; flex-direction: column; gap: 4px;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(28,38,32,0.07); font-size: 15px; font-weight: 700;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7551" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="3"></rect><path d="M8 3v4M16 3v4M4 10h16"></path></svg>This week</div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; font-size: 15px; color: #3B443E; cursor: pointer;" style-hover="background: #F1EEE6;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h3l2.2 10.2a2 2 0 0 0 2 1.6h6.4a2 2 0 0 0 2-1.5L21 8H7.5"></path><circle cx="11" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></svg>Grocery list <span style="margin-left: auto; background: #EEF4EE; color: #234A33; border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;">24</span></div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; font-size: 15px; color: #3B443E; cursor: pointer;" style-hover="background: #F1EEE6;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg>Favourites</div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; font-size: 15px; color: #3B443E; cursor: pointer;" style-hover="background: #F1EEE6;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.2"></circle><path d="M4 19a5.4 5.4 0 0 1 10 0M16 7.2a3 3 0 0 1 0 5.6M17 19a5 5 0 0 0-2-3.6"></path></svg>Household</div>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Mobile bottom navigation</div>
+          <div style="max-width: 340px; margin: 0 auto; border: 1px solid #E6E1D6; border-radius: 20px 20px 24px 24px; overflow: hidden; background: #FBF9F5;">
+            <div style="height: 92px; background: repeating-linear-gradient(135deg, #F1EEE6 0 10px, #EAE6DC 10px 20px); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8073;">app content</div>
+            <div style="display: flex; background: #FFFFFF; border-top: 1px solid #EFE9DC; padding: 8px 4px 12px; box-shadow: 0 -2px 8px rgba(28,38,32,0.05);">
+              <div style="flex: 1; text-align: center; min-height: 48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3D7551" stroke="#3D7551" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="3" fill="#EEF4EE"></rect><path d="M8 3v4M16 3v4M4 10h16"></path></svg><div style="font-size: 11px; font-weight: 700; color: #234A33; margin-top: 3px;">Plan</div></div>
+              <div style="flex: 1; text-align: center; min-height: 48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A9490" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h3l2.2 10.2a2 2 0 0 0 2 1.6h6.4a2 2 0 0 0 2-1.5L21 8H7.5"></path><circle cx="11" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></svg><div style="font-size: 11px; color: #5C665E; margin-top: 3px;">Grocery</div></div>
+              <div style="flex: 1; text-align: center; min-height: 48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A9490" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg><div style="font-size: 11px; color: #5C665E; margin-top: 3px;">Saved</div></div>
+              <div style="flex: 1; text-align: center; min-height: 48px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A9490" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.2"></circle><path d="M4 19a5.4 5.4 0 0 1 10 0M16 7.2a3 3 0 0 1 0 5.6"></path></svg><div style="font-size: 11px; color: #5C665E; margin-top: 3px;">Household</div></div>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: #8A9490; margin-top: 12px;">Four destinations maximum. The active icon fills and its label bolds &mdash; shape plus weight, not colour alone.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">15 / Meal components</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 32px; letter-spacing: -0.015em;">Meal card</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A9490; margin-bottom: 10px;">Standard &middot; default</div>
+        <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,38,32,0.06); transition: transform 200ms cubic-bezier(0.2,0,0,1), box-shadow 200ms ease;" style-hover="transform: translateY(-3px); box-shadow: 0 2px 4px rgba(28,38,32,0.05), 0 14px 28px -14px rgba(28,38,32,0.2);">
+          <div style="position: relative; height: 180px; background: repeating-linear-gradient(135deg, #EFEAE0 0 10px, #E8E2D6 10px 20px); display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8073; background: rgba(255,255,255,0.82); padding: 5px 9px; border-radius: 6px;">meal photo &middot; 4:3</span>
+            <button aria-label="Save to favourites" style="position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 999px; border: none; background: rgba(255,255,255,0.94); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 6px rgba(28,38,32,0.16);"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg></button>
+            <span style="position: absolute; bottom: 10px; left: 10px; background: rgba(28,38,32,0.72); color: #fff; border-radius: 8px; padding: 5px 10px; font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: 6px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>30 min</span>
+          </div>
+          <div style="padding: 16px 18px 18px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+              <div style="font-size: 19px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25;">Lemon herb chicken bowls</div>
+              <button aria-label="More options" style="width: 32px; height: 32px; border: none; background: transparent; border-radius: 999px; cursor: pointer; flex: none;" style-hover="background: #F4F1EA;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#8A9490"><circle cx="5" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="19" cy="12" r="1.6"></circle></svg></button>
+            </div>
+            <div style="display: flex; gap: 6px; margin: 10px 0 14px;">
+              <span style="background: #EEF4EE; color: #234A33; border-radius: 7px; padding: 4px 9px; font-size: 12.5px; font-weight: 600;">High protein</span>
+              <span style="background: #F4F1EA; color: #4A534C; border-radius: 7px; padding: 4px 9px; font-size: 12.5px; font-weight: 600;">Gluten-free</span>
+            </div>
+            <div style="display: flex; gap: 8px; padding-top: 14px; border-top: 1px solid #F1EEE6;">
+              <span style="display: inline-flex; align-items: center; gap: 7px; background: #E7F1EF; border-radius: 999px; padding: 5px 12px 5px 5px; font-size: 13px; font-weight: 600; color: #234A33;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #35786B; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center;">C</span>6 oz &middot; 720 cal</span>
+              <span style="display: inline-flex; align-items: center; gap: 7px; background: #FBEEE2; border-radius: 999px; padding: 5px 12px 5px 5px; font-size: 13px; font-weight: 600; color: #7A4718;"><span style="width: 22px; height: 22px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 10px; display: flex; align-items: center; justify-content: center; border: 1.5px dashed #FBEEE2;">P</span>4 oz &middot; 520 cal</span>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 14px;">
+              <button style="flex: 1; background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 12px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px;">View portions</button>
+              <button style="background: #FFFFFF; color: #234A33; border: 1px solid #D8D2C4; border-radius: 12px; padding: 12px 14px; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; gap: 7px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12l-3-3M20 16H8l3 3"></path></svg>Replace</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A9490; margin-bottom: 10px;">Compact &middot; list row</div>
+          <div style="background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 14px; padding: 10px; display: flex; gap: 12px; align-items: center; box-shadow: 0 1px 2px rgba(28,38,32,0.05);">
+            <div style="width: 68px; height: 68px; border-radius: 10px; flex: none; background: repeating-linear-gradient(135deg, #EFEAE0 0 8px, #E8E2D6 8px 16px);"></div>
+            <div style="min-width: 0;">
+              <div style="font-size: 15.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Lemon herb chicken bowls</div>
+              <div style="font-size: 13px; color: #5C665E; margin-top: 3px;">30 min &middot; High protein</div>
+              <div style="display: flex; gap: 5px; margin-top: 7px;"><span style="width: 20px; height: 20px; border-radius: 999px; background: #35786B; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">C</span><span style="width: 20px; height: 20px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 9.5px; display: flex; align-items: center; justify-content: center;">P</span><span style="font-size: 12.5px; color: #5C665E; margin-left: 2px;">6 oz / 4 oz</span></div>
+            </div>
+            <button aria-label="Open meal" style="margin-left: auto; width: 40px; height: 40px; border: none; background: transparent; border-radius: 999px; cursor: pointer; flex: none;" style-hover="background: #F4F1EA;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6l6 6-6 6"></path></svg></button>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A9490; margin-bottom: 10px;">Selected</div>
+          <div style="background: #F6FAF6; border: 1.5px solid #3D7551; border-radius: 14px; padding: 10px; display: flex; gap: 12px; align-items: center; box-shadow: 0 0 0 3px rgba(61,117,81,0.12);">
+            <div style="width: 68px; height: 68px; border-radius: 10px; flex: none; background: repeating-linear-gradient(135deg, #E4EDE3 0 8px, #DCE7DB 8px 16px);"></div>
+            <div><div style="font-size: 15.5px; font-weight: 700;">Lemon herb chicken bowls</div><div style="font-size: 13px; color: #5C665E; margin-top: 3px;">Added to Tuesday dinner</div></div>
+            <span style="margin-left: auto; width: 26px; height: 26px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; flex: none;">&#10003;</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A9490; margin-bottom: 10px;">Loading skeleton &middot; missing image</div>
+          <div style="display: flex; gap: 12px;">
+            <div style="flex: 1; background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 14px; padding: 10px; display: flex; gap: 12px; align-items: center;">
+              <div style="width: 68px; height: 68px; border-radius: 10px; flex: none; background: linear-gradient(90deg, #F1EEE6 25%, #E8E4DA 37%, #F1EEE6 63%); background-size: 420px 100%; animation: ppShimmer 1400ms ease-in-out infinite;"></div>
+              <div style="flex: 1;"><div style="height: 13px; border-radius: 6px; background: linear-gradient(90deg, #F1EEE6 25%, #E8E4DA 37%, #F1EEE6 63%); background-size: 420px 100%; animation: ppShimmer 1400ms ease-in-out infinite; margin-bottom: 9px;"></div><div style="height: 11px; width: 60%; border-radius: 6px; background: #F1EEE6;"></div></div>
+            </div>
+            <div style="flex: 1; background: #FFFFFF; border: 1px solid #EFE9DC; border-radius: 14px; padding: 10px; display: flex; gap: 12px; align-items: center;">
+              <div style="width: 68px; height: 68px; border-radius: 10px; flex: none; background: #F1EEE6; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B6AF9F" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 13.5h7"></path></svg></div>
+              <div><div style="font-size: 15px; font-weight: 700;">Miso salmon traybake</div><div style="font-size: 12.5px; color: #8A9490; margin-top: 3px;">Photo coming soon</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A9490; margin-bottom: 10px;">Featured &middot; tonight&rsquo;s dinner</div>
+        <div style="border-radius: 24px; overflow: hidden; background: #1A3726; box-shadow: 0 4px 8px rgba(28,38,32,0.06), 0 20px 40px -20px rgba(28,38,32,0.28);">
+          <div style="position: relative; height: 230px; background: repeating-linear-gradient(135deg, #35533E 0 12px, #2E4A37 12px 24px); display: flex; align-items: flex-end; padding: 18px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #C7D8C6; background: rgba(18,39,27,0.6); padding: 5px 9px; border-radius: 6px; position: absolute; top: 16px; left: 18px;">hero photo &middot; 3:2, warm natural light</span>
+            <div style="color: #fff;">
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #EBB482; margin-bottom: 8px;">Tonight &middot; Tuesday</div>
+              <div style="font-family: 'Newsreader', serif; font-size: 32px; line-height: 1.1;">Lemon herb chicken bowls</div>
+            </div>
+          </div>
+          <div style="padding: 18px; color: #DCE7DB;">
+            <div style="display: flex; gap: 18px; font-size: 14px; margin-bottom: 16px;"><span>30 min</span><span style="color: #6C8A70;">&middot;</span><span>High protein</span><span style="color: #6C8A70;">&middot;</span><span>Gluten-free</span></div>
+            <button style="width: 100%; background: #EAF1E9; color: #12271B; border: none; border-radius: 14px; padding: 15px; font-family: inherit; font-size: 15.5px; font-weight: 700; cursor: pointer; min-height: 48px;">Start cooking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Ingredient rows &amp; cooking steps</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 4px; border-bottom: 1px solid #F1EEE6;">
+            <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600;">Chicken breast</div><div style="font-size: 13px; color: #8A9490; margin-top: 2px;">Pounded to even thickness</div></div>
+            <div style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">10 oz</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 4px; border-bottom: 1px solid #F1EEE6;">
+            <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600;">Jasmine rice</div><div style="display: flex; gap: 6px; margin-top: 5px;"><span style="font-size: 12px; background: #E7F1EF; color: #235148; border-radius: 6px; padding: 2px 7px; font-weight: 600;">C 1&frac12; cups</span><span style="font-size: 12px; background: #FBEEE2; color: #7A4718; border-radius: 6px; padding: 2px 7px; font-weight: 600;">P 1 cup</span></div></div>
+            <div style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">2&frac12; cups</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 4px; border-bottom: 1px solid #F1EEE6;">
+            <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600;">Greek yoghurt</div><div style="font-size: 13px; color: #3E6E8E; margin-top: 3px; display: flex; align-items: center; gap: 5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3E6E8E" stroke-width="2" stroke-linecap="round"><path d="M4 8h12l-3-3M20 16H8l3 3"></path></svg>Substitute: coconut yoghurt (dairy-free)</div></div>
+            <div style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">&frac12; cup</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 4px;">
+            <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600; color: #A0A79F;">Fresh dill</div><div style="font-size: 13px; color: #A0A79F; margin-top: 2px;">Optional &mdash; skipped, disliked by Partner</div></div>
+            <div style="font-size: 15px; font-weight: 700; color: #A0A79F;">&mdash;</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; gap: 14px; padding: 14px 16px; background: #F6FAF6; border: 1px solid #DCE9DB; border-radius: 14px; align-items: flex-start;">
+            <span style="width: 26px; height: 26px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; flex: none;">&#10003;</span>
+            <div style="font-size: 15px; line-height: 1.55; color: #6C7A70; text-decoration: line-through; text-decoration-color: #B4CFB9;">Rinse the rice and start it in 3 cups of salted water.</div>
+          </div>
+          <div style="display: flex; gap: 14px; padding: 14px 16px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; align-items: flex-start;">
+            <span style="width: 26px; height: 26px; border-radius: 999px; background: #EEF4EE; color: #234A33; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex: none; font-variant-numeric: tabular-nums;">2</span>
+            <div style="flex: 1;"><div style="font-size: 15px; line-height: 1.55;">Sear the chicken 6 minutes per side, then rest before slicing.</div>
+              <button style="margin-top: 10px; display: inline-flex; align-items: center; gap: 7px; background: #FFFFFF; border: 1px solid #D8D2C4; border-radius: 999px; padding: 7px 14px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; min-height: 40px;" style-hover="border-color: #8AB394; background: #F6FAF6;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3D7551" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>Start 12:00 timer</button>
+            </div>
+          </div>
+          <div style="display: flex; gap: 14px; padding: 14px 16px; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 14px; align-items: flex-start;">
+            <span style="width: 26px; height: 26px; border-radius: 999px; background: #EEF4EE; color: #234A33; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex: none; font-variant-numeric: tabular-nums;">3</span>
+            <div style="font-size: 15px; line-height: 1.55;">Build each bowl to the portion sizes shown for Charlie and Partner.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">16 / Portion components</div>
+    <div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 20px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 8px;">Household switcher &middot; live</div>
+          <p style="font-size: 13.5px; color: #8A9490; margin: 0 0 16px;">Try it &mdash; the thumb slides and the panel below cross-fades.</p>
+          <div style="position: relative; display: flex; background: #F4F1EA; border-radius: 14px; padding: 5px;">
+            <div style="position: absolute; top: 5px; bottom: 5px; width: 33.33%; left: {{ thumbLeft }}; padding: 0 5px; box-sizing: border-box; transition: left 260ms cubic-bezier(0.2,0,0,1);"><div style="width: 100%; height: 100%; background: #FFFFFF; border-radius: 10px; box-shadow: 0 1px 3px rgba(28,38,32,0.14);"></div></div>
+            <button onClick="{{ pickHousehold }}" style="position: relative; flex: 1; background: transparent; border: none; padding: 11px 6px; font-family: inherit; font-size: 14px; font-weight: 600; color: #1C2620; cursor: pointer; min-height: 44px; z-index: 1;">Household</button>
+            <button onClick="{{ pickCharlie }}" style="position: relative; flex: 1; background: transparent; border: none; padding: 11px 6px; font-family: inherit; font-size: 14px; font-weight: 600; color: #1C2620; cursor: pointer; min-height: 44px; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 7px;"><span style="width: 18px; height: 18px; border-radius: 999px; background: #35786B; color: #fff; font-size: 9px; display: flex; align-items: center; justify-content: center;">C</span>Charlie</button>
+            <button onClick="{{ pickPartner }}" style="position: relative; flex: 1; background: transparent; border: none; padding: 11px 6px; font-family: inherit; font-size: 14px; font-weight: 600; color: #1C2620; cursor: pointer; min-height: 44px; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 7px;"><span style="width: 18px; height: 18px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 9px; display: flex; align-items: center; justify-content: center;">P</span>Partner</button>
+          </div>
+          <div style="margin-top: 18px; background: #FBF9F5; border: 1px solid #EFE9DC; border-radius: 14px; padding: 18px;">
+            <div style="font-size: 13px; color: #5C665E;">Now viewing</div>
+            <div style="font-size: 22px; font-weight: 700; margin: 4px 0 12px;">{{ viewLabel }}</div>
+            <div style="display: flex; gap: 26px; font-variant-numeric: tabular-nums;">
+              <div><div style="font-size: 12px; color: #8A9490;">Chicken</div><div style="font-size: 20px; font-weight: 700;">{{ viewChicken }}</div></div>
+              <div><div style="font-size: 12px; color: #8A9490;">Rice</div><div style="font-size: 20px; font-weight: 700;">{{ viewRice }}</div></div>
+              <div><div style="font-size: 12px; color: #8A9490;">Calories</div><div style="font-size: 20px; font-weight: 700;">{{ viewCals }}</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 16px;">Portion profile badges</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <span style="display: inline-flex; align-items: center; gap: 9px; background: #E7F1EF; border: 1px solid #B9D7D1; border-radius: 999px; padding: 6px 14px 6px 6px;"><span style="width: 28px; height: 28px; border-radius: 999px; background: #35786B; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><span><span style="font-size: 14px; font-weight: 700; color: #1C2620;">Charlie</span><span style="font-size: 12.5px; color: #4C6B65; margin-left: 7px;">1&frac12; servings</span></span></span>
+            <span style="display: inline-flex; align-items: center; gap: 9px; background: #FBEEE2; border: 1px dashed #D8A876; border-radius: 999px; padding: 6px 14px 6px 6px;"><span style="width: 28px; height: 28px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</span><span><span style="font-size: 14px; font-weight: 700; color: #1C2620;">Partner</span><span style="font-size: 12.5px; color: #7A5936; margin-left: 7px;">1 serving</span></span></span>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <div style="flex: 1; border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;"><span style="width: 44px; height: 44px; border-radius: 999px; background: #35786B; color: #fff; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><button aria-label="Edit Charlie" style="width: 36px; height: 36px; border: none; background: transparent; border-radius: 999px; cursor: pointer;" style-hover="background: #F4F1EA;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h3l9-9-3-3-9 9v3z"></path></svg></button></div>
+              <div style="font-size: 17px; font-weight: 700; margin: 12px 0 4px;">Charlie</div>
+              <div style="font-size: 13.5px; color: #5C665E; line-height: 1.5;">Build muscle &middot; 2,150 cal<br />High protein, gluten-free</div>
+            </div>
+            <div style="flex: 1; border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;"><span style="width: 44px; height: 44px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</span><button aria-label="Edit Partner" style="width: 36px; height: 36px; border: none; background: transparent; border-radius: 999px; cursor: pointer;" style-hover="background: #F4F1EA;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h3l9-9-3-3-9 9v3z"></path></svg></button></div>
+              <div style="font-size: 17px; font-weight: 700; margin: 12px 0 4px;">Partner</div>
+              <div style="font-size: 13.5px; color: #5C665E; line-height: 1.5;">Maintain &middot; 1,620 cal<br />Balanced, no shellfish</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Portion comparison</div>
+            <div style="font-size: 13px; color: #8A9490;">Lemon herb chicken bowls</div>
+          </div>
+          <p style="font-size: 14px; color: #5C665E; margin: 0 0 22px; max-width: 520px;">Food quantities lead. Bars are scaled to each person&rsquo;s own plate, not against each other, so neither portion reads as the &ldquo;right&rdquo; one &mdash; and every bar is labelled in words.</p>
+
+          <div style="display: grid; grid-template-columns: 96px 1fr 1fr; gap: 14px 18px; align-items: center;">
+            <div></div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 26px; height: 26px; border-radius: 999px; background: #35786B; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">C</span><span style="font-size: 15px; font-weight: 700;">Charlie</span></div>
+            <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 26px; height: 26px; border-radius: 999px; background: #C07A3E; color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">P</span><span style="font-size: 15px; font-weight: 700;">Partner</span></div>
+
+            <div style="font-size: 14px; color: #5C665E; border-top: 1px solid #F1EEE6; padding-top: 14px;">Chicken</div>
+            <div style="border-top: 1px solid #F1EEE6; padding-top: 14px;"><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">6 oz</div><div style="height: 8px; background: #E7F1EF; border-radius: 999px; margin-top: 8px;"><div style="width: 100%; height: 8px; background: #35786B; border-radius: 999px;"></div></div></div>
+            <div style="border-top: 1px solid #F1EEE6; padding-top: 14px;"><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">4 oz</div><div style="height: 8px; background: #FBEEE2; border-radius: 999px; margin-top: 8px;"><div style="width: 67%; height: 8px; background: #C07A3E; border-radius: 999px; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.28) 0 3px, transparent 3px 6px);"></div></div></div>
+
+            <div style="font-size: 14px; color: #5C665E; border-top: 1px solid #F1EEE6; padding-top: 14px;">Rice</div>
+            <div style="border-top: 1px solid #F1EEE6; padding-top: 14px;"><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">1&frac12; cups</div><div style="height: 8px; background: #E7F1EF; border-radius: 999px; margin-top: 8px;"><div style="width: 100%; height: 8px; background: #35786B; border-radius: 999px;"></div></div></div>
+            <div style="border-top: 1px solid #F1EEE6; padding-top: 14px;"><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</div><div style="height: 8px; background: #FBEEE2; border-radius: 999px; margin-top: 8px;"><div style="width: 67%; height: 8px; background: #C07A3E; border-radius: 999px; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.28) 0 3px, transparent 3px 6px);"></div></div></div>
+
+            <div style="font-size: 14px; color: #5C665E; border-top: 1px solid #F1EEE6; padding-top: 14px;">Vegetables</div>
+            <div style="border-top: 1px solid #F1EEE6; padding-top: 14px;"><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</div><div style="height: 8px; background: #E7F1EF; border-radius: 999px; margin-top: 8px;"><div style="width: 100%; height: 8px; background: #35786B; border-radius: 999px;"></div></div></div>
+            <div style="border-top: 1px solid #F1EEE6; padding-top: 14px;"><div style="font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums;">&frac34; cup</div><div style="height: 8px; background: #FBEEE2; border-radius: 999px; margin-top: 8px;"><div style="width: 75%; height: 8px; background: #C07A3E; border-radius: 999px; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.28) 0 3px, transparent 3px 6px);"></div></div></div>
+          </div>
+
+          <div style="margin-top: 22px; background: #FBF9F5; border: 1px solid #EFE9DC; border-radius: 14px; padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div style="font-size: 14px; color: #5C665E;">Both portions meet their own daily targets. <span style="color: #1C2620; font-weight: 600;">Same meal, same table.</span></div>
+            <button style="background: transparent; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: #3D7551; cursor: pointer; min-height: 44px; padding: 10px 4px;">Show calories &amp; macros</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 24px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 16px;">Nutrition &middot; collapsed</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid #E6E1D6; border-radius: 14px; padding: 16px; cursor: pointer;" style-hover="background: #FBF9F5;">
+              <div><div style="font-size: 13px; color: #5C665E;">Charlie&rsquo;s portion</div><div style="font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums;">720 <span style="font-size: 14px; font-weight: 500; color: #5C665E;">cal</span></div></div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"></path></svg>
+            </div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 24px;">
+            <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 16px;">Nutrition &middot; expanded</div>
+            <div style="border: 1px solid #B4CFB9; background: #F6FAF6; border-radius: 14px; padding: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;"><div><div style="font-size: 13px; color: #5C665E;">Charlie&rsquo;s portion</div><div style="font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums;">720 <span style="font-size: 14px; font-weight: 500; color: #5C665E;">cal</span></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D7551" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"></path></svg></div>
+              <div style="display: flex; gap: 14px; font-variant-numeric: tabular-nums;">
+                <div style="flex: 1;"><div style="font-size: 12px; color: #5C665E;">Protein</div><div style="font-size: 17px; font-weight: 700;">50 g</div><div style="height: 5px; background: #DCE7DB; border-radius: 999px; margin-top: 6px;"><div style="width: 82%; height: 5px; background: #3D7551; border-radius: 999px;"></div></div></div>
+                <div style="flex: 1;"><div style="font-size: 12px; color: #5C665E;">Carbs</div><div style="font-size: 17px; font-weight: 700;">70 g</div><div style="height: 5px; background: #DCE7DB; border-radius: 999px; margin-top: 6px;"><div style="width: 64%; height: 5px; background: #5E9270; border-radius: 999px;"></div></div></div>
+                <div style="flex: 1;"><div style="font-size: 12px; color: #5C665E;">Fat</div><div style="font-size: 17px; font-weight: 700;">22 g</div><div style="height: 5px; background: #DCE7DB; border-radius: 999px; margin-top: 6px;"><div style="width: 40%; height: 5px; background: #8AB394; border-radius: 999px;"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">17 / Grocery components</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Grocery list &middot; live</div>
+          <div style="font-size: 13px; color: #8A9490; font-variant-numeric: tabular-nums;">{{ doneCount }} of 5 done</div>
+        </div>
+        <p style="font-size: 13.5px; color: #8A9490; margin: 0 0 18px;">Tick an item &mdash; it fades, strikes through and drops into &ldquo;in the basket&rdquo;.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <sc-for list="{{ openItems }}" as="item" hint-placeholder-count="5">
+            <div onClick="{{ item.toggle }}" style="display: flex; align-items: center; gap: 13px; padding: 12px 14px; border: 1px solid #EFE9DC; border-radius: 12px; background: #FFFFFF; cursor: pointer; min-height: 56px; transition: background 160ms ease, border-color 160ms ease;" style-hover="background: #FBF9F5; border-color: #DDD8CC;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #C9BFAF; background: #fff; flex: none;"></span>
+              <div style="flex: 1;">
+                <div style="font-size: 15px; font-weight: 600;">{{ item.name }}</div>
+                <div style="font-size: 12.5px; color: #8A9490; margin-top: 2px;">{{ item.meta }}</div>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">{{ item.qty }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ hasDone }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top: 18px; border-top: 1px solid #F1EEE6; padding-top: 16px;">
+            <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8A9490; margin-bottom: 8px;">In the basket</div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <sc-for list="{{ doneItems }}" as="item" hint-placeholder-count="1">
+                <div onClick="{{ item.toggle }}" style="display: flex; align-items: center; gap: 13px; padding: 12px 14px; border: 1px solid #EFE9DC; border-radius: 12px; background: #FBF9F5; cursor: pointer; min-height: 56px; opacity: 0.72;">
+                  <span style="width: 24px; height: 24px; border-radius: 8px; background: #3D7551; flex: none; display: flex; align-items: center; justify-content: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+                  <div style="flex: 1; font-size: 15px; font-weight: 600; text-decoration: line-through; text-decoration-color: #B6AF9F; color: #6C7A70;">{{ item.name }}</div>
+                  <div style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; color: #6C7A70;">{{ item.qty }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 16px;">Item states</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 13px; padding: 12px 14px; border: 1px solid #EFE9DC; border-radius: 12px; min-height: 56px;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #3D7551; background: #3D7551; flex: none; display: flex; align-items: center; justify-content: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+              <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600; color: #6C7A70; text-decoration: line-through; text-decoration-color: #B6AF9F;">Jasmine rice</div></div>
+              <div style="font-size: 15px; font-weight: 700; color: #6C7A70;">2&frac12; cups</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 13px; padding: 12px 14px; border: 1px solid #EFE9DC; border-radius: 12px; min-height: 56px;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #C9BFAF; flex: none;"></span>
+              <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600;">Greek yoghurt</div><div style="font-size: 12.5px; color: #A9622A; margin-top: 2px;">Edited &middot; was &frac12; cup</div></div>
+              <div style="font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;">1 cup</div>
+              <button aria-label="Edit quantity" style="width: 36px; height: 36px; border: none; background: transparent; border-radius: 999px; cursor: pointer;" style-hover="background: #F4F1EA;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h3l9-9-3-3-9 9v3z"></path></svg></button>
+            </div>
+            <div style="display: flex; align-items: center; gap: 13px; padding: 12px 14px; border: 1px solid #EFE9DC; border-radius: 12px; min-height: 56px;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #C9BFAF; flex: none;"></span>
+              <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600;">Coconut yoghurt</div><div style="font-size: 12.5px; color: #3E6E8E; margin-top: 2px;">Substituted for Greek yoghurt</div></div>
+              <div style="font-size: 15px; font-weight: 700;">1 cup</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 13px; padding: 12px 14px; border: 1px dashed #E6E1D6; border-radius: 12px; min-height: 56px; background: #FBF9F5;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid #E6E1D6; background: #F1EEE6; flex: none;"></span>
+              <div style="flex: 1;"><div style="font-size: 15px; font-weight: 600; color: #A0A79F;">Fresh dill</div><div style="font-size: 12.5px; color: #A0A79F; margin-top: 2px;">Unavailable at your store</div></div>
+              <button style="background: transparent; border: none; font-family: inherit; font-size: 13.5px; font-weight: 600; color: #3D7551; cursor: pointer; min-height: 44px; padding: 0 4px;">Find substitute</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+          <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 16px;">Categories</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="border: 1px solid #E6E1D6; border-radius: 14px; overflow: hidden;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #FBF9F5; cursor: pointer;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D7551" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l6-6 6 6"></path></svg>
+                <div style="font-size: 15px; font-weight: 700;">Produce</div>
+                <div style="font-size: 13px; color: #5C665E; font-variant-numeric: tabular-nums;">3 of 7</div>
+                <div style="flex: 1; height: 5px; background: #E6E1D6; border-radius: 999px; max-width: 120px; margin-left: auto;"><div style="width: 43%; height: 5px; background: #3D7551; border-radius: 999px;"></div></div>
+              </div>
+              <div style="padding: 6px 16px 14px; font-size: 14px; color: #5C665E;">Broccoli &middot; lemons &middot; parsley &middot; shallots&hellip;</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid #E6E1D6; border-radius: 14px; cursor: pointer;" style-hover="background: #FBF9F5;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"></path></svg>
+              <div style="font-size: 15px; font-weight: 700;">Protein</div><div style="font-size: 13px; color: #5C665E; font-variant-numeric: tabular-nums;">0 of 4</div>
+              <div style="flex: 1; height: 5px; background: #E6E1D6; border-radius: 999px; max-width: 120px; margin-left: auto;"></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid #E6E1D6; border-radius: 14px; cursor: pointer;" style-hover="background: #FBF9F5;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C665E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"></path></svg>
+              <div style="font-size: 15px; font-weight: 700;">Pantry</div><div style="font-size: 13px; color: #5C665E; font-variant-numeric: tabular-nums;">5 of 6</div>
+              <div style="flex: 1; height: 5px; background: #E6E1D6; border-radius: 999px; max-width: 120px; margin-left: auto;"><div style="width: 83%; height: 5px; background: #3D7551; border-radius: 999px;"></div></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid #DCE9DB; background: #F6FAF6; border-radius: 14px;">
+              <span style="width: 20px; height: 20px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px;">&#10003;</span>
+              <div style="font-size: 15px; font-weight: 700; color: #234A33;">Dairy</div><div style="font-size: 13px; color: #4C6B55;">All 3 in the basket</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid #E6E1D6; border-radius: 14px; color: #A0A79F;">
+              <span style="width: 18px;"></span><div style="font-size: 15px; font-weight: 700;">Frozen</div><div style="font-size: 13px;">Nothing this week</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; margin-top: 20px;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 18px;">Dietary preference cards</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px;">
+        <div style="border: 1.5px solid #3D7551; background: #F6FAF6; border-radius: 16px; padding: 18px; box-shadow: 0 0 0 3px rgba(61,117,81,0.12); cursor: pointer; position: relative;">
+          <span style="position: absolute; top: 14px; right: 14px; width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px;">&#10003;</span>
+          <div style="font-size: 16px; font-weight: 700;">High protein</div><div style="font-size: 13px; color: #5C665E; margin-top: 5px; line-height: 1.5;">30g+ per serving, lean cuts and legumes.</div>
+        </div>
+        <div style="border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; cursor: pointer; transition: border-color 160ms ease, transform 160ms cubic-bezier(0.2,0,0,1);" style-hover="border-color: #8AB394; transform: translateY(-2px);"><div style="font-size: 16px; font-weight: 700;">Balanced</div><div style="font-size: 13px; color: #5C665E; margin-top: 5px; line-height: 1.5;">An even mix of protein, grains and produce.</div></div>
+        <div style="border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; cursor: pointer;" style-hover="border-color: #8AB394;"><div style="font-size: 16px; font-weight: 700;">Vegetarian</div><div style="font-size: 13px; color: #5C665E; margin-top: 5px; line-height: 1.5;">No meat or fish; eggs and dairy welcome.</div></div>
+        <div style="border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; cursor: pointer;" style-hover="border-color: #8AB394;"><div style="font-size: 16px; font-weight: 700;">Vegan</div><div style="font-size: 13px; color: #5C665E; margin-top: 5px; line-height: 1.5;">Fully plant-based, with protein kept high.</div></div>
+        <div style="border: 1.5px solid #3D7551; background: #F6FAF6; border-radius: 16px; padding: 18px; box-shadow: 0 0 0 3px rgba(61,117,81,0.12); cursor: pointer; position: relative;">
+          <span style="position: absolute; top: 14px; right: 14px; width: 22px; height: 22px; border-radius: 999px; background: #3D7551; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px;">&#10003;</span>
+          <div style="font-size: 16px; font-weight: 700;">Gluten-free</div><div style="font-size: 13px; color: #5C665E; margin-top: 5px; line-height: 1.5;">Rice, quinoa and certified oats only.</div>
+        </div>
+        <div style="border: 1px solid #E6E1D6; border-radius: 16px; padding: 18px; cursor: pointer;" style-hover="border-color: #8AB394;"><div style="font-size: 16px; font-weight: 700;">Dairy-free</div><div style="font-size: 13px; color: #5C665E; margin-top: 5px; line-height: 1.5;">Plant milks and yoghurts substituted automatically.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">18 / Loading, empty and feedback states</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start;">
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E; margin-bottom: 4px;">Messages</div>
+        <div style="display: flex; gap: 12px; background: #F1F8F2; border: 1px solid #C2DEC7; border-radius: 14px; padding: 14px 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E7D5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.6 2.5L16 9.5"></path></svg>
+          <div><div style="font-size: 14.5px; font-weight: 700;">Plan saved for Aug 3&ndash;9</div><div style="font-size: 13.5px; color: #4A6552; margin-top: 3px;">Your grocery list has been updated with 24 items.</div></div>
+        </div>
+        <div style="display: flex; gap: 12px; background: #FDF1EE; border: 1px solid #EBC3B9; border-radius: 14px; padding: 14px 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B4432F" stroke-width="2" stroke-linecap="round" style="flex: none; margin-top: 1px;"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5M12 16.4v.01"></path></svg>
+          <div><div style="font-size: 14.5px; font-weight: 700;">We couldn&rsquo;t generate this week&rsquo;s plan</div><div style="font-size: 13.5px; color: #7A3A2C; margin-top: 3px;">Your budget of $25 is below the minimum for 5 dinners. <span style="font-weight: 600; text-decoration: underline;">Adjust budget</span></div></div>
+        </div>
+        <div style="display: flex; gap: 12px; background: #EFF4F8; border: 1px solid #C3D4E1; border-radius: 14px; padding: 14px 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E6E8E" stroke-width="2" stroke-linecap="round" style="flex: none; margin-top: 1px;"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5.5M12 7.6v.01"></path></svg>
+          <div><div style="font-size: 14.5px; font-weight: 700;">Partner avoids shellfish</div><div style="font-size: 13.5px; color: #3C5A6D; margin-top: 3px;">We swapped the shrimp stir-fry for miso salmon.</div></div>
+        </div>
+        <div style="display: flex; gap: 12px; background: #FDF6E8; border: 1px solid #E7CF9E; border-radius: 14px; padding: 14px 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C08419" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px;"><path d="M12 4.5l8.5 15h-17z"></path><path d="M12 10v4M12 17v.01"></path></svg>
+          <div><div style="font-size: 14.5px; font-weight: 700;">$12 over your weekly budget</div><div style="font-size: 13.5px; color: #7A5A19; margin-top: 3px;">Swapping salmon for chicken thighs would bring you back under.</div></div>
+        </div>
+        <div style="margin-top: 6px; background: #1C2620; color: #F1EEE6; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 24px -12px rgba(28,38,32,0.6);">
+          <span style="font-size: 14.5px; flex: 1;">Tuesday dinner replaced.</span>
+          <button style="background: transparent; border: none; color: #A9CBA9; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; min-height: 44px;">Undo</button>
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 6px;">
+          <span style="background: #1C2620; color: #F1EEE6; font-size: 13px; border-radius: 10px; padding: 8px 12px; position: relative; max-width: 260px; line-height: 1.45;">Portions are estimates &mdash; adjust any serving and we&rsquo;ll recalculate the list.<span style="position: absolute; bottom: -5px; left: 30px; width: 10px; height: 10px; background: #1C2620; transform: rotate(45deg);"></span></span>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Overlays</div>
+        <div style="border: 1px solid #EFE9DC; border-radius: 14px; padding: 8px; box-shadow: 0 6px 12px rgba(28,38,32,0.07), 0 22px 44px -20px rgba(28,38,32,0.26); max-width: 240px;">
+          <div style="padding: 11px 12px; border-radius: 10px; font-size: 14.5px; display: flex; gap: 10px; align-items: center; background: #F4F1EA;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3B443E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12l-3-3M20 16H8l3 3"></path></svg>Replace this meal</div>
+          <div style="padding: 11px 12px; border-radius: 10px; font-size: 14.5px; display: flex; gap: 10px; align-items: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3B443E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.3A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.7C19 15.4 12 20 12 20z"></path></svg>Save to favourites</div>
+          <div style="padding: 11px 12px; border-radius: 10px; font-size: 14.5px; display: flex; gap: 10px; align-items: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3B443E" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Add a second serving</div>
+          <div style="height: 1px; background: #F1EEE6; margin: 6px 8px;"></div>
+          <div style="padding: 11px 12px; border-radius: 10px; font-size: 14.5px; color: #B4432F;">Remove from plan</div>
+        </div>
+        <div style="border-radius: 20px 20px 0 0; border: 1px solid #EFE9DC; border-bottom: none; padding: 14px 20px 20px; box-shadow: 0 -18px 44px -18px rgba(28,38,32,0.24);">
+          <div style="width: 40px; height: 4px; background: #DDD8CC; border-radius: 999px; margin: 0 auto 16px;"></div>
+          <div style="font-size: 17px; font-weight: 700; margin-bottom: 6px;">Adjust Charlie&rsquo;s portion</div>
+          <div style="font-size: 13.5px; color: #5C665E; margin-bottom: 14px;">Changes update the grocery list instantly.</div>
+          <button style="width: 100%; background: #3D7551; color: #fff; border: none; border-radius: 14px; padding: 14px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 48px; cursor: pointer;">Apply</button>
+        </div>
+        <div style="background: rgba(28,38,32,0.42); border-radius: 16px; padding: 26px; display: flex; align-items: center; justify-content: center;">
+          <div style="background: #fff; border-radius: 20px; padding: 22px; max-width: 300px; box-shadow: 0 8px 16px rgba(28,38,32,0.08), 0 32px 64px -24px rgba(28,38,32,0.3);">
+            <div style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">Regenerate the whole week?</div>
+            <div style="font-size: 14px; color: #5C665E; line-height: 1.55;">Your two favourited meals will be kept. Everything else will be replaced.</div>
+            <div style="display: flex; gap: 10px; margin-top: 18px;"><button style="flex: 1; background: #FFFFFF; border: 1px solid #D8D2C4; border-radius: 12px; padding: 12px; font-family: inherit; font-size: 14.5px; font-weight: 600; min-height: 44px; cursor: pointer;">Cancel</button><button style="flex: 1; background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 12px; font-family: inherit; font-size: 14.5px; font-weight: 600; min-height: 44px; cursor: pointer;">Regenerate</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5C665E;">Loading &amp; empty</div>
+        <div style="border: 1px solid #EFE9DC; border-radius: 16px; padding: 18px;">
+          <div style="height: 120px; border-radius: 12px; background: linear-gradient(90deg, #F1EEE6 25%, #E8E4DA 37%, #F1EEE6 63%); background-size: 420px 100%; animation: ppShimmer 1400ms ease-in-out infinite;"></div>
+          <div style="height: 14px; width: 70%; border-radius: 7px; margin-top: 14px; background: linear-gradient(90deg, #F1EEE6 25%, #E8E4DA 37%, #F1EEE6 63%); background-size: 420px 100%; animation: ppShimmer 1400ms ease-in-out infinite;"></div>
+          <div style="height: 12px; width: 45%; border-radius: 6px; margin-top: 10px; background: #F1EEE6;"></div>
+        </div>
+        <div style="border: 1px solid #EFE9DC; border-radius: 16px; padding: 22px; text-align: center;">
+          <div style="width: 46px; height: 46px; border-radius: 999px; border: 3px solid #E6E1D6; border-top-color: #3D7551; margin: 0 auto 14px; animation: ppSpin 900ms linear infinite;"></div>
+          <div style="font-size: 15.5px; font-weight: 700;">Building your week</div>
+          <div style="font-size: 13.5px; color: #5C665E; margin-top: 4px;">Matching 5 dinners to two sets of goals&hellip;</div>
+        </div>
+        <div style="border: 1px dashed #DDD8CC; border-radius: 16px; padding: 26px; text-align: center; background: #FBF9F5;">
+          <div style="width: 52px; height: 52px; border-radius: 999px; background: #EEF4EE; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D7551" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="3"></rect><path d="M8 3v4M16 3v4M4 10h16"></path></svg></div>
+          <div style="font-size: 16.5px; font-weight: 700;">No plan for this week yet</div>
+          <div style="font-size: 14px; color: #5C665E; margin: 6px auto 16px; max-width: 260px; line-height: 1.55;">Tell us how many dinners you need and we&rsquo;ll build one menu that works for both of you.</div>
+          <button style="background: #3D7551; color: #fff; border: none; border-radius: 12px; padding: 13px 22px; font-family: inherit; font-size: 15px; font-weight: 600; min-height: 44px; cursor: pointer;">Generate a plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 72px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">19 / Motion guidance</div>
+    <h2 style="font-family: 'Newsreader', serif; font-weight: 400; font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.015em;">Motion</h2>
+    <p style="font-size: 16px; color: #5C665E; margin: 0 0 28px; max-width: 660px;">Two easings do almost everything: <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px;">cubic-bezier(0.2, 0, 0, 1)</span> for anything entering or expanding, and <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px;">cubic-bezier(0.4, 0, 1, 1)</span> for anything leaving. Springs are reserved for direct manipulation only.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px;">
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px;"><div style="font-size: 15px; font-weight: 700;">Instant</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: #3D7551; margin: 8px 0;">80ms</div><div style="font-size: 13px; color: #5C665E; line-height: 1.5;">Press states, checkbox fill, ripple-free tap feedback.</div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px;"><div style="font-size: 15px; font-weight: 700;">Fast</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: #3D7551; margin: 8px 0;">160ms</div><div style="font-size: 13px; color: #5C665E; line-height: 1.5;">Hover, focus rings, chip selection, tooltip fade.</div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px;"><div style="font-size: 15px; font-weight: 700;">Standard</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: #3D7551; margin: 8px 0;">240ms</div><div style="font-size: 13px; color: #5C665E; line-height: 1.5;">Segmented thumb, accordion, day switch, toast in.</div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px;"><div style="font-size: 15px; font-weight: 700;">Emphasized</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: #3D7551; margin: 8px 0;">320ms</div><div style="font-size: 13px; color: #5C665E; line-height: 1.5;">Bottom sheets, side panels, meal replacement.</div></div>
+      <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 16px; padding: 20px;"><div style="font-size: 15px; font-weight: 700;">Page</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: #3D7551; margin: 8px 0;">400ms</div><div style="font-size: 13px; color: #5C665E; line-height: 1.5;">Plan &rarr; meal detail shared-element transition.</div></div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 14px 24px; background: #F4F1EA; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5C665E;"><div>Component</div><div>Trigger</div><div>What it communicates</div><div>Curve</div><div>Reduced motion</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Button press</div><div style="color: #5C665E;">Pointer down</div><div style="color: #5C665E;">The surface accepted your touch</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">scale .98 &middot; 80ms ease</div><div style="color: #5C665E;">Colour shift only</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Card selection</div><div style="color: #5C665E;">Tap / Enter</div><div style="color: #5C665E;">This card is now part of your plan</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">160ms border + halo</div><div style="color: #5C665E;">Instant border, no halo growth</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Expand section</div><div style="color: #5C665E;">Header tap</div><div style="color: #5C665E;">Detail belongs to this header</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">240ms height + 160ms fade</div><div style="color: #5C665E;">Toggle visibility, no height animation</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Profile switch</div><div style="color: #5C665E;">Segment tap</div><div style="color: #5C665E;">Same meal, a different lens on it</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">260ms thumb + 160ms crossfade</div><div style="color: #5C665E;">Thumb jumps, numbers swap</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Portion adjust</div><div style="color: #5C665E;">Drag / stepper</div><div style="color: #5C665E;">Quantities are linked and recalculating</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">spring 180/22 on thumb; 200ms number tween</div><div style="color: #5C665E;">Values update on release, no tween</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Replace meal</div><div style="color: #5C665E;">Replace action</div><div style="color: #5C665E;">One slot changed; the week did not</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">320ms crossfade + 8px rise, height locked</div><div style="color: #5C665E;">Straight swap with a toast</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Open meal detail</div><div style="color: #5C665E;">Card tap</div><div style="color: #5C665E;">You went deeper into this same meal</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">400ms shared image + 240ms content</div><div style="color: #5C665E;">120ms fade, no shared element</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Check grocery item</div><div style="color: #5C665E;">Tap row</div><div style="color: #5C665E;">Captured, and moved out of your way</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">80ms check, 240ms fade + reflow</div><div style="color: #5C665E;">Immediate reorder, no fade</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Bottom sheet</div><div style="color: #5C665E;">Action / drag</div><div style="color: #5C665E;">A temporary layer over your plan</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">320ms in, 240ms out; drag follows finger</div><div style="color: #5C665E;">Fade in place, drag still allowed</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Plan generating</div><div style="color: #5C665E;">Generate tap</div><div style="color: #5C665E;">Work is happening; the shape is coming</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">skeleton 1.4s loop, 60ms stagger on reveal</div><div style="color: #5C665E;">Static skeletons, single fade in</div></div>
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.5fr 0.9fr 1.2fr; padding: 16px 24px; border-top: 1px solid #EFE9DC; font-size: 14px; line-height: 1.5;"><div style="font-weight: 600;">Day change</div><div style="color: #5C665E;">Day tap / swipe</div><div style="color: #5C665E;">You moved along the week, not away</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">240ms 12px directional slide</div><div style="color: #5C665E;">Content replaces instantly</div></div>
+    </div>
+  </section>
+
+  <section style="padding: 0 64px 96px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A9490; margin-bottom: 16px;">20 / Accessibility and responsive rules</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 20px; align-items: start;">
+      <div style="min-width: 0; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 18px;">Accessibility rules</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14.5px; line-height: 1.55; color: #3B443E;">
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Body text is 4.5:1 minimum; secondary text never lighter than 5C665E on cream.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Focus is a 3px primary-500 halo at 2px offset &mdash; visible on every interactive element, never removed on mouse users.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Touch targets are 44&times;44 minimum, with 8px between adjacent targets.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Every field has a persistent visible label; placeholders are examples, never labels.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Errors sit under the field, are tied via <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">aria-describedby</span>, carry an icon, and say how to fix it.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Selection always carries a non-colour cue: a check glyph, a 1.5px border, or a weight change.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Portion comparison labels every quantity in words and initials; the teal/clay pair is a reinforcement, not the message.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Disabled controls keep 3:1 contrast and always explain why nearby &mdash; never a dead grey button with no reason.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span>Mobile body text is 16px minimum; numerals never below 15px.</div>
+          <div style="display: flex; gap: 10px;"><span style="color: #3D7551; font-weight: 700;">&#10003;</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">prefers-reduced-motion</span> replaces movement with cross-fades under 120ms; nothing loops.</div>
+        </div>
+      </div>
+
+      <div style="min-width: 0; background: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 20px; padding: 26px;">
+        <h3 style="font-size: 20px; font-weight: 700; margin: 0 0 6px;">Responsive behaviour</h3>
+        <p style="font-size: 14px; color: #5C665E; margin: 0 0 20px;">The meal card at each breakpoint.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: start;">
+          <div style="min-width: 0;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-bottom: 8px;">mobile &middot; &lt;640</div>
+            <div style="border: 1px solid #EFE9DC; border-radius: 14px; overflow: hidden;">
+              <div style="height: 78px; background: repeating-linear-gradient(135deg, #EFEAE0 0 8px, #E8E2D6 8px 16px);"></div>
+              <div style="padding: 12px;"><div style="font-size: 14px; font-weight: 700;">Lemon herb chicken bowls</div><div style="font-size: 12px; color: #5C665E; margin: 4px 0 10px;">30 min &middot; 6 oz / 4 oz</div><button style="width: 100%; background: #3D7551; color: #fff; border: none; border-radius: 10px; padding: 11px; font-family: inherit; font-size: 13.5px; font-weight: 600; min-height: 44px;">View portions</button></div>
+            </div>
+            <div style="font-size: 12.5px; color: #5C665E; margin-top: 10px; line-height: 1.5;">Stacked cards, full-width actions, bottom nav, sheets, scrollable day strip.</div>
+          </div>
+          <div style="min-width: 0;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A9490; margin-bottom: 8px;">tablet 640&ndash;1024 &middot; desktop &gt;1024</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+              <div style="min-width: 0; border: 1px solid #EFE9DC; border-radius: 14px; padding: 10px; display: flex; gap: 10px;">
+                <div style="width: 56px; height: 56px; border-radius: 10px; flex: none; background: repeating-linear-gradient(135deg, #EFEAE0 0 8px, #E8E2D6 8px 16px);"></div>
+                <div><div style="font-size: 13.5px; font-weight: 700;">Lemon herb chicken bowls</div><div style="font-size: 12px; color: #5C665E; margin-top: 3px;">30 min &middot; 6 oz / 4 oz</div></div>
+              </div>
+              <div style="min-width: 0; border: 1px solid #EFE9DC; border-radius: 14px; padding: 10px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                <div style="width: 76px; height: 62px; border-radius: 10px; flex: none; background: repeating-linear-gradient(135deg, #EFEAE0 0 8px, #E8E2D6 8px 16px);"></div>
+                <div style="flex: 1; min-width: 120px;"><div style="font-size: 14px; font-weight: 700;">Lemon herb chicken bowls</div><div style="font-size: 12px; color: #5C665E; margin-top: 3px;">30 min &middot; High protein &middot; Gluten-free</div></div>
+                <div style="display: flex; gap: 8px; font-variant-numeric: tabular-nums; font-size: 12px;"><span style="background: #E7F1EF; color: #235148; border-radius: 6px; padding: 4px 8px; font-weight: 600;">C 6 oz</span><span style="background: #FBEEE2; color: #7A4718; border-radius: 6px; padding: 4px 8px; font-weight: 600;">P 4 oz</span></div>
+                <button style="background: #3D7551; color: #fff; border: none; border-radius: 10px; padding: 10px 14px; font-family: inherit; font-size: 13px; font-weight: 600; min-height: 44px; flex: none;">View</button>
+              </div>
+            </div>
+            <div style="font-size: 12.5px; color: #5C665E; margin-top: 10px; line-height: 1.5;">Tablet: two-column plan, sheets become side panels at 1024. Desktop: 12-column grid, persistent side nav, side-by-side portion comparison, inline detail panel instead of a modal, max content width 1200 so lines stay readable.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;defaultProfile&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;household&quot;,&quot;charlie&quot;,&quot;partner&quot;],&quot;default&quot;:&quot;household&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Live demos&quot;},&quot;startWithBasketItem&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Live demos&quot;}}">class Component extends DCLogic {
+  state = {
+    who: ({ household: 0, charlie: 1, partner: 2 })[this.props.defaultProfile] ?? 0,
+    items: [
+      { name: 'Chicken breast', meta: 'Lemon herb chicken bowls', qty: '10 oz', done: false },
+      { name: 'Jasmine rice', meta: 'Two meals this week', qty: '2½ cups', done: false },
+      { name: 'Broccoli florets', meta: 'Lemon herb chicken bowls', qty: '3 cups', done: this.props.startWithBasketItem ?? true },
+      { name: 'Greek yoghurt', meta: 'Herb sauce', qty: '1 cup', done: false },
+      { name: 'Lemons', meta: 'Two meals this week', qty: '3', done: false }
+    ]
+  };
+
+  toggle(i) {
+    this.setState(s => ({ items: s.items.map((it, n) => n === i ? Object.assign({}, it, { done: !it.done }) : it) }));
+  }
+
+  renderVals() {
+    const views = [
+      { label: 'Household total', chicken: '10 oz', rice: '2½ cups', cals: '1,240' },
+      { label: 'Charlie’s portion', chicken: '6 oz', rice: '1½ cups', cals: '720' },
+      { label: 'Partner’s portion', chicken: '4 oz', rice: '1 cup', cals: '520' }
+    ];
+    const v = views[this.state.who];
+    const decorate = (it, i) => ({ name: it.name, meta: it.meta, qty: it.qty, toggle: () => this.toggle(i) });
+    const open = [], done = [];
+    this.state.items.forEach((it, i) => (it.done ? done : open).push(decorate(it, i)));
+    return {
+      thumbLeft: (this.state.who * 33.333) + '%',
+      pickHousehold: () => this.setState({ who: 0 }),
+      pickCharlie: () => this.setState({ who: 1 }),
+      pickPartner: () => this.setState({ who: 2 }),
+      viewLabel: v.label,
+      viewChicken: v.chicken,
+      viewRice: v.rice,
+      viewCals: v.cals,
+      openItems: open,
+      doneItems: done,
+      hasDone: done.length > 0,
+      doneCount: done.length
+    };
+  }
+}</script>
+</body>
+</html>

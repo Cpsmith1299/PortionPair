@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ variant === 'desktop' }}" hint-placeholder-val="{{ true }}">
+  <div style="height: 64px; box-sizing: border-box; background: #FFFFFF; border-bottom: 1px solid #E6E1D6; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif;">
+    <div style="font-family: 'Newsreader', serif; font-size: 20px; font-weight: 500; color: #1C2620;">PortionPair</div>
+    <div style="display: flex; align-items: center; gap: 4px; background: #F7F4EE; border-radius: 999px; padding: 4px;">
+      <sc-if value="{{ active === 'week' }}" hint-placeholder-val="{{ true }}"><a href="#screen-2" aria-current="page" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #FFFFFF; color: #234A33; font-size: 14px; font-weight: 700; box-shadow: 0 1px 2px rgba(28,38,32,0.08); text-decoration: none;">Week</a></sc-if>
+      <sc-if value="{{ active !== 'week' }}" hint-placeholder-val="{{ false }}"><a href="#screen-2" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; color: #4F5A53; font-size: 14px; font-weight: 600; text-decoration: none;">Week</a></sc-if>
+      <sc-if value="{{ active === 'grocery' }}" hint-placeholder-val="{{ false }}"><a href="#screen-6" aria-current="page" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #FFFFFF; color: #234A33; font-size: 14px; font-weight: 700; box-shadow: 0 1px 2px rgba(28,38,32,0.08); text-decoration: none;">Grocery</a></sc-if>
+      <sc-if value="{{ active !== 'grocery' }}" hint-placeholder-val="{{ true }}"><a href="#screen-6" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; color: #4F5A53; font-size: 14px; font-weight: 600; text-decoration: none;">Grocery</a></sc-if>
+      <sc-if value="{{ active === 'favorites' }}" hint-placeholder-val="{{ false }}"><a href="#" aria-current="page" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #FFFFFF; color: #234A33; font-size: 14px; font-weight: 700; box-shadow: 0 1px 2px rgba(28,38,32,0.08); text-decoration: none;">Favorites</a></sc-if>
+      <sc-if value="{{ active !== 'favorites' }}" hint-placeholder-val="{{ true }}"><a href="#" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; color: #4F5A53; font-size: 14px; font-weight: 600; text-decoration: none;">Favorites</a></sc-if>
+      <sc-if value="{{ active === 'profile' }}" hint-placeholder-val="{{ false }}"><a href="#" aria-current="page" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; background: #FFFFFF; color: #234A33; font-size: 14px; font-weight: 700; box-shadow: 0 1px 2px rgba(28,38,32,0.08); text-decoration: none;">Profile</a></sc-if>
+      <sc-if value="{{ active !== 'profile' }}" hint-placeholder-val="{{ true }}"><a href="#" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 999px; color: #4F5A53; font-size: 14px; font-weight: 600; text-decoration: none;">Profile</a></sc-if>
+    </div>
+    <span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 999px; background: #E6E1D6; color: #38423C; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none;">H</span>
+  </div>
+</sc-if>
+<sc-if value="{{ variant === 'mobile' }}" hint-placeholder-val="{{ false }}">
+  <div role="navigation" aria-label="Primary" style="position: absolute; left: 0; right: 0; bottom: 0; height: 62px; box-sizing: border-box; background: #FFFFFF; border-top: 1px solid #E6E1D6; display: grid; grid-template-columns: repeat(4, 1fr); z-index: 5;">
+    <sc-if value="{{ active === 'week' }}" hint-placeholder-val="{{ true }}">
+      <a href="#screen-2" aria-label="Week" aria-current="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #234A33;"><span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 26px; border-radius: 999px; background: #EEF4EE;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg></span><span style="font-size: 11.5px; font-weight: 700;">Week</span></a>
+    </sc-if>
+    <sc-if value="{{ active !== 'week' }}" hint-placeholder-val="{{ false }}">
+      <a href="#screen-2" aria-label="Week" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #636C65;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 3px;"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg><span style="font-size: 11.5px; font-weight: 600;">Week</span></a>
+    </sc-if>
+    <sc-if value="{{ active === 'grocery' }}" hint-placeholder-val="{{ false }}">
+      <a href="#screen-6" aria-label="Grocery" aria-current="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #234A33;"><span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 26px; border-radius: 999px; background: #EEF4EE;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6"></path><circle cx="9" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle></svg></span><span style="font-size: 11.5px; font-weight: 700;">Grocery</span></a>
+    </sc-if>
+    <sc-if value="{{ active !== 'grocery' }}" hint-placeholder-val="{{ true }}">
+      <a href="#screen-6" aria-label="Grocery" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #636C65;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 3px;"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6"></path><circle cx="9" cy="20" r="1.5"></circle><circle cx="17" cy="20" r="1.5"></circle></svg><span style="font-size: 11.5px; font-weight: 600;">Grocery</span></a>
+    </sc-if>
+    <sc-if value="{{ active === 'favorites' }}" hint-placeholder-val="{{ false }}">
+      <a href="#" aria-label="Favorites" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #234A33;"><span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 26px; border-radius: 999px; background: #EEF4EE;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9C.6 9 2 5 6 5c2.2 0 3.7 1.2 4.5 2.4C11.3 6.2 12.8 5 15 5c4 0 5.4 4 4 7-2.5 4.4-10 9-10 9z"></path></svg></span><span style="font-size: 11.5px; font-weight: 700;">Favorites</span></a>
+    </sc-if>
+    <sc-if value="{{ active !== 'favorites' }}" hint-placeholder-val="{{ true }}">
+      <a href="#" aria-label="Favorites" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #636C65;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 3px;"><path d="M12 21s-7.5-4.6-10-9C.6 9 2 5 6 5c2.2 0 3.7 1.2 4.5 2.4C11.3 6.2 12.8 5 15 5c4 0 5.4 4 4 7-2.5 4.4-10 9-10 9z"></path></svg><span style="font-size: 11.5px; font-weight: 600;">Favorites</span></a>
+    </sc-if>
+    <sc-if value="{{ active === 'profile' }}" hint-placeholder-val="{{ false }}">
+      <a href="#" aria-label="Profile" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #234A33;"><span style="display: flex; align-items: center; justify-content: center; width: 44px; height: 26px; border-radius: 999px; background: #EEF4EE;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#234A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c1.5-3.6 4.2-5.4 7-5.4S18.5 16.4 20 20"></path></svg></span><span style="font-size: 11.5px; font-weight: 700;">Profile</span></a>
+    </sc-if>
+    <sc-if value="{{ active !== 'profile' }}" hint-placeholder-val="{{ true }}">
+      <a href="#" aria-label="Profile" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #636C65;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#636C65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 3px;"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c1.5-3.6 4.2-5.4 7-5.4S18.5 16.4 20 20"></path></svg><span style="font-size: 11.5px; font-weight: 600;">Profile</span></a>
+    </sc-if>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:64},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;desktop&quot;,&quot;options&quot;:[&quot;desktop&quot;,&quot;mobile&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;week&quot;,&quot;options&quot;:[&quot;week&quot;,&quot;grocery&quot;,&quot;favorites&quot;,&quot;profile&quot;],&quot;tsType&quot;:&quot;string&quot;}}"></script>
+</body>
+</html>
