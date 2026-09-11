@@ -1,11 +1,14 @@
 /**
  * Curated starter recipe catalog (CLAUDE.md §15 Milestone 3, §8 "Recipe strategy").
  *
- * These are the seven meals CLAUDE.md §12 names as accepted examples — the
- * brief calls for 40–75 recipes at full strength, so this batch is a starting
- * point to prove the ingredient/nutrition/portion pipeline end to end, not the
- * finished catalog. Grow it by adding entries here and to `ingredients.ts`;
- * nothing else needs to change.
+ * The brief calls for 40–75 recipes at full strength; this is a growing
+ * starting batch to prove the ingredient/nutrition/portion pipeline end to
+ * end, not the finished catalog. The first seven are the accepted example
+ * meals from CLAUDE.md §12; the rest reuse those same verified ingredients
+ * plus a second wave (shrimp, pork, tofu, quinoa, couscous, broccoli, ...)
+ * to widen variety without re-deriving nutrition from scratch each time.
+ * Grow it by adding entries here and to `ingredients.ts`; nothing else needs
+ * to change.
  *
  * Quantities are written for the base `servings` yield; the portion engine
  * (`domain/portions/scale.ts`) derives each member's actual plate from there.
@@ -33,12 +36,14 @@ export const RECIPE_CATALOG: Recipe[] = [
     ingredients: [
       { ingredientId: 'chicken-breast', role: 'protein', quantity: { amount: 340, unit: 'g' } },
       { ingredientId: 'white-rice-cooked', role: 'carb', quantity: { amount: 2.5, unit: 'cup' } },
-      { ingredientId: 'roasted-mixed-vegetables', role: 'vegetable', quantity: { amount: 1.75, unit: 'cup' } },
+      { ingredientId: 'zucchini', role: 'vegetable', quantity: { amount: 0.75, unit: 'cup' } },
+      { ingredientId: 'bell-pepper-red', role: 'vegetable', quantity: { amount: 0.6, unit: 'cup' } },
+      { ingredientId: 'onion', role: 'vegetable', quantity: { amount: 0.4, unit: 'cup' } },
       { ingredientId: 'lemon-herb-dressing', role: 'fat', quantity: { amount: 3.5, unit: 'tbsp' } },
     ],
     instructions: [
       'Season chicken breasts and roast at 425°F until cooked through, about 20 minutes.',
-      'Toss vegetables with a little oil and roast alongside the chicken.',
+      'Toss zucchini, bell pepper, and onion with a little oil and roast alongside the chicken.',
       'Whisk together olive oil, lemon juice, and chopped herbs for the dressing.',
       'Slice the chicken and serve over rice with roasted vegetables, finished with dressing.',
     ],
@@ -108,7 +113,8 @@ export const RECIPE_CATALOG: Recipe[] = [
     ingredients: [
       { ingredientId: 'black-beans-canned', role: 'protein', quantity: { amount: 300, unit: 'g' } },
       { ingredientId: 'corn-tortilla', role: 'carb', quantity: { amount: 6, unit: 'piece' } },
-      { ingredientId: 'roasted-sweet-potato-pepper', role: 'vegetable', quantity: { amount: 2.5, unit: 'cup' } },
+      { ingredientId: 'sweet-potato-cooked', role: 'vegetable', quantity: { amount: 1.5, unit: 'cup' } },
+      { ingredientId: 'bell-pepper-red', role: 'vegetable', quantity: { amount: 1, unit: 'cup' } },
       { ingredientId: 'avocado', role: 'fat', quantity: { amount: 1, unit: 'piece' } },
     ],
     instructions: [
@@ -182,13 +188,217 @@ export const RECIPE_CATALOG: Recipe[] = [
     ingredients: [
       { ingredientId: 'chicken-breast', role: 'protein', quantity: { amount: 320, unit: 'g' } },
       { ingredientId: 'flour-tortilla', role: 'carb', quantity: { amount: 6, unit: 'piece' } },
-      { ingredientId: 'roasted-peppers-onions', role: 'vegetable', quantity: { amount: 2.5, unit: 'cup' } },
+      { ingredientId: 'bell-pepper-red', role: 'vegetable', quantity: { amount: 1.5, unit: 'cup' } },
+      { ingredientId: 'onion', role: 'vegetable', quantity: { amount: 1, unit: 'cup' } },
       { ingredientId: 'olive-oil', role: 'other', quantity: { amount: 2, unit: 'tbsp' } },
     ],
     instructions: [
       'Toss sliced chicken, peppers, and onions with olive oil and fajita seasoning.',
       'Roast on a sheet pan at 425°F until the chicken is cooked through, about 20 minutes.',
       'Warm the tortillas and serve everything alongside for building fajitas.',
+    ],
+  },
+  {
+    id: 'shrimp-quinoa-bowls',
+    slug: 'shrimp-quinoa-bowls',
+    name: 'Shrimp and quinoa bowls',
+    description: 'Seared shrimp over quinoa with broccoli, cherry tomatoes, and lemon herb dressing.',
+    prepMinutes: 10,
+    cookMinutes: 15,
+    servings: 2,
+    dietaryTags: ['High protein', 'Gluten-free'],
+    allergenTags: ['shellfish'],
+    costPerServing: 5.9,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'shrimp-cooked', role: 'protein', quantity: { amount: 320, unit: 'g' } },
+      { ingredientId: 'quinoa-cooked', role: 'carb', quantity: { amount: 300, unit: 'g' } },
+      { ingredientId: 'broccoli-cooked', role: 'vegetable', quantity: { amount: 2, unit: 'cup' } },
+      { ingredientId: 'cherry-tomatoes', role: 'vegetable', quantity: { amount: 1, unit: 'cup' } },
+      { ingredientId: 'lemon-herb-dressing', role: 'fat', quantity: { amount: 3, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Cook quinoa according to package directions.',
+      'Sear shrimp in a hot pan for 1-2 minutes per side, until just opaque.',
+      'Steam or roast broccoli until tender-crisp.',
+      'Combine over quinoa with cherry tomatoes, finished with dressing.',
+    ],
+  },
+  {
+    id: 'pork-tenderloin-sweet-potato-mash',
+    slug: 'pork-tenderloin-sweet-potato-mash',
+    name: 'Pork tenderloin with sweet potato mash',
+    description: 'Roasted pork tenderloin with a dijon honey glaze, sweet potato mash, and broccoli.',
+    prepMinutes: 10,
+    cookMinutes: 25,
+    servings: 2,
+    dietaryTags: ['Balanced', 'Gluten-free'],
+    allergenTags: [],
+    costPerServing: 5.4,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'pork-tenderloin-cooked', role: 'protein', quantity: { amount: 320, unit: 'g' } },
+      { ingredientId: 'sweet-potato-cooked', role: 'carb', quantity: { amount: 400, unit: 'g' }, preparationNote: 'mashed' },
+      { ingredientId: 'broccoli-cooked', role: 'vegetable', quantity: { amount: 2, unit: 'cup' } },
+      { ingredientId: 'dijon-honey-glaze', role: 'fat', quantity: { amount: 3, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Roast pork tenderloin at 400°F until cooked through, about 20-25 minutes; brush with glaze in the last 5 minutes.',
+      'Boil and mash sweet potato.',
+      'Steam broccoli until tender-crisp.',
+      'Slice pork and serve over the mash with broccoli, finished with any remaining glaze.',
+    ],
+  },
+  {
+    id: 'tofu-broccoli-stir-fry',
+    slug: 'tofu-broccoli-stir-fry',
+    name: 'Tofu and broccoli stir-fry',
+    description: 'Pan-seared tofu and broccoli in ginger soy glaze over rice.',
+    prepMinutes: 10,
+    cookMinutes: 15,
+    servings: 2,
+    dietaryTags: ['Vegetarian'],
+    allergenTags: ['soy', 'gluten'],
+    costPerServing: 3.8,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'tofu-firm', role: 'protein', quantity: { amount: 340, unit: 'g' } },
+      { ingredientId: 'white-rice-cooked', role: 'carb', quantity: { amount: 2.5, unit: 'cup' } },
+      { ingredientId: 'broccoli-cooked', role: 'vegetable', quantity: { amount: 2, unit: 'cup' } },
+      { ingredientId: 'bell-pepper-red', role: 'vegetable', quantity: { amount: 1, unit: 'cup' } },
+      { ingredientId: 'ginger-soy-glaze', role: 'fat', quantity: { amount: 3, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Press and cube tofu, then pan-sear until golden on most sides.',
+      'Stir-fry broccoli and bell pepper until tender-crisp.',
+      'Toss everything with ginger soy glaze.',
+      'Serve over rice.',
+    ],
+  },
+  {
+    id: 'greek-chicken-couscous',
+    slug: 'greek-chicken-couscous',
+    name: 'Greek chicken with couscous',
+    description: 'Roasted chicken over couscous with cucumber, cherry tomatoes, and tzatziki.',
+    prepMinutes: 10,
+    cookMinutes: 20,
+    servings: 2,
+    dietaryTags: ['High protein'],
+    allergenTags: ['dairy', 'gluten'],
+    costPerServing: 5.0,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'chicken-breast', role: 'protein', quantity: { amount: 320, unit: 'g' } },
+      { ingredientId: 'couscous-cooked', role: 'carb', quantity: { amount: 300, unit: 'g' } },
+      { ingredientId: 'cucumber', role: 'vegetable', quantity: { amount: 200, unit: 'g' } },
+      { ingredientId: 'cherry-tomatoes', role: 'vegetable', quantity: { amount: 1, unit: 'cup' } },
+      { ingredientId: 'tzatziki-yogurt-sauce', role: 'fat', quantity: { amount: 4, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Season and roast chicken at 425°F until cooked through, about 20 minutes.',
+      'Cook couscous according to package directions.',
+      'Slice cucumber and halve cherry tomatoes for a quick salad.',
+      'Slice the chicken and serve over couscous with the salad and tzatziki.',
+    ],
+  },
+  {
+    id: 'beef-broccoli',
+    slug: 'beef-broccoli',
+    name: 'Beef and broccoli',
+    description: 'Seared flank steak and broccoli in ginger soy glaze over rice.',
+    prepMinutes: 10,
+    cookMinutes: 15,
+    servings: 2,
+    dietaryTags: ['High protein'],
+    allergenTags: ['soy', 'gluten'],
+    costPerServing: 6.1,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'beef-flank-steak', role: 'protein', quantity: { amount: 320, unit: 'g' } },
+      { ingredientId: 'white-rice-cooked', role: 'carb', quantity: { amount: 2.5, unit: 'cup' } },
+      { ingredientId: 'broccoli-cooked', role: 'vegetable', quantity: { amount: 2.5, unit: 'cup' } },
+      { ingredientId: 'ginger-soy-glaze', role: 'fat', quantity: { amount: 3, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Slice beef thinly against the grain and sear over high heat until browned.',
+      'Stir-fry broccoli until tender-crisp.',
+      'Toss beef and broccoli with ginger soy glaze.',
+      'Serve over rice.',
+    ],
+  },
+  {
+    id: 'turkey-black-bean-chili',
+    slug: 'turkey-black-bean-chili',
+    name: 'Turkey and black bean chili',
+    description: 'Ground turkey chili with black beans, peppers, and crushed tomatoes.',
+    prepMinutes: 10,
+    cookMinutes: 25,
+    servings: 2,
+    dietaryTags: ['High protein', 'Gluten-free'],
+    allergenTags: [],
+    costPerServing: 4.2,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'ground-turkey-93', role: 'protein', quantity: { amount: 300, unit: 'g' } },
+      { ingredientId: 'black-beans-canned', role: 'carb', quantity: { amount: 300, unit: 'g' } },
+      { ingredientId: 'crushed-tomatoes', role: 'vegetable', quantity: { amount: 1.5, unit: 'cup' } },
+      { ingredientId: 'bell-pepper-red', role: 'vegetable', quantity: { amount: 1, unit: 'cup' } },
+      { ingredientId: 'onion', role: 'vegetable', quantity: { amount: 0.75, unit: 'cup' } },
+      { ingredientId: 'olive-oil', role: 'other', quantity: { amount: 1, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Brown ground turkey with onion and bell pepper.',
+      'Add black beans, crushed tomatoes, and chili seasoning.',
+      'Simmer 15-20 minutes until thickened.',
+    ],
+  },
+  {
+    id: 'mushroom-spinach-orzo',
+    slug: 'mushroom-spinach-orzo',
+    name: 'Mushroom and spinach orzo',
+    description: 'Creamy orzo with sautéed mushrooms, spinach, and parmesan.',
+    prepMinutes: 10,
+    cookMinutes: 20,
+    servings: 2,
+    dietaryTags: ['Vegetarian'],
+    allergenTags: ['gluten', 'dairy'],
+    costPerServing: 3.8,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'parmesan-grated', role: 'protein', quantity: { amount: 4, unit: 'tbsp' } },
+      { ingredientId: 'orzo-cooked', role: 'carb', quantity: { amount: 300, unit: 'g' } },
+      { ingredientId: 'mushrooms-white', role: 'vegetable', quantity: { amount: 2, unit: 'cup' } },
+      { ingredientId: 'baby-spinach', role: 'vegetable', quantity: { amount: 2, unit: 'cup' } },
+      { ingredientId: 'heavy-cream', role: 'fat', quantity: { amount: 4, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Sauté mushrooms until browned and any liquid has cooked off.',
+      'Simmer orzo in stock until tender.',
+      'Stir in mushrooms, spinach, and cream until glossy.',
+      'Finish with grated parmesan.',
+    ],
+  },
+  {
+    id: 'sheet-pan-salmon-sweet-potato',
+    slug: 'sheet-pan-salmon-sweet-potato',
+    name: 'Sheet-pan salmon with sweet potato and broccoli',
+    description: 'Roasted salmon, sweet potato, and broccoli with olive oil.',
+    prepMinutes: 10,
+    cookMinutes: 20,
+    servings: 2,
+    dietaryTags: ['High protein', 'Gluten-free'],
+    allergenTags: ['fish'],
+    costPerServing: 6.8,
+    status: 'verified',
+    ingredients: [
+      { ingredientId: 'salmon-atlantic', role: 'protein', quantity: { amount: 340, unit: 'g' } },
+      { ingredientId: 'sweet-potato-cooked', role: 'carb', quantity: { amount: 350, unit: 'g' } },
+      { ingredientId: 'broccoli-cooked', role: 'vegetable', quantity: { amount: 2, unit: 'cup' } },
+      { ingredientId: 'olive-oil', role: 'other', quantity: { amount: 2, unit: 'tbsp' } },
+    ],
+    instructions: [
+      'Toss diced sweet potato with olive oil and roast at 425°F for 10 minutes.',
+      'Add salmon and broccoli to the sheet pan and roast until the salmon is just cooked through, about 10 more minutes.',
     ],
   },
 ];

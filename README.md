@@ -77,10 +77,10 @@ roving-focus member and day tabs, and the responsive shell at mobile, tablet, an
 desktop.
 
 The trusted recipe and nutrition domain (Milestone 3): a curated starter catalog
-of seven recipes (`domain/recipes/catalog.ts`) built from 27 normalized
-ingredients (`domain/recipes/ingredients.ts`), most mapped to a verified USDA
-FoodData Central entry and the rest clearly flagged `reference_estimate`
-pending backfill. `domain/nutrition/` computes calories and macros
+of 15 recipes (`domain/recipes/catalog.ts`) built from 38 normalized
+ingredients (`domain/recipes/ingredients.ts`) — 31 mapped to a verified USDA
+FoodData Central entry, 7 composite sauces/glazes clearly flagged
+`reference_estimate` pending a from-scratch breakdown. `domain/nutrition/` computes calories and macros
 deterministically from those figures; `domain/portions/scale.ts` scales a
 recipe's primary protein and carbohydrate toward each member's target within
 a configurable tolerance, keeping vegetables/fat/garnish close to baseline and
@@ -99,9 +99,9 @@ readable by everyone, writable only by the service role) via
   verified catalog and portion engine into plan generation, ahead of the
   structured AI proposal step, is Milestone 4.
 - **Nutrition figures beyond the starter catalog.** The engine computes real
-  numbers for all seven Milestone 3 recipes, but the catalog is a starting
-  batch (CLAUDE.md §8 calls for 40–75) and several minor ingredients are
-  `reference_estimate` values pending USDA FoodData Central verification —
+  numbers for all 15 Milestone 3 recipes, but the catalog is a starting batch
+  (CLAUDE.md §8 calls for 40–75) and the 7 composite sauces/glazes are
+  `reference_estimate` values pending a from-scratch or per-brand breakdown —
   see the notes in `domain/recipes/ingredients.ts`.
 - **Plan persistence.** Accounts, households, members, and plan preferences
   now persist to Supabase (Milestone 2). The generated plan itself still
