@@ -6,6 +6,9 @@ One shared weekly dinner plan for a two-person household, with different portion
 calculated for each person from their individual calorie and macro targets. Cook
 the same recipes, shop from one combined list, skip the separate meals.
 
+Live: https://portionpair-cpsmith1299smith-7423s-projects.vercel.app (Milestone 2 — auth
+and onboarding are real; meals are still a fixture catalog, see "What is still mocked" below)
+
 The full product brief, locked decisions, and milestone sequence live in
 [CLAUDE.md](CLAUDE.md). It is the source of truth; this file only covers running
 the code.
