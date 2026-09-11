@@ -31,14 +31,18 @@ sign-up/login (Milestone 2).
 ## Supabase setup
 
 1. Create a project at [supabase.com](https://supabase.com).
-2. Run `supabase/migrations/20260911000000_identity_and_households.sql`
-   against it — paste it into the SQL editor, or `supabase db push` once the
-   CLI is linked to the project. There's no local Supabase (Docker) setup in
-   this repo; migrations are meant to be applied straight to a hosted project.
+2. Run every file in `supabase/migrations/`, in filename order, against it —
+   paste each into the SQL editor, or `supabase db push` once the CLI is
+   linked to the project. There's no local Supabase (Docker) setup in this
+   repo; migrations are meant to be applied straight to a hosted project.
 3. Copy `.env.example` to `.env.local` and fill in `NEXT_PUBLIC_SUPABASE_URL`
    and `NEXT_PUBLIC_SUPABASE_ANON_KEY` from Project Settings → API.
 4. Optionally, in Authentication → Providers, turn off "Confirm email" for
    faster local testing — sign-up works either way (see "What is still mocked").
+5. Milestone 3's recipe/ingredient tables are reference data, not something
+   each install needs to author from scratch: after the migration, run
+   `npx tsx scripts/generate-recipe-seed-sql.ts` and apply the SQL it prints
+   to seed the starter catalog from `domain/recipes/`.
 
 See [.env.example](.env.example) for the variables each later milestone introduces.
 
@@ -72,14 +76,33 @@ seven-day plan where days past the chosen dinner count become leftovers nights,
 roving-focus member and day tabs, and the responsive shell at mobile, tablet, and
 desktop.
 
+The trusted recipe and nutrition domain (Milestone 3): a curated starter catalog
+of seven recipes (`domain/recipes/catalog.ts`) built from 27 normalized
+ingredients (`domain/recipes/ingredients.ts`), most mapped to a verified USDA
+FoodData Central entry and the rest clearly flagged `reference_estimate`
+pending backfill. `domain/nutrition/` computes calories and macros
+deterministically from those figures; `domain/portions/scale.ts` scales a
+recipe's primary protein and carbohydrate toward each member's target within
+a configurable tolerance, keeping vegetables/fat/garnish close to baseline and
+explaining every bound it has to enforce. `domain/recipes/eligibility.ts`
+filters the catalog by diet and avoided foods, and
+`domain/groceries/consolidate.ts` combines repeated ingredients into one
+total — the normalization payoff. The same catalog is mirrored into Supabase
+(`ingredients` / `ingredient_nutrients` / `recipes` / `recipe_ingredients`,
+readable by everyone, writable only by the service role) via
+`scripts/generate-recipe-seed-sql.ts`, ready for Milestone 4 to query.
+
 ## What is still mocked
 
-- **The planner.** `DeterministicPlanner` serves a seven-meal fixture catalog. It
-  does not filter by diet or allergy — real enforcement belongs to the verified
-  recipe domain in Milestone 3 and must not be faked earlier.
-- **Nutrition figures.** Only "Lemon herb chicken bowls" carries portion numbers,
-  because those are the only figures approved in the brief. No calories or macros
-  are invented for the other meals.
+- **The planner.** `DeterministicPlanner` still serves its own seven-meal
+  fixture catalog and does not read `domain/recipes/` yet — wiring the
+  verified catalog and portion engine into plan generation, ahead of the
+  structured AI proposal step, is Milestone 4.
+- **Nutrition figures beyond the starter catalog.** The engine computes real
+  numbers for all seven Milestone 3 recipes, but the catalog is a starting
+  batch (CLAUDE.md §8 calls for 40–75) and several minor ingredients are
+  `reference_estimate` values pending USDA FoodData Central verification —
+  see the notes in `domain/recipes/ingredients.ts`.
 - **Plan persistence.** Accounts, households, members, and plan preferences
   now persist to Supabase (Milestone 2). The generated plan itself still
   lives in `sessionStorage` (`features/planning/plan-store.tsx`) — `meal_plans`
