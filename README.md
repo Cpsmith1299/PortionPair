@@ -22,11 +22,22 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:3000. The app redirects to `/onboarding`.
+Then open http://localhost:3000. The app redirects to `/onboarding`, behind
+sign-up/login (Milestone 2).
 
-No environment variables are needed for the current slice — the planner is local
-and deterministic, and there is no database, AI, or billing yet. See
-[.env.example](.env.example) for the variables each later milestone introduces.
+## Supabase setup
+
+1. Create a project at [supabase.com](https://supabase.com).
+2. Run `supabase/migrations/20260911000000_identity_and_households.sql`
+   against it — paste it into the SQL editor, or `supabase db push` once the
+   CLI is linked to the project. There's no local Supabase (Docker) setup in
+   this repo; migrations are meant to be applied straight to a hosted project.
+3. Copy `.env.example` to `.env.local` and fill in `NEXT_PUBLIC_SUPABASE_URL`
+   and `NEXT_PUBLIC_SUPABASE_ANON_KEY` from Project Settings → API.
+4. Optionally, in Authentication → Providers, turn off "Confirm email" for
+   faster local testing — sign-up works either way (see "What is still mocked").
+
+See [.env.example](.env.example) for the variables each later milestone introduces.
 
 ## Scripts
 
@@ -66,9 +77,14 @@ desktop.
 - **Nutrition figures.** Only "Lemon herb chicken bowls" carries portion numbers,
   because those are the only figures approved in the brief. No calories or macros
   are invented for the other meals.
-- **Persistence.** The generated plan lives in `sessionStorage`
-  (`features/planning/plan-store.tsx`) until Supabase lands. There are no
-  accounts, and no household is stored.
+- **Plan persistence.** Accounts, households, members, and plan preferences
+  now persist to Supabase (Milestone 2). The generated plan itself still
+  lives in `sessionStorage` (`features/planning/plan-store.tsx`) — `meal_plans`
+  / `member_portions` land in Milestone 4.
+- **Per-person profiles.** Signup collects a household name and both
+  members' names, but not yet individual calorie/macro targets or dietary
+  preferences — that's the Person 1/Person 2 profile wizard from CLAUDE.md's
+  first-time flow, deliberately deferred past this pass.
 - **Navigation.** Grocery, Favorites, and Profile are rendered disabled. Meal
   details, replace-meal, and the grocery list are not built.
 

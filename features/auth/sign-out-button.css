@@ -1,0 +1,26 @@
+/*
+ * Deliberately outside the locked `topbar`/`AppNavigation` markup (week.css) —
+ * see the comment in SignOutButton.tsx. Small and out of the way until
+ * Profile exists and can host it properly.
+ */
+.sign-out-form {
+  position: fixed;
+  z-index: 6;
+  top: 0.875rem;
+  right: 0.875rem;
+}
+
+.sign-out-button {
+  min-height: 44px;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-raised);
+  padding: 0.5rem 0.875rem;
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.sign-out-button:hover { color: var(--color-text-primary); border-color: var(--color-border-control); }

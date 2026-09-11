@@ -1,0 +1,50 @@
+/*
+ * Auth screens aren't part of the locked design canvases (Design System
+ * v0.2.2 covers onboarding/week; CLAUDE.md's "marketing" flow, which is
+ * where Sign Up/Login live, is explicitly out of slice one). This reuses the
+ * same tokens and shell proportions as `features/onboarding/onboarding.css`
+ * rather than inventing new visual language, but keeps its own class names —
+ * each feature owns its CSS independently, same as onboarding/ and week/.
+ */
+
+.auth-main {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: clamp(1rem, 5vw, 3.5rem) 1rem;
+  background: var(--color-surface-raised);
+}
+
+.auth-card { width: min(100%, 26rem); }
+
+.auth-header { margin-bottom: var(--space-8); }
+/* `.wordmark` and `.eyebrow` are declared once in app/globals.css. */
+
+.auth-card h1 { margin-bottom: 0.625rem; font-family: var(--font-display); font-size: clamp(1.75rem, 6vw, 2rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; }
+.auth-lede { margin-bottom: 1.625rem; color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.55; text-wrap: pretty; }
+
+.auth-fields { display: flex; flex-direction: column; gap: 1.125rem; margin-bottom: 1.625rem; }
+.auth-fields-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+
+.text-input {
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid var(--color-border-control);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+}
+
+.text-input[aria-invalid='true'] { border-color: var(--color-feedback-error); }
+
+.error-summary { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: var(--space-5); border: 1px solid #e6b5af; border-radius: var(--radius-lg); background: var(--color-feedback-error-surface); padding: 0.75rem 0.875rem; color: var(--color-feedback-error-text); font-size: 0.8125rem; line-height: 1.5; }
+
+.status-summary { margin-bottom: var(--space-5); border: 1px solid var(--color-border-default); border-radius: var(--radius-lg); background: var(--color-surface-sunken); padding: 0.75rem 0.875rem; color: var(--color-text-body); font-size: 0.8125rem; line-height: 1.5; }
+
+.auth-action > span, .auth-footer { display: block; margin-top: 0.875rem; color: var(--color-text-secondary); font-size: 0.8125rem; text-align: center; }
+.auth-footer a { color: var(--color-action-primary); font-weight: 600; }
+
+@media (max-width: 30rem) {
+  .auth-fields-row { grid-template-columns: 1fr; }
+}

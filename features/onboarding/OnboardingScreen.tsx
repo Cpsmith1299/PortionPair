@@ -1,21 +1,32 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import type { Household } from '@/domain/households/types';
 import { PlanGenerationError } from '@/domain/meal-plans/planner';
 import type { PlanPreferences, WeeklyPlan } from '@/domain/meal-plans/types';
 import { generatePlanAction } from '@/features/planning/actions';
 import { usePlanStore } from '@/features/planning/plan-store';
-import { DEMO_HOUSEHOLD } from '@/lib/planning/demo-household';
 import { PlanSetupForm } from './PlanSetupForm';
+
+interface OnboardingScreenProps {
+  household: Household;
+  initialPreferences: PlanPreferences;
+}
 
 /**
  * Wires the setup form to the server. Generation happens in a Server Action, so
  * planning never runs in the browser and the form stays free of transport
  * concerns.
+ *
+ * `household` and `initialPreferences` come from the real signed-in
+ * household (Milestone 2, loaded server-side by `app/onboarding/page.tsx`)
+ * rather than the old `DEMO_HOUSEHOLD` fixture and `DEFAULT_PREFERENCES`.
+ * The generated plan itself still lives in `sessionStorage` via
+ * `usePlanStore` until Milestone 4 persists `meal_plans`.
  */
-export function OnboardingScreen() {
+export function OnboardingScreen({ household, initialPreferences }: OnboardingScreenProps) {
   const router = useRouter();
-  const { preferences, savePlan } = usePlanStore();
+  const { savePlan } = usePlanStore();
 
   async function generatePlan(next: PlanPreferences): Promise<WeeklyPlan> {
     const result = await generatePlanAction(next);
@@ -31,8 +42,8 @@ export function OnboardingScreen() {
 
   return (
     <PlanSetupForm
-      initialPreferences={preferences}
-      household={DEMO_HOUSEHOLD}
+      initialPreferences={initialPreferences}
+      household={household}
       generatePlan={generatePlan}
       onComplete={handleComplete}
     />

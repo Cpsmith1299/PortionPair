@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SignOutButton } from '@/features/auth/SignOutButton';
 import { WeekScreen } from '@/features/week/WeekScreen';
 
 export const metadata: Metadata = {
@@ -6,5 +7,10 @@ export const metadata: Metadata = {
 };
 
 export default function WeekPage() {
-  return <WeekScreen />;
+  return (
+    <>
+      <SignOutButton />
+      <WeekScreen />
+    </>
+  );
 }
