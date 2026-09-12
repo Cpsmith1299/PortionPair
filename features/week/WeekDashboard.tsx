@@ -1,11 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useRef, useState, type KeyboardEvent } from 'react';
 import { Avatar } from '@/components/ui/Avatar';
 import { Button } from '@/components/ui/Button';
 import { sortedMembers, type HouseholdMember } from '@/domain/households/types';
 import type { MemberPortion, PlannedMeal, WeeklyPlan } from '@/domain/meal-plans/types';
+import { replaceMealAction } from '@/features/planning/actions';
 import { resolveMealImage } from '@/lib/planning/demo-catalog';
 import { AppNavigation } from './AppNavigation';
 import './week.css';
@@ -19,14 +22,32 @@ interface WeekDashboardProps {
 type PortionView = 'household' | string;
 
 export function WeekDashboard({ plan, onEditPreferences }: WeekDashboardProps) {
+  const router = useRouter();
   const members = sortedMembers(plan.household);
   const views: PortionView[] = ['household', ...members.map((member) => member.id)];
 
   const [selectedDay, setSelectedDay] = useState(() => initialDayIndex(plan.meals));
   const [view, setView] = useState<PortionView>('household');
+  const [replacing, setReplacing] = useState(false);
+  const [replaceError, setReplaceError] = useState('');
 
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const selectedMeal = plan.meals[selectedDay];
+
+  async function handleReplaceMeal() {
+    if (!selectedMeal?.mealPlanItemId) return;
+    setReplacing(true);
+    setReplaceError('');
+
+    const result = await replaceMealAction(selectedMeal.mealPlanItemId);
+    setReplacing(false);
+
+    if (!result.ok) {
+      setReplaceError(result.error);
+      return;
+    }
+    router.refresh();
+  }
 
   /** Roving focus: arrows move focus and selection together (CLAUDE.md §11). */
   function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, current: PortionView) {
@@ -196,13 +217,31 @@ export function WeekDashboard({ plan, onEditPreferences }: WeekDashboardProps) {
               )}
 
               <div className="meal-actions">
-                <Button type="button" disabled>
-                  View meal details
-                </Button>
-                <Button type="button" variant="secondary" disabled>
+                {selectedMeal.mealPlanItemId && selectedMeal.kind === 'cooked' ? (
+                  <Link className="button button--primary" href={`/meals/${selectedMeal.mealPlanItemId}`}>
+                    View meal details
+                  </Link>
+                ) : (
+                  <Button type="button" disabled>
+                    View meal details
+                  </Button>
+                )}
+                <Button
+                  type="button"
+                  variant="secondary"
+                  disabled={!selectedMeal.mealPlanItemId || selectedMeal.kind !== 'cooked'}
+                  loading={replacing}
+                  loadingLabel="Replacing…"
+                  onClick={handleReplaceMeal}
+                >
                   Replace meal
                 </Button>
               </div>
+              {replaceError && (
+                <p className="field-error" role="alert">
+                  {replaceError}
+                </p>
+              )}
             </div>
           </section>
 
@@ -213,9 +252,9 @@ export function WeekDashboard({ plan, onEditPreferences }: WeekDashboardProps) {
                 <h2>One list for the week</h2>
               </div>
               <p>Built from every dinner and combined for both portions.</p>
-              <Button type="button" variant="secondary" fullWidth disabled>
+              <Link className="button button--secondary button--full" href="/grocery">
                 Open grocery list
-              </Button>
+              </Link>
             </section>
 
             <section className="summary-card summary-card--subtle">

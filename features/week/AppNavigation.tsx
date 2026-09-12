@@ -1,17 +1,21 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
 import './week.css';
 
 /**
- * Approved authenticated navigation (CLAUDE.md §10). Only Week exists in slice
- * one; the rest are rendered as disabled so the shell is honest about what is
- * built rather than offering dead links.
+ * Approved authenticated navigation (CLAUDE.md §10). Week and Grocery are
+ * built; Favorites and Profile are rendered disabled so the shell is honest
+ * about what is built rather than offering dead links.
  */
 interface NavItem {
   label: string;
   icon: ReactNode;
-  active: boolean;
+  // A literal union, not `string` — Next's typed routes need to see the exact
+  // route at the `<Link>` call site, not a widened string.
+  href?: '/week' | '/grocery';
 }
 
 function CalendarIcon() {
@@ -51,27 +55,36 @@ function UserIcon() {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Week', icon: <CalendarIcon />, active: true },
-  { label: 'Grocery', icon: <CartIcon />, active: false },
-  { label: 'Favorites', icon: <HeartIcon />, active: false },
-  { label: 'Profile', icon: <UserIcon />, active: false },
+  { label: 'Week', icon: <CalendarIcon />, href: '/week' },
+  { label: 'Grocery', icon: <CartIcon />, href: '/grocery' },
+  { label: 'Favorites', icon: <HeartIcon /> },
+  { label: 'Profile', icon: <UserIcon /> },
 ];
 
 export function AppNavigation({ mobile = false }: { mobile?: boolean }) {
+  const pathname = usePathname();
+
   return (
     <nav className={mobile ? 'mobile-nav' : 'desktop-nav'} aria-label={mobile ? 'Primary, mobile' : 'Primary'}>
-      {NAV_ITEMS.map((item) => (
-        <button
-          key={item.label}
-          type="button"
-          aria-current={item.active ? 'page' : undefined}
-          disabled={!item.active}
-          aria-label={item.active ? item.label : `${item.label}, coming soon`}
-        >
-          {mobile && <span className="nav-icon">{item.icon}</span>}
-          <span>{item.label}</span>
-        </button>
-      ))}
+      {NAV_ITEMS.map((item) => {
+        const active = item.href !== undefined && pathname?.startsWith(item.href);
+
+        if (!item.href) {
+          return (
+            <button key={item.label} type="button" disabled aria-label={`${item.label}, coming soon`}>
+              {mobile && <span className="nav-icon">{item.icon}</span>}
+              <span>{item.label}</span>
+            </button>
+          );
+        }
+
+        return (
+          <Link key={item.label} href={item.href} aria-current={active ? 'page' : undefined}>
+            {mobile && <span className="nav-icon">{item.icon}</span>}
+            <span>{item.label}</span>
+          </Link>
+        );
+      })}
     </nav>
   );
 }

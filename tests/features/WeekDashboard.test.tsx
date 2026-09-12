@@ -6,6 +6,15 @@ import { WeekDashboard } from '@/features/week/WeekDashboard';
 import { DeterministicPlanner } from '@/lib/planning/deterministic-planner';
 import { DEMO_HOUSEHOLD } from '@/lib/planning/demo-household';
 
+// WeekDashboard reads `useRouter` for the (here-disabled, since this fixture
+// carries no `mealPlanItemId`) replace-meal flow, and it renders
+// `AppNavigation`, which reads `usePathname` — no App Router is mounted in
+// this component-level render, so both need a stub rather than the real hook.
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({ push: vi.fn(), refresh: vi.fn(), replace: vi.fn() }),
+  usePathname: () => '/week',
+}));
+
 const planner = new DeterministicPlanner();
 
 async function buildPlan(overrides: Partial<PlanPreferences> = {}): Promise<WeeklyPlan> {

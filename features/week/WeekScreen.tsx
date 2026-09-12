@@ -1,34 +1,24 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
-import { usePlanStore } from '@/features/planning/plan-store';
+import type { WeeklyPlan } from '@/domain/meal-plans/types';
 import { WeekDashboard } from './WeekDashboard';
 import './week.css';
 
+interface WeekScreenProps {
+  plan: WeeklyPlan;
+}
+
 /**
- * Guards the dashboard against being reached without a plan. Once households are
- * persisted (Milestone 2) this becomes a server-side fetch plus an auth check,
- * and the empty state becomes "generate your first week" rather than a redirect.
+ * The plan is loaded server-side by `app/week/page.tsx` (Milestone 4) — this
+ * component just renders it and handles the one client-side navigation
+ * ("edit preferences" clears nothing locally anymore, since there is no
+ * local plan state left to clear).
  */
-export function WeekScreen() {
+export function WeekScreen({ plan }: WeekScreenProps) {
   const router = useRouter();
-  const { plan, hydrated, clearPlan } = usePlanStore();
-
-  useEffect(() => {
-    if (hydrated && !plan) router.replace('/onboarding');
-  }, [hydrated, plan, router]);
-
-  if (!plan) {
-    return (
-      <main className="week-empty" aria-busy={!hydrated}>
-        <p role="status">{hydrated ? 'Taking you back to setup…' : 'Loading your week…'}</p>
-      </main>
-    );
-  }
 
   function handleEditPreferences() {
-    clearPlan();
     router.push('/onboarding');
   }
 

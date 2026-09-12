@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { DEFAULT_PREFERENCES } from '@/domain/meal-plans/types';
 import { OnboardingScreen } from '@/features/onboarding/OnboardingScreen';
+import { getNutritionTargetsForHousehold, hasTargetForEveryMember } from '@/lib/households/nutrition-targets-repository';
 import { getHouseholdForUser, getHouseholdPreferences } from '@/lib/households/repository';
 import { createClient } from '@/lib/supabase/server';
 
@@ -31,6 +32,12 @@ export default async function OnboardingPage() {
 
   const household = await getHouseholdForUser(supabase, user.id);
   if (!household) redirect('/login');
+
+  // Step 3 needs every member's nutrition target to build real portions
+  // (Milestone 4) — step 2 collects it and redirects back here.
+  const memberIds = household.members.map((member) => member.id);
+  const targets = await getNutritionTargetsForHousehold(supabase, memberIds);
+  if (!hasTargetForEveryMember(targets, memberIds)) redirect('/onboarding/targets');
 
   const preferences = (await getHouseholdPreferences(supabase, household.id)) ?? DEFAULT_PREFERENCES;
 

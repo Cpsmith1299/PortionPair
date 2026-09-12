@@ -1,4 +1,5 @@
 import type { Household } from '@/domain/households/types';
+import type { ScaledIngredientLine } from '@/domain/portions/types';
 
 export const DIET_OPTIONS = [
   'Balanced',
@@ -46,6 +47,14 @@ export interface MemberPortion {
   portion: string;
   calories: number;
   protein: number;
+  /**
+   * The full scaled ingredient breakdown behind `portion` — undefined for a
+   * leftovers night or a meal predating Milestone 4. Powers the meal-details
+   * view and grocery-list consolidation (each member's actual buy quantity).
+   */
+  scaledIngredients?: ScaledIngredientLine[];
+  /** Explainable-validation notes from the portion engine (CLAUDE.md §15) — clamped bounds, tolerance misses. */
+  warnings?: string[];
 }
 
 export type MealKind = 'cooked' | 'leftovers';
@@ -66,9 +75,20 @@ export interface PlannedMeal {
   tags?: string[];
   costPerServing?: number;
   portions: MemberPortion[];
+  /**
+   * Persisted `meal_plan_items.id` (Milestone 4) — the meal-details and
+   * replace-meal actions address a slot by this id, not by day index, so a
+   * replacement can't race with a stale client-side day computation.
+   * Undefined only for a plan that hasn't been persisted yet.
+   */
+  mealPlanItemId?: string;
+  /** `domain/recipes/catalog.ts` id this meal was generated from; null for leftovers. */
+  recipeId?: string | null;
 }
 
 export interface WeeklyPlan {
+  /** Persisted `meal_plans.id` (Milestone 4); undefined before the first save. */
+  id?: string;
   weekStart: string;
   weekLabel: string;
   preferences: PlanPreferences;

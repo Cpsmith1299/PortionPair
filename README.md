@@ -6,8 +6,9 @@ One shared weekly dinner plan for a two-person household, with different portion
 calculated for each person from their individual calorie and macro targets. Cook
 the same recipes, shop from one combined list, skip the separate meals.
 
-Live: https://portionpair-cpsmith1299smith-7423s-projects.vercel.app (Milestone 2 — auth
-and onboarding are real; meals are still a fixture catalog, see "What is still mocked" below)
+Live: https://portionpair-cpsmith1299smith-7423s-projects.vercel.app (Milestone 4 — the
+whole plan → portions → meal details → replace → grocery list flow is real and
+persisted; see "What is still mocked" below for what isn't yet)
 
 The full product brief, locked decisions, and milestone sequence live in
 [CLAUDE.md](CLAUDE.md). It is the source of truth; this file only covers running
@@ -90,29 +91,49 @@ filters the catalog by diet and avoided foods, and
 total — the normalization payoff. The same catalog is mirrored into Supabase
 (`ingredients` / `ingredient_nutrients` / `recipes` / `recipe_ingredients`,
 readable by everyone, writable only by the service role) via
-`scripts/generate-recipe-seed-sql.ts`, ready for Milestone 4 to query.
+`scripts/generate-recipe-seed-sql.ts`.
+
+The real planning flow (Milestone 4): `CatalogPlanner`
+(`lib/planning/catalog-planner.ts`) replaced the fixture planner — it filters
+the verified catalog by diet/avoided foods, picks a varied recipe per cooked
+night, and scales each member's portion from their *own* nutrition target
+(`nutrition_targets`, a new minimal step 2 of onboarding — Milestone 2 had
+deferred this, and the portion engine cannot personalize without it; a
+member's daily target is scaled to a dinner-sized share before it reaches the
+portion engine, per `domain/households/nutrition-targets.ts`). The generated
+plan is persisted (`meal_plans` / `meal_plan_items` / `member_portions`,
+written atomically through two Postgres functions —
+`upsert_meal_plan`/`replace_meal_plan_item` — rather than sequential
+client-side inserts) and `sessionStorage` is gone. Built on top of that:
+meal-details/cooking view (`/meals/[mealPlanItemId]`, full ingredients and
+instructions, per-member breakdown), a working "Replace meal" action, and a
+categorized, check-off-able grocery list (`/grocery`) built from
+`domain/groceries/consolidate.ts` combining every cooked night's ingredients.
+The AI-proposal step CLAUDE.md §15 calls for still slots in behind
+`CatalogPlanner`/`Planner` without touching persistence or presentation.
 
 ## What is still mocked
 
-- **The planner.** `DeterministicPlanner` still serves its own seven-meal
-  fixture catalog and does not read `domain/recipes/` yet — wiring the
-  verified catalog and portion engine into plan generation, ahead of the
-  structured AI proposal step, is Milestone 4.
+- **The AI proposal.** Meal selection is still deterministic (varied, not
+  random) rather than a structured AI proposal from OpenAI — the eligible
+  catalog and portion engine it will hand off to are real and already wired,
+  per `lib/planning/catalog-planner.ts`'s doc comment.
 - **Nutrition figures beyond the starter catalog.** The engine computes real
   numbers for all 15 Milestone 3 recipes, but the catalog is a starting batch
-  (CLAUDE.md §8 calls for 40–75) and the 7 composite sauces/glazes are
+  (CLAUDE.md §8 calls for 40–75) and 7 composite sauces/glazes are
   `reference_estimate` values pending a from-scratch or per-brand breakdown —
   see the notes in `domain/recipes/ingredients.ts`.
-- **Plan persistence.** Accounts, households, members, and plan preferences
-  now persist to Supabase (Milestone 2). The generated plan itself still
-  lives in `sessionStorage` (`features/planning/plan-store.tsx`) — `meal_plans`
-  / `member_portions` land in Milestone 4.
-- **Per-person profiles.** Signup collects a household name and both
-  members' names, but not yet individual calorie/macro targets or dietary
-  preferences — that's the Person 1/Person 2 profile wizard from CLAUDE.md's
-  first-time flow, deliberately deferred past this pass.
-- **Navigation.** Grocery, Favorites, and Profile are rendered disabled. Meal
-  details, replace-meal, and the grocery list are not built.
+- **Per-person profiles.** Onboarding now collects each member's daily
+  calorie/protein target (just two numbers), but not the full Person 1/Person
+  2 profile — dietary style, allergies, cuisines, spice preference — from
+  CLAUDE.md's first-time flow, deliberately deferred past this pass.
+- **Navigation.** Favorites and Profile are still rendered disabled. Week and
+  Grocery are both real now.
+- **Grocery list nuance.** A replaced meal clears the whole derived list and
+  rebuilds it fresh next visit — custom items survive, but a derived item's
+  checked/pantry state does not. There's also no per-ingredient
+  "which meals need this" traceability (`grocery_item_sources` from CLAUDE.md
+  §9 was deliberately skipped for this slice) and no reset/print/export yet.
 
 ## Architecture
 
@@ -126,13 +147,17 @@ tests/       Vitest + Testing Library
 ```
 
 The rule that matters: **`domain/` stays pure.** Plan generation sits behind the
-`Planner` interface in `domain/meal-plans/planner.ts`, so the real pipeline —
-eligible recipes → structured AI proposal → server validation → deterministic
-nutrition and portion engines — replaces the fixture planner without touching a
-single component.
+`Planner` interface in `domain/meal-plans/planner.ts` — `CatalogPlanner`
+(`lib/planning/catalog-planner.ts`) implements it today; swapping in a
+structured AI proposal ahead of the same eligible-recipe pool and portion
+engine won't touch persistence or a single component.
 
-Plan generation runs in a Server Action (`features/planning/actions.ts`) that
-validates its input with Zod, so planning never executes in the browser.
+Plan generation, replacement, and grocery mutations all run in Server Actions
+(`features/planning/actions.ts`, `features/grocery/actions.ts`) that validate
+input with Zod, so none of it executes in the browser. Persistence
+(`lib/planning/repository.ts`, `lib/planning/grocery-repository.ts`,
+`lib/households/nutrition-targets-repository.ts`) is a separate adapter layer
+between the Server Actions and Supabase — `domain/` never imports it.
 
 ## Design system
 

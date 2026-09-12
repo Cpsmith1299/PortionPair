@@ -5,7 +5,6 @@ import type { Household } from '@/domain/households/types';
 import { PlanGenerationError } from '@/domain/meal-plans/planner';
 import type { PlanPreferences, WeeklyPlan } from '@/domain/meal-plans/types';
 import { generatePlanAction } from '@/features/planning/actions';
-import { usePlanStore } from '@/features/planning/plan-store';
 import { PlanSetupForm } from './PlanSetupForm';
 
 interface OnboardingScreenProps {
@@ -19,14 +18,13 @@ interface OnboardingScreenProps {
  * concerns.
  *
  * `household` and `initialPreferences` come from the real signed-in
- * household (Milestone 2, loaded server-side by `app/onboarding/page.tsx`)
- * rather than the old `DEMO_HOUSEHOLD` fixture and `DEFAULT_PREFERENCES`.
- * The generated plan itself still lives in `sessionStorage` via
- * `usePlanStore` until Milestone 4 persists `meal_plans`.
+ * household (Milestone 2). The generated plan is now persisted server-side
+ * (Milestone 4, `meal_plans` / `member_portions`) — this screen just
+ * navigates to `/week`, which reads it fresh rather than carrying it over
+ * client state.
  */
 export function OnboardingScreen({ household, initialPreferences }: OnboardingScreenProps) {
   const router = useRouter();
-  const { savePlan } = usePlanStore();
 
   async function generatePlan(next: PlanPreferences): Promise<WeeklyPlan> {
     const result = await generatePlanAction(next);
@@ -35,8 +33,7 @@ export function OnboardingScreen({ household, initialPreferences }: OnboardingSc
     return result.plan;
   }
 
-  function handleComplete(plan: WeeklyPlan) {
-    savePlan(plan);
+  function handleComplete() {
     router.push('/week');
   }
 
